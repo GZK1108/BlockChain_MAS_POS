@@ -10,11 +10,13 @@ def calculate_hash(s):
 
 # calculate_block_hash returns the hash of all block information
 def calculate_block_hash(block):
-    record = str(block.index) + block.timestamp + str(block.mileage) + block.prev_hash
+    record = (str(block.index) + block.timestamp + str(block.mileage) + 
+              block.prev_hash + block.validator + block.transaction_id + 
+              block.recipient + str(block.amount))
     return calculate_hash(record)
 
 # generate_block creates a new block using previous block's hash
-def generate_block(old_block, mileage, address):
+def generate_block(old_block, mileage, address, transaction_id="", recipient="", amount=0):
     new_block = Block()
     
     t = time.time()
@@ -23,8 +25,11 @@ def generate_block(old_block, mileage, address):
     new_block.timestamp = str(t)
     new_block.mileage = mileage
     new_block.prev_hash = old_block.hash
-    new_block.hash = calculate_block_hash(new_block)
     new_block.validator = address
+    new_block.transaction_id = transaction_id
+    new_block.recipient = recipient
+    new_block.amount = amount
+    new_block.hash = calculate_block_hash(new_block)
     
     return new_block, None
 

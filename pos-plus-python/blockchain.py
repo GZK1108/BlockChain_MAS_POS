@@ -2,13 +2,16 @@ import threading
 
 # Block represents each 'item' in the blockchain
 class Block:
-    def __init__(self, index=0, timestamp="", mileage=0, hash_value="", prev_hash="", validator=""):
+    def __init__(self, index=0, timestamp="", mileage=0, hash_value="", prev_hash="", validator="", transaction_id="", recipient="", amount=0):
         self.index = index
         self.timestamp = timestamp
         self.mileage = mileage
         self.hash = hash_value
         self.prev_hash = prev_hash
         self.validator = validator
+        self.transaction_id = transaction_id
+        self.recipient = recipient
+        self.amount = amount
 
 class Node:
     def __init__(self):

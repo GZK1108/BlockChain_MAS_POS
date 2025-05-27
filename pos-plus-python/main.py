@@ -12,15 +12,12 @@ from consensus import pick_winner
 
 def main():
     # Load environment variables
-    load_dotenv()
-    
-    # Set up logging
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    
-    # Create genesis block
+    load_dotenv()    # Set up logging
+    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+      # Create genesis block
     t = time.time()
     genesis_block = Block()
-    genesis_block = Block(0, str(t), 0, calculate_block_hash(genesis_block), "", "")
+    genesis_block = Block(0, str(t), 0, calculate_block_hash(genesis_block), "", "", "", "", 0)
     
     print("Genesis Block Created:")
     print(json.dumps(genesis_block.__dict__, indent=2))

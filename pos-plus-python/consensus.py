@@ -1,6 +1,7 @@
 import random
 import time
 import threading
+import json
 from blockchain import mutex, temp_blocks, Blockchain, validators, announcements
 from malicious_detection import get_total_attack_probability
 
@@ -39,8 +40,19 @@ def pick_winner():
                     with mutex:
                         Blockchain.append(block)
                     
+                    # 通知所有节点有新区块被确认
                     for _ in validators:
-                        announcements.append(f"\nwinning validator: {lottery_winner}\n")
+                        announcements.append(json.dumps({
+                            "type": "BLOCK_CONFIRMED",
+                            "validator": lottery_winner,
+                            "block": {
+                                "index": block.index,
+                                "timestamp": block.timestamp,
+                                "mileage": block.mileage,
+                                "hash": block.hash,
+                                "validator": block.validator
+                            }
+                        }))
                     break
     
     with mutex:
