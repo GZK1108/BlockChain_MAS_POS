@@ -18,3 +18,5 @@ MAS两篇论文
 Python RL库：trl
 
 MRL-POS论文开源代码：https://github.com/SPaDeS-Lab/mrl-pos-plus（使用GO语言）
+
+比较老的pos实现：https://github.com/csunny/blockchain
