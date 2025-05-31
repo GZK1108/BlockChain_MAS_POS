@@ -4,9 +4,24 @@ import socket
 import logging
 import threading
 import os
-from blockchain import validators, mutex, Blockchain, candidate_blocks
+from blockchain import validators, mutex, Blockchain, candidate_blocks, Block
 from utilities import calculate_hash, generate_block, is_block_valid
 from collections import deque
+from dotenv import load_dotenv
+
+# 不在模块级别加载环境变量，改为在需要时加载
+# load_dotenv()
+
+# 延迟获取环境变量，确保在main.py中正确加载配置后再获取
+def get_server_config():
+    """获取服务器配置，确保环境变量已正确加载"""
+    return {
+        'host': os.getenv("SERVER_HOST", "localhost"),
+        'port': int(os.getenv("SERVER_PORT", 9000))
+    }
+
+SERVER_HOST = None  # 将在初始化时设置
+SERVER_PORT = None  # 将在初始化时设置
 
 # 全局公告队列
 announcements = deque()
@@ -59,8 +74,19 @@ def handle_conn(conn, addr):
                     else:
                         t = time.time()
                         address = calculate_hash(str(t))
+                        
+                    # 如果是注册消息，可能包含节点的通信地址和端口
+                    node_addr = message.get("node_addr", "")
+                    node_port = message.get("node_port", "")
+                    
+                    if node_addr and node_port:
+                        # 添加到已知节点列表
+                        node_port = int(node_port)
+                        if (node_addr, node_port) not in known_nodes:
+                            known_nodes.append((node_addr, node_port))
+                            logging.info(f"添加新节点到已知列表: {node_addr}:{node_port}")
                 else:
-                    # 如果不是JSON或不是注册消息，尝试作为整数处理
+                    # 如果不是注册消息，尝试作为整数处理
                     balance = int(balance_data)
                     t = time.time()
                     address = calculate_hash(str(t))
@@ -95,7 +121,19 @@ def handle_conn(conn, addr):
                         
                         # 处理不同类型的消息
                         if isinstance(message, dict):
-                            msg_type = message.get("type", "")                            # 处理交易消息
+                            msg_type = message.get("type", "")
+                            
+                            # 处理心跳消息
+                            if msg_type == "HEARTBEAT":
+                                from_node = message.get("from", "")
+                                logging.info(f"收到来自 {from_node} 的心跳消息")
+                                conn.sendall(json.dumps({
+                                    "status": "success", 
+                                    "message": "心跳消息已接收"
+                                }).encode())
+                                continue
+                            
+                            # 处理交易消息
                             if msg_type == "TRANSACTION":
                                 mileage = int(message.get("BPM", 30))
                                 transaction_address = message.get("address", address)
@@ -106,13 +144,15 @@ def handle_conn(conn, addr):
                                 logging.info(f"收到交易: BPM={mileage}, 地址={transaction_address}, ID={transaction_id}")                                # 检查是否为双花交易
                                 if transaction_id:
                                     logging.info(f"检查交易ID: {transaction_id}")
-                                    logging.info(f"已知交易ID: {known_transaction_ids}")                                    # 检查全局已知交易ID集合中是否已存在该ID
+                                    # 检查全局已知交易ID集合中是否已存在该ID
                                     if transaction_id in known_transaction_ids:
                                         logging.warning(f"检测到双花尝试! ID: {transaction_id}, 地址: {transaction_address}")
-                                        conn.sendall(json.dumps({
+                                        # 立即发送错误响应
+                                        error_response = json.dumps({
                                             "status": "error", 
                                             "message": "检测到双花交易尝试"
-                                        }).encode())
+                                        })
+                                        conn.sendall(error_response.encode())
                                         
                                         # 创建警报消息
                                         alert_message = json.dumps({
@@ -123,7 +163,6 @@ def handle_conn(conn, addr):
                                         })
                                         
                                         # 发送警报到所有节点
-                                        logging.info(f"添加警报到公告队列: {alert_message}")
                                         announcements.append(alert_message)
                                         
                                         # 传播警报到其他节点
@@ -137,29 +176,7 @@ def handle_conn(conn, addr):
                                         continue
                                     
                                     # 将新交易ID添加到全局已知交易ID集合
-                                    logging.info(f"添加交易ID到已知集合: {transaction_id}")
                                     known_transaction_ids.add(transaction_id)
-                                    
-                                    # 在实际应用中，这里应该检查交易池中是否已存在相同ID的交易
-                                    # 作为备用检测方法，我们仍然检查 candidate_blocks
-                                    if transaction_id.startswith("double_spend_"):
-                                        # 检查是否在短时间内收到相同ID的交易
-                                        with mutex:
-                                            for block in candidate_blocks:
-                                                if hasattr(block, 'transaction_id') and block.transaction_id == transaction_id:
-                                                    logging.warning(f"检测到双花尝试! ID: {transaction_id}, 地址: {transaction_address}")
-                                                    conn.sendall(json.dumps({
-                                                        "status": "error", 
-                                                        "message": "检测到双花交易尝试"
-                                                    }).encode())
-                                                    
-                                                    # 发送警报到所有节点
-                                                    announcements.append(json.dumps({
-                                                        "type": "ALERT", 
-                                                        "message": "检测到双花攻击",
-                                                        "address": transaction_address,                                                    "transaction_id": transaction_id
-                                                    }))
-                                                    continue
                                 
                                 with mutex:
                                     old_last_index = Blockchain[-1]
@@ -190,16 +207,6 @@ def handle_conn(conn, addr):
                                     
                                     # 添加到公告队列，通知其他节点有新交易
                                     announcements.append(announcement_message)
-                                    
-                                    # 传播交易到其他节点
-                                    propagate_to_other_nodes({
-                                        "type": "TRANSACTION",
-                                        "BPM": mileage,
-                                        "address": transaction_address,
-                                        "recipient": recipient,
-                                        "amount": amount,
-                                        "id": transaction_id or f"propagated_tx_{time.time()}"
-                                    })
                                     
                                     # 传播交易到其他节点
                                     propagate_to_other_nodes({
@@ -306,46 +313,177 @@ def handle_conn(conn, addr):
 
 def initialize_known_nodes():
     """初始化已知节点列表"""
-    # 读取环境变量中配置的其他节点
-    other_nodes = os.getenv("KNOWN_NODES", "").split(",")
-    for node in other_nodes:
-        node = node.strip()
-        if node:
-            try:
-                host, port_str = node.split(":")
-                port = int(port_str)
-                if (host, port) not in known_nodes:
-                    known_nodes.append((host, port))
-                    logging.info(f"已添加已知节点: {host}:{port}")
-            except Exception as e:
-                logging.error(f"解析节点地址错误: {node}, {e}")
-
-def propagate_to_other_nodes(message):
-    """将消息传播到其他已知节点"""
-    if not known_nodes:
-        logging.debug("没有已知节点，跳过消息传播")
-        return
-        
-    logging.info(f"正在向 {len(known_nodes)} 个节点传播消息")
+    global known_nodes, SERVER_HOST, SERVER_PORT
     
+    # 初始化服务器配置
+    config = get_server_config()
+    SERVER_HOST = config['host']
+    SERVER_PORT = config['port']
+    
+    # 从环境变量读取已知节点
+    known_nodes_str = os.getenv("KNOWN_NODES", "")
+    if known_nodes_str:
+        try:
+            for node_str in known_nodes_str.split(","):
+                if ":" in node_str:
+                    host, port = node_str.strip().split(":")
+                    if (host, int(port)) not in known_nodes:
+                        known_nodes.append((host, int(port)))
+            
+            logging.info(f"从环境变量加载了 {len(known_nodes)} 个已知节点")
+        except Exception as e:
+            logging.error(f"解析已知节点列表时出错: {e}")
+    
+    # 确保当前节点不在已知节点列表中
+    current_node = (SERVER_HOST, SERVER_PORT)
+    if current_node in known_nodes:
+        known_nodes.remove(current_node)
+        logging.info(f"从已知节点列表中移除了当前节点: {current_node}")
+
+def connect_to_known_nodes():
+    """连接到所有已知节点"""
+    if not known_nodes:
+        logging.warning("没有已知节点可以连接")
+        return
+    
+    logging.info(f"尝试连接到 {len(known_nodes)} 个已知节点")
     for host, port in known_nodes:
         try:
+            logging.info(f"尝试连接到节点 {host}:{port}")
             sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            sock.settimeout(3)  # 设置3秒超时
-            logging.debug(f"尝试连接到节点 {host}:{port}")
-            sock.connect((host, port))
+            sock.settimeout(5)
+            sock.connect((host, int(port)))
             
             # 跳过初始提示
-            sock.recv(1024)  # 跳过"Enter token balance:"
-            sock.sendall(b"0")  # 发送0表示不是验证者
+            sock.recv(1024)
+            sock.sendall(b"0")
+            sock.recv(1024)
             
-            sock.recv(1024)  # 跳过"Enter current mileage:"
+            # 发送心跳消息
+            heartbeat = {
+                "type": "HEARTBEAT",
+                "from": f"{SERVER_HOST}:{SERVER_PORT}"
+            }
+            
+            sock.sendall(json.dumps(heartbeat).encode())
+            
+            try:
+                response = sock.recv(1024).decode()
+                logging.info(f"心跳响应: {response}")
+            except:
+                logging.warning(f"未收到来自节点 {host}:{port} 的心跳响应")
+            
+            sock.close()
+            logging.info(f"成功连接到节点 {host}:{port}")
+        except Exception as e:
+            logging.error(f"连接到节点 {host}:{port} 时出错: {e}")
+
+def propagate_to_other_nodes(message):
+    """将消息传播到所有已知节点"""
+    if not known_nodes:
+        logging.warning("没有已知节点可以传播消息")
+        return
+    
+    logging.info(f"正在将消息传播到 {len(known_nodes)} 个已知节点")
+    for host, port in known_nodes:
+        try:
+            logging.info(f"尝试将消息传播到节点 {host}:{port}")
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock.settimeout(5)
+            sock.connect((host, int(port)))
+            
+            # 跳过初始提示
+            sock.recv(1024)
+            sock.sendall(b"0")
+            sock.recv(1024)
             
             # 发送消息
             sock.sendall(json.dumps(message).encode())
-            logging.info(f"消息已传播到节点 {host}:{port}")
             
-            # 关闭连接
+            try:
+                response = sock.recv(1024).decode()
+                logging.info(f"传播响应: {response}")
+            except:
+                logging.warning(f"未收到来自节点 {host}:{port} 的传播响应")
+            
             sock.close()
+            logging.info(f"成功将消息传播到节点 {host}:{port}")
         except Exception as e:
-            logging.error(f"向节点 {host}:{port} 传播消息失败: {e}")
+            logging.error(f"传播消息到节点 {host}:{port} 时出错: {e}")
+
+# 新增: 实现区块链同步功能
+def sync_blockchain_with_peers():
+    """从对等节点同步区块链数据"""
+    global Blockchain
+    
+    if not known_nodes:
+        logging.warning("没有已知节点可以同步区块链")
+        return
+    
+    longest_chain = None
+    max_length = len(Blockchain)
+    
+    # 遍历所有已知节点
+    for host, port in known_nodes:
+        if int(port) == SERVER_PORT:
+            continue  # 跳过自己
+            
+        try:
+            logging.info(f"尝试从节点 {host}:{port} 同步区块链")
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock.settimeout(5)
+            sock.connect((host, int(port)))
+            
+            # 跳过初始提示
+            sock.recv(1024)
+            sock.sendall(b"0")
+            sock.recv(1024)
+            
+            # 发送区块链状态查询
+            sock.sendall(json.dumps({"type": "QUERY", "query": "BLOCKCHAIN_STATUS"}).encode())
+            
+            response = sock.recv(8192).decode()
+            try:
+                peer_blockchain = json.loads(response)
+                if isinstance(peer_blockchain, list) and len(peer_blockchain) > max_length:
+                    # 找到更长的链
+                    logging.info(f"发现更长的区块链: 节点={host}:{port}, 长度={len(peer_blockchain)}")
+                    longest_chain = peer_blockchain
+                    max_length = len(peer_blockchain)
+            except json.JSONDecodeError:
+                logging.error(f"无法解析来自节点 {host}:{port} 的区块链数据")
+            finally:
+                sock.close()
+        except Exception as e:
+            logging.error(f"从节点 {host}:{port} 同步区块链时出错: {e}")
+    
+    # 如果找到更长的链，替换本地区块链
+    if longest_chain and len(longest_chain) > len(Blockchain):
+        logging.info(f"使用更长的区块链替换本地链: 旧长度={len(Blockchain)}, 新长度={len(longest_chain)}")
+        
+        # 转换JSON对象为Block对象
+        new_blockchain = []
+        for block_data in longest_chain:
+            block = Block(
+                index=block_data.get("index", 0),
+                timestamp=block_data.get("timestamp", ""),
+                mileage=block_data.get("mileage", 0),
+                hash_value=block_data.get("hash", ""),
+                prev_hash=block_data.get("prev_hash", ""),
+                validator=block_data.get("validator", ""),
+                transaction_id=block_data.get("transaction_id", ""),
+                recipient=block_data.get("recipient", ""),
+                amount=block_data.get("amount", 0)
+            )
+            new_blockchain.append(block)
+          # 替换区块链
+        with mutex:
+            Blockchain.clear()
+            Blockchain.extend(new_blockchain)
+
+# 新增: 定期同步线程
+def periodic_sync():
+    """定期与其他节点同步区块链"""
+    while True:
+        time.sleep(30)  # 每30秒同步一次
+        sync_blockchain_with_peers()

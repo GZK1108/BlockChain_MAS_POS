@@ -9,7 +9,7 @@ import argparse
 from dotenv import load_dotenv
 from blockchain import Block, Blockchain, temp_blocks, mutex, candidate_blocks
 from utilities import calculate_block_hash
-from connection import handle_conn, initialize_known_nodes
+from connection import handle_conn, initialize_known_nodes, connect_to_known_nodes, sync_blockchain_with_peers
 from consensus import pick_winner
 
 def main():
@@ -30,7 +30,8 @@ def main():
     
     # Set up logging
     logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
-      # 添加双花检测的调试输出
+    
+    # 添加双花检测的调试输出
     from connection import known_transaction_ids, known_nodes
     print("初始化双花检测系统...")
     print(f"已知交易ID: {known_transaction_ids}")
@@ -41,8 +42,8 @@ def main():
     
     # Create genesis block
     t = time.time()
-    genesis_block = Block()
-    genesis_block = Block(0, str(t), 0, calculate_block_hash(genesis_block), "", "", "", "", 0)
+    genesis_block = Block(0, str(t), 0, "", "", "", "", "", 0)
+    genesis_block.hash = calculate_block_hash(genesis_block)
     
     print("Genesis Block Created:")
     print(json.dumps(genesis_block.__dict__, indent=2))
@@ -50,7 +51,7 @@ def main():
     Blockchain.append(genesis_block)
     
     # Start TCP server
-    server_port = os.getenv("ADDR", "9000")
+    server_port = os.getenv("SERVER_PORT", os.environ["ADDR"])
     try:
         server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -60,6 +61,12 @@ def main():
     except Exception as e:
         logging.error(f"Error starting server: {e}")
         return
+    
+    # 启动连接到已知节点的线程
+    peer_connect_thread = threading.Thread(target=connect_to_known_nodes)
+    peer_connect_thread.daemon = True
+    peer_connect_thread.start()
+    logging.info("已启动连接到已知节点的线程")
     
     # Start candidate blocks handler
     def handle_candidates():
@@ -77,6 +84,21 @@ def main():
     winner_thread = threading.Thread(target=lambda: [pick_winner() for _ in iter(int, 1)])
     winner_thread.daemon = True
     winner_thread.start()
+      # 添加区块链同步功能
+    def sync_blockchain():
+        """定期同步区块链"""
+        while True:
+            try:
+                # 等待30秒再同步，给节点启动时间
+                time.sleep(30)
+                sync_blockchain_with_peers()
+            except Exception as e:
+                logging.error(f"区块链同步过程中出错: {e}")
+
+    # 启动区块链同步线程
+    sync_thread = threading.Thread(target=sync_blockchain, daemon=True)
+    sync_thread.start()
+    logging.info("已启动区块链同步线程")
     
     # Accept connections
     try:
