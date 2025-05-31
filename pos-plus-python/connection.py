@@ -3,12 +3,19 @@ import time
 import socket
 import logging
 import threading
+import os
 from blockchain import validators, mutex, Blockchain, candidate_blocks
 from utilities import calculate_hash, generate_block, is_block_valid
 from collections import deque
 
 # 全局公告队列
 announcements = deque()
+
+# 已知交易ID集合，用于双花检测
+known_transaction_ids = set()
+
+# 已知节点列表，用于节点间通信
+known_nodes = []
 
 def handle_conn(conn, addr):
     try:
@@ -96,12 +103,45 @@ def handle_conn(conn, addr):
                                 recipient = message.get("recipient", "")
                                 amount = message.get("amount", 0)
                                 
-                                logging.info(f"收到交易: BPM={mileage}, 地址={transaction_address}, ID={transaction_id}")
-                                
-                                # 检查是否为双花交易
+                                logging.info(f"收到交易: BPM={mileage}, 地址={transaction_address}, ID={transaction_id}")                                # 检查是否为双花交易
                                 if transaction_id:
+                                    logging.info(f"检查交易ID: {transaction_id}")
+                                    logging.info(f"已知交易ID: {known_transaction_ids}")                                    # 检查全局已知交易ID集合中是否已存在该ID
+                                    if transaction_id in known_transaction_ids:
+                                        logging.warning(f"检测到双花尝试! ID: {transaction_id}, 地址: {transaction_address}")
+                                        conn.sendall(json.dumps({
+                                            "status": "error", 
+                                            "message": "检测到双花交易尝试"
+                                        }).encode())
+                                        
+                                        # 创建警报消息
+                                        alert_message = json.dumps({
+                                            "type": "ALERT", 
+                                            "message": "检测到双花攻击",
+                                            "address": transaction_address,
+                                            "transaction_id": transaction_id
+                                        })
+                                        
+                                        # 发送警报到所有节点
+                                        logging.info(f"添加警报到公告队列: {alert_message}")
+                                        announcements.append(alert_message)
+                                        
+                                        # 传播警报到其他节点
+                                        propagate_to_other_nodes({
+                                            "type": "ALERT", 
+                                            "message": "检测到双花攻击",
+                                            "address": transaction_address,
+                                            "transaction_id": transaction_id
+                                        })
+                                        
+                                        continue
+                                    
+                                    # 将新交易ID添加到全局已知交易ID集合
+                                    logging.info(f"添加交易ID到已知集合: {transaction_id}")
+                                    known_transaction_ids.add(transaction_id)
+                                    
                                     # 在实际应用中，这里应该检查交易池中是否已存在相同ID的交易
-                                    # 这里为了演示，我们使用特定的ID前缀来模拟双花检测
+                                    # 作为备用检测方法，我们仍然检查 candidate_blocks
                                     if transaction_id.startswith("double_spend_"):
                                         # 检查是否在短时间内收到相同ID的交易
                                         with mutex:
@@ -117,8 +157,7 @@ def handle_conn(conn, addr):
                                                     announcements.append(json.dumps({
                                                         "type": "ALERT", 
                                                         "message": "检测到双花攻击",
-                                                        "address": transaction_address,
-                                                        "transaction_id": transaction_id
+                                                        "address": transaction_address,                                                    "transaction_id": transaction_id
                                                     }))
                                                     continue
                                 
@@ -141,13 +180,36 @@ def handle_conn(conn, addr):
                                         "transaction_id": f"tx_{time.time()}"
                                     }).encode())
                                     
-                                    # 添加到公告队列，通知其他节点有新交易
-                                    announcements.append(json.dumps({
+                                    # 创建公告消息
+                                    announcement_message = json.dumps({
                                         "type": "NEW_TRANSACTION",
                                         "from": transaction_address,
                                         "BPM": mileage,
                                         "timestamp": time.time()
-                                    }))
+                                    })
+                                    
+                                    # 添加到公告队列，通知其他节点有新交易
+                                    announcements.append(announcement_message)
+                                    
+                                    # 传播交易到其他节点
+                                    propagate_to_other_nodes({
+                                        "type": "TRANSACTION",
+                                        "BPM": mileage,
+                                        "address": transaction_address,
+                                        "recipient": recipient,
+                                        "amount": amount,
+                                        "id": transaction_id or f"propagated_tx_{time.time()}"
+                                    })
+                                    
+                                    # 传播交易到其他节点
+                                    propagate_to_other_nodes({
+                                        "type": "TRANSACTION",
+                                        "BPM": mileage,
+                                        "address": transaction_address,
+                                        "recipient": recipient,
+                                        "amount": amount,
+                                        "id": transaction_id or f"propagated_tx_{time.time()}"
+                                    })
                                 
                             # 处理查询消息
                             elif msg_type == "QUERY":
@@ -241,3 +303,49 @@ def handle_conn(conn, addr):
         logging.error(f"Connection error: {e}")
     finally:
         conn.close()
+
+def initialize_known_nodes():
+    """初始化已知节点列表"""
+    # 读取环境变量中配置的其他节点
+    other_nodes = os.getenv("KNOWN_NODES", "").split(",")
+    for node in other_nodes:
+        node = node.strip()
+        if node:
+            try:
+                host, port_str = node.split(":")
+                port = int(port_str)
+                if (host, port) not in known_nodes:
+                    known_nodes.append((host, port))
+                    logging.info(f"已添加已知节点: {host}:{port}")
+            except Exception as e:
+                logging.error(f"解析节点地址错误: {node}, {e}")
+
+def propagate_to_other_nodes(message):
+    """将消息传播到其他已知节点"""
+    if not known_nodes:
+        logging.debug("没有已知节点，跳过消息传播")
+        return
+        
+    logging.info(f"正在向 {len(known_nodes)} 个节点传播消息")
+    
+    for host, port in known_nodes:
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock.settimeout(3)  # 设置3秒超时
+            logging.debug(f"尝试连接到节点 {host}:{port}")
+            sock.connect((host, port))
+            
+            # 跳过初始提示
+            sock.recv(1024)  # 跳过"Enter token balance:"
+            sock.sendall(b"0")  # 发送0表示不是验证者
+            
+            sock.recv(1024)  # 跳过"Enter current mileage:"
+            
+            # 发送消息
+            sock.sendall(json.dumps(message).encode())
+            logging.info(f"消息已传播到节点 {host}:{port}")
+            
+            # 关闭连接
+            sock.close()
+        except Exception as e:
+            logging.error(f"向节点 {host}:{port} 传播消息失败: {e}")

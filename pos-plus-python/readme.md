@@ -4,6 +4,17 @@
 
 这是一个基于 Proof of Stake Plus (POS+) 共识机制的区块链实现，它结合了传统的 Proof of Stake (POS) 机制与恶意节点检测功能。该项目提供了一个简化的区块链网络，允许多个节点参与区块的验证和生成过程，同时检测并防范可能的恶意行为，包括双花攻击等安全威胁。POS+相比传统POS共识机制，增加了恶意行为检测算法，可以有效防止区块链网络中的多种攻击行为。
 
+> **注意**：本项目是一个概念验证实现，部分功能（如恶意检测系统）可能只包含框架或模拟实现。在实际测试中，请关注双花检测、交易处理和区块生成等核心功能。
+
+### 主要特点
+
+1. **创世区块自动创建**：系统启动时自动创建初始区块
+2. **节点注册与质押**：支持新节点注册并设置质押代币数量
+3. **交易处理**：支持发送和接收交易，生成包含交易数据的区块
+4. **区块链查询**：实时查看区块链状态和已确认的区块
+5. **双花攻击检测**：通过交易ID识别重复交易，防范双花攻击
+6. **多节点通信**：支持多个节点组成网络，共同维护区块链
+
 ### POS+ vs 传统POS比较
 
 | 特性 | 传统POS | POS+ |
@@ -52,9 +63,9 @@
 
 ### 4. 恶意检测模块 (malicious_detection.py)
 
-提供全面的恶意节点检测功能：
+提供恶意节点检测功能的框架：
 - `get_total_attack_probability` 函数：计算节点的综合攻击概率
-- 实现15种攻击行为检测机制：
+- 15种攻击行为检测机制的接口（注意：当前版本中大多数检测函数仅包含框架，没有完整实现）:
   1. 区块生成垄断检测 (majority_block_generation)
   2. 哈希率异常波动检测 (hash_rate_deviation)
   3. 分叉频率检测 (fork_frequency)
@@ -72,6 +83,7 @@
   15. 频繁网络错误检测 (frequent_network_errors)
   16. 节点资源过载检测 (node_resource_overload)
 - 对可疑节点实施惩罚机制，降低其被选为验证者的概率
+- 注意：实际的双花检测主要在connection.py中实现
 
 ### 5. 双花攻击测试模块 (double_spend.py)
 
@@ -79,6 +91,16 @@
 - `simulate_double_spending` 函数：模拟向区块链网络发送两个具有相同ID但不同接收者的交易
 - 创建具有相同交易ID的多笔交易，用于测试系统对双花攻击的防御能力
 - 支持指定攻击金额和接收者地址
+
+该模块可以直接作为独立脚本运行：
+```bash
+python double_spend.py <主机地址> <端口号> [金额]
+```
+
+例如：
+```bash
+python double_spend.py localhost 9000 100
+```
 
 ### 6. 工具模块 (utilities.py)
 
@@ -102,7 +124,7 @@
 ## 运行方式
 
 1. 确保已安装所有依赖项：
-```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -115,11 +137,21 @@ pip install -r requirements.txt
 - json
 - random
 - os
-- dotenv
+- python-dotenv
 
-2. 复制环境变量示例文件并根据需要修改：
-```
+2. 创建并配置环境变量文件：
+```bash
+# 复制环境变量示例文件
 cp env.example .env
+```
+
+或者手动创建一个包含以下内容的.env文件：
+```
+ADDR=9000
+HOST=localhost
+DEBUG=True
+STAKE=100
+KNOWN_NODES=localhost:9001,localhost:9002
 ```
 
 环境变量配置说明：
@@ -127,9 +159,10 @@ cp env.example .env
 - `HOST`：节点监听地址（默认localhost）
 - `DEBUG`：是否开启调试模式（默认False）
 - `STAKE`：初始质押代币数量（默认100）
+- `KNOWN_NODES`：已知节点列表，逗号分隔的"主机:端口"格式
 
 3. 运行主程序：
-```
+```bash
 python main.py
 ```
 
@@ -141,6 +174,45 @@ python main.py
 4. 系统定期选择赢家节点生成新区块
 5. 恶意检测模块监控网络活动，识别并处理可疑行为
 6. 新的有效区块被添加到区块链中
+
+## 客户端使用说明
+
+项目包含了一个完整的客户端实现（`client.py`），提供了多种与区块链交互的功能。
+
+### 命令行参数格式
+
+客户端的命令行参数格式如下：
+
+```bash
+python client.py [--host 主机地址] [--port 端口号] 命令 [命令特定参数]
+```
+
+> **重要提示**：必须先指定全局参数(--host, --port)，然后再指定命令和命令参数。
+
+例如：
+```bash
+python client.py --host localhost --port 9000 register --stake 100 --address new_node_1
+```
+
+### 可用命令
+
+客户端支持以下命令：
+
+1. **register** - 注册新节点到区块链网络
+   - `--stake`：质押代币数量（默认100）
+   - `--address`：节点地址（默认自动生成）
+
+2. **transaction** - 发送交易
+   - `--bpm`：每分钟心跳数（默认30）
+   - `--address`：钱包地址（默认自动生成）
+   - `--recipient`：接收者地址（可选）
+   - `--amount`：交易金额（可选）
+
+3. **query** - 查询区块链状态
+   - 无特定参数
+
+4. **double-spend** - 模拟双花攻击（测试安全机制）
+   - 无特定参数
 
 ## 特色功能
 
@@ -264,133 +336,266 @@ def hash_rate_deviation(node):
 
 ### 基本使用流程
 
-#### 1. 启动主节点
 
-首先，启动一个作为主节点的实例：
+#### 临时关闭防火墙
+```bash
+netsh advfirewall set allprofiles state off
+```
+
+#### 测试完后记得开启
+```bash
+netsh advfirewall set allprofiles state on
+```
+
+#### 1. 初始化环境
+
+首先，配置环境变量：
 
 ```bash
-# 设置环境变量ADDR为9000（主节点端口）
-# 在.env文件中配置或直接设置环境变量
+# 复制环境变量示例文件
+cp env.example .env
+
+# 修改.env文件，配置参数
+# ADDR=9000（节点端口）
+# HOST=localhost（节点地址）
+# DEBUG=True（开启调试模式）
+# STAKE=100（初始质押代币）
+```
+
+#### 2. 启动主节点（创建创世区块）
+
+启动一个主节点，系统会自动创建创世区块：
+
+```bash
 python main.py
 ```
 
 输出示例：
 ```
-2025-05-26 10:00:00 - root - INFO - Server started on port 9000
+初始化双花检测系统...
+已知交易ID: set()
 Genesis Block Created:
 {
-  "Index": 0,
-  "Timestamp": "1716674400.0",
-  "BPM": 0,
-  "Hash": "ab1234...",
-  "PrevHash": "",
-  "Validator": ""
+  "index": 0,
+  "timestamp": "1748588246.509181",
+  "mileage": 0,
+  "hash": "2ac9a6746aca543af8dff39894cfe8173afba21eb01c6fae33d52947222855ef",
+  "prev_hash": "",
+  "validator": "",
+  "transaction_id": "",
+  "recipient": "",
+  "amount": 0
 }
+2025-05-30 14:57:26,519 - INFO - Server started on port 9000
 ```
 
-#### 2. 启动验证节点
+#### 3. 注册节点
 
-在不同的终端窗口中，启动验证节点（需修改端口）：
+在一个新的终端窗口中，使用客户端工具注册一个新节点到网络：
 
 ```bash
-# 设置不同的端口，例如9001
-# 在新的.env文件中配置ADDR=9001
-python main.py
+python client.py --host localhost --port 9000 register --stake 100 --address node_9001
 ```
 
-#### 3. 使用客户端与区块链交互
+> **注意**：一定要按照上述顺序指定参数，先指定host和port，再指定命令和命令参数。
 
-项目包含了一个完整的客户端实现（`client.py`），提供了多种与区块链交互的功能：
+输出示例：
+```
+Server prompt: Enter token balance:
+Registration response: 
+Enter current mileage:
+Final response: {"status": "success", "message": "交易已接收", "transaction_id": "tx_1748587488.0683002"}
+```
+
+#### 4. 发送交易
+
+使用客户端工具发送交易到区块链网络：
 
 ```bash
-# 查看客户端帮助信息
-python client.py --help
-
-# 发送交易（指定BPM值和钱包地址）
-python client.py transaction --host localhost --port 9000 --bpm 30 --address wallet_123
-
-# 查询区块链状态
-python client.py query --host localhost --port 9000
-
-# 注册新节点（指定质押金额和节点地址）
-python client.py register --host localhost --port 9000 --stake 100 --address new_node_1
-
-# 模拟双花攻击（用于测试恶意检测功能）
-python client.py double-spend --host localhost --port 9000
+python client.py --host localhost --port 9000 transaction --bpm 30 --address wallet_123
 ```
 
-客户端功能详解：
+输出示例：
+```
+Server prompt: Enter token balance:
+Server prompt: 
+Enter current mileage:
+Response: {"status": "success", "message": "交易已接收", "transaction_id": "tx_1748587506.9962564"}
+```
 
-1. **发送交易**：向网络提交新的交易数据
-   ```bash
-   python client.py transaction --bpm 30
-   ```
+#### 5. 查询区块链状态
 
-2. **查询区块链**：获取并显示当前区块链的完整状态
-   ```bash
-   python client.py query
-   ```
+使用客户端工具查询当前区块链的状态：
 
-3. **注册节点**：将新节点注册到区块链网络
-   ```bash
-   python client.py register --stake 200
-   ```
+```bash
+python client.py --host localhost --port 9000 query
+```
 
-4. **模拟双花攻击**：用于测试系统的恶意检测功能
-   ```bash
-   python client.py double-spend
-   ```
+输出示例：
+```
+Server prompt: Enter token balance:
+Server prompt: 
+Enter current mileage:
+=== 当前区块链状态 ===
+块 #0
+  索引: 0
+  时间戳: 1748587152.7182262
+  数据: BPM 0
+  哈希: 2ac9a6746a...
+  验证者: 
+块 #1
+  索引: 1
+  时间戳: 1748587488.0683002
+  数据: BPM 30
+  哈希: c2fbe3bb48...
+  验证者: node_9001
+=====================
+```
+
+#### 6. 测试双花攻击检测
+
+可以使用专门的双花攻击测试脚本测试系统的安全机制：
+
+```bash
+python double_spend.py localhost 9000
+```
+
+> **注意**：双花检测功能依赖于正确的交易ID跟踪。在当前实现中，如果没有正确检测到双花，可能需要检查connection.py中的known_transaction_ids集合是否正确更新。
+
+输出示例：
+```
+2025-05-30 14:58:24,019 - INFO - 正在连接到 localhost:9000...
+=== 开始双花攻击模拟 ===
+发送者地址: malicious_wallet_9c7e8f71
+交易ID: double_spend_47a4fe
+金额: 100
+========================
+发送交易 1 到接收者 recipient_0_19b6
+...
+发送交易 2 到接收者 recipient_1_9415
+...
+监听双花警报...
+```
+
+或者使用客户端工具的双花测试功能：
+
+```bash
+python client.py --host localhost --port 9000 double-spend
+```
 
 ### 多节点测试流程
 
 要测试完整的区块链网络，可以按照以下步骤操作：
 
-1. **启动多个节点**：
-   ```bash
+1. **启动主节点**：
+   ```powershell
    # 终端1（主节点，端口9000）
    python main.py
+   # 或者明确指定配置文件
+   python main.py --config .env
+   ```
+
+2. **启动验证节点**：
+
+   首先创建环境配置文件：
    
+   ```powershell
+   # PowerShell（端口9001的节点）
+   echo "ADDR=9001`nHOST=localhost`nDEBUG=True`nSTAKE=100" > .env.node1
+   
+   # PowerShell（端口9002的节点）
+   echo "ADDR=9002`nHOST=localhost`nDEBUG=True`nSTAKE=100" > .env.node2
+   ```
+   
+   然后使用配置文件启动节点：
+   
+   ```powershell
    # 终端2（验证节点1，端口9001）
-   # 修改.env文件中的ADDR=9001
-   python main.py
+   python main.py --config .env.node1
    
    # 终端3（验证节点2，端口9002）
-   # 修改.env文件中的ADDR=9002
-   python main.py
+   python main.py --config .env.node2
    ```
 
-2. **注册节点**：
-   ```bash
+3. **注册节点**：
+   ```powershell
    # 在终端4中执行，注册节点到网络
-   python client.py register --host localhost --port 9000 --stake 100 --address node_9001
-   python client.py register --host localhost --port 9000 --stake 150 --address node_9002
+   python client.py --host localhost --port 9000 register --stake 100 --address node_9001
+   python client.py --host localhost --port 9000 register --stake 150 --address node_9002
    ```
 
-3. **发送交易**：
-   ```bash
+4. **发送交易**：
+   ```powershell
    # 在终端4中执行，发送多个交易
-   python client.py transaction --host localhost --port 9000 --bpm 30
-   python client.py transaction --host localhost --port 9001 --bpm 35
+   python client.py --host localhost --port 9000 transaction --bpm 30 --address wallet_A
+   python client.py --host localhost --port 9000 transaction --bpm 30 --address wallet_B
    ```
 
-4. **查询状态**：
-   ```bash
-   # 在任意终端执行，查询区块链状态
-   python client.py query --host localhost --port 9000
+5. **查询状态**：
+   ```powershell
+   # 查询区块链状态
+   python client.py --host localhost --port 9000 query
    ```
 
-恶意检测系统应该能识别这种行为并做出响应。
+6. **测试双花攻击**：
+   ```powershell
+   # 使用专用脚本测试双花攻击
+   python double_spend.py localhost 9000
+   
+   # 或者使用客户端工具
+   python client.py --host localhost --port 9000 double-spend
+   ```
 
-## 注意事项
+### 在不同环境中运行多节点
 
-- 此项目主要用于学习和研究目的
-- 在生产环境中使用前需进行更全面的安全测试
-- 系统性能可能需要根据网络规模进行优化
+根据您使用的终端环境，设置环境变量的方式有所不同。以下是在不同环境中运行多节点的指导：
 
-## 故障排除
+#### 在PowerShell中设置环境变量并运行
+
+```powershell
+# 方法1：分两行命令设置环境变量并运行
+$env:DOTENV_PATH = ".env.node1"
+python main.py
+
+# 方法2：在一行中设置环境变量并运行
+$env:DOTENV_PATH = ".env.node1"; python main.py
+```
+
+#### 在Windows CMD中设置环境变量并运行
+
+```cmd
+# 方法1：分两行命令设置环境变量并运行
+set DOTENV_PATH=.env.node1
+python main.py
+
+# 方法2：在一行中设置环境变量并运行
+set DOTENV_PATH=.env.node1 && python main.py
+```
+
+#### 在Bash/Linux/Mac终端中设置环境变量并运行
+
+```bash
+# 方法1：分两行命令设置环境变量并运行
+export DOTENV_PATH=.env.node1
+python main.py
+
+# 方法2：在一行中设置环境变量并运行
+DOTENV_PATH=.env.node1 python main.py
+```
+
+#### 使用命令行参数（推荐，适用于所有环境）
+
+```bash
+# 使用--config参数指定配置文件
+python main.py --config .env.node1
+```
+
+## 调试与故障排除
+
+### 常见问题
 
 1. **连接问题**：
-   - 检查端口是否被占用：`netstat -an | grep <port>`
+   - 检查端口是否被占用：`netstat -an | findstr 9000`
    - 确保防火墙未阻止连接：临时关闭防火墙或添加例外规则
    - 如果使用虚拟机或容器，确保端口映射正确
 
@@ -404,10 +609,73 @@ python client.py double-spend --host localhost --port 9000
    - 确认节点连接正常
    - 尝试增加质押数量提高被选为验证者的概率
 
-4. **恶意检测误报**：
-   - 调整检测算法参数（需修改源代码中的阈值）
-   - 确保节点时钟同步
-   - 查看详细日志分析原因
+4. **双花检测问题**：
+   - 检查connection.py中的known_transaction_ids集合是否正确更新
+   - 在DEBUG模式下运行以查看更详细的日志输出
+   - 可以暂时在connection.py的双花检测部分添加更多日志输出以排查问题
+   - 如果修改了代码，确保重启所有节点让更改生效
+
+5. **客户端参数问题**：
+   - 确保参数顺序正确: 先指定host和port，再指定命令及其参数
+   - 例如：`python client.py --host localhost --port 9000 register --stake 100 --address node_1`
+   
+6. **JSON解析错误**:
+   - 检查发送和接收的JSON格式是否正确
+   - 确保未包含无效字符或格式错误
+
+7. **多节点运行问题**:
+   - 使用命令行参数`--config`指定不同的配置文件: `python main.py --config .env.node1`
+   - 确保每个节点的配置文件中ADDR端口不同，避免端口冲突
+   - 在每个节点的配置文件中添加`KNOWN_NODES`环境变量，列出其他节点的地址和端口
+   - 如果环境变量不生效，检查PowerShell的执行策略，可能需要修改为允许脚本执行
+   - 确保所有节点都已启动并且可以互相访问
+   - 对于Windows用户，确保防火墙未阻止节点间通信
+
+8. **节点不显示交易**:
+   - 检查是否正确配置了`KNOWN_NODES`
+   - 确保节点成功启动并监听在正确的端口上
+   - 使用`DEBUG=True`查看更详细的日志，找出通信问题
+   - 确保节点能够正确接收和处理其他节点传来的交易信息
+
+### 调试技巧
+
+1. **启用详细日志**：
+   在.env文件中设置`DEBUG=True`可以查看更详细的日志输出。
+
+2. **检查交易流程**：
+   ```bash
+   # 在DEBUG模式下跟踪一个完整的交易流程
+   python main.py  # 确保.env中设置了DEBUG=True
+   # 在另一个终端中发送交易并观察主节点的日志输出
+   python client.py --host localhost --port 9000 transaction --bpm 30 --address wallet_debug
+   ```
+
+3. **监控known_transaction_ids集合**：
+   主程序启动时会打印初始的已知交易ID集合，发送交易后应该看到该集合被更新。
+
+## 已知限制与未来改进
+
+当前实现有一些已知限制，计划在未来版本中改进：
+
+1. **恶意检测系统实现不完整**：
+   - 当前的malicious_detection.py文件包含框架结构，但大多数检测功能尚未完全实现
+   - 优先级较高的双花检测已在connection.py中实现
+
+2. **双花检测可靠性**：
+   - 当前的双花检测依赖于正确跟踪已知交易ID
+   - 在某些情况下，特别是高负载或分布式环境中，可能会出现漏检
+
+3. **节点间通信有限**：
+   - 当前实现主要支持一个主节点与多个验证节点的通信
+   - 未来将改进P2P网络结构，支持更完善的节点间通信
+
+4. **错误恢复机制有限**：
+   - 当前实现对网络分区、节点崩溃等情况的处理有限
+   - 计划添加更强大的错误恢复和状态同步机制
+
+5. **性能和扩展性**：
+   - 当前实现主要关注功能验证，未优化性能
+   - 未来将提升交易处理性能和网络扩展性
 
 ## 贡献指南
 
@@ -424,3 +692,7 @@ python client.py double-spend --host localhost --port 9000
 - 添加了必要的测试用例
 - 更新了相关文档
 - 所有测试都能通过
+
+## 许可证
+
+本项目采用 [MIT 许可证](LICENSE)。
