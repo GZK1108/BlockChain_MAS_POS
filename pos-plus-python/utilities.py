@@ -35,14 +35,25 @@ def generate_block(old_block, mileage, address, transaction_id="", recipient="",
 
 # is_block_valid makes sure block is valid by checking index
 # and comparing the hash of the previous block
+# 新增：分叉检测与处理
+# 检查新区块是否导致分叉，并记录分叉信息
+# 在 is_block_valid 失败时，增加分叉计数
+
 def is_block_valid(new_block, old_block):
     if old_block.index + 1 != new_block.index:
+        # 记录分叉
+        if hasattr(new_block, 'validator') and new_block.validator in validators:
+            node_obj = validators.get(new_block.validator)
+            if hasattr(node_obj, 'forks'):
+                node_obj.forks += 1
         return False
-    
     if old_block.hash != new_block.prev_hash:
+        # 记录分叉
+        if hasattr(new_block, 'validator') and new_block.validator in validators:
+            node_obj = validators.get(new_block.validator)
+            if hasattr(node_obj, 'forks'):
+                node_obj.forks += 1
         return False
-    
     if calculate_block_hash(new_block) != new_block.hash:
         return False
-    
     return True

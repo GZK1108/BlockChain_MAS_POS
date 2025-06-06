@@ -422,6 +422,8 @@ def sync_blockchain_with_peers():
     
     longest_chain = None
     max_length = len(Blockchain)
+    fork_detected = False
+    fork_info = []
     
     # 遍历所有已知节点
     for host, port in known_nodes:
@@ -445,11 +447,18 @@ def sync_blockchain_with_peers():
             response = sock.recv(8192).decode()
             try:
                 peer_blockchain = json.loads(response)
-                if isinstance(peer_blockchain, list) and len(peer_blockchain) > max_length:
-                    # 找到更长的链
-                    logging.info(f"发现更长的区块链: 节点={host}:{port}, 长度={len(peer_blockchain)}")
-                    longest_chain = peer_blockchain
-                    max_length = len(peer_blockchain)
+                if isinstance(peer_blockchain, list):
+                    # 检查分叉：同高度区块 hash 不同
+                    min_len = min(len(peer_blockchain), len(Blockchain))
+                    for i in range(min_len):
+                        if peer_blockchain[i].get("hash") != getattr(Blockchain[i], "hash", None):
+                            fork_detected = True
+                            fork_info.append({"peer": f"{host}:{port}", "height": i, "local_hash": getattr(Blockchain[i], "hash", None), "peer_hash": peer_blockchain[i].get("hash")})
+                            break
+                    if len(peer_blockchain) > max_length:
+                        logging.info(f"发现更长的区块链: 节点={host}:{port}, 长度={len(peer_blockchain)}")
+                        longest_chain = peer_blockchain
+                        max_length = len(peer_blockchain)
             except json.JSONDecodeError:
                 logging.error(f"无法解析来自节点 {host}:{port} 的区块链数据")
             finally:
@@ -457,11 +466,10 @@ def sync_blockchain_with_peers():
         except Exception as e:
             logging.error(f"从节点 {host}:{port} 同步区块链时出错: {e}")
     
-    # 如果找到更长的链，替换本地区块链
+    if fork_detected:
+        logging.warning(f"检测到分叉: {fork_info}")
     if longest_chain and len(longest_chain) > len(Blockchain):
         logging.info(f"使用更长的区块链替换本地链: 旧长度={len(Blockchain)}, 新长度={len(longest_chain)}")
-        
-        # 转换JSON对象为Block对象
         new_blockchain = []
         for block_data in longest_chain:
             block = Block(
@@ -476,7 +484,6 @@ def sync_blockchain_with_peers():
                 amount=block_data.get("amount", 0)
             )
             new_blockchain.append(block)
-          # 替换区块链
         with mutex:
             Blockchain.clear()
             Blockchain.extend(new_blockchain)

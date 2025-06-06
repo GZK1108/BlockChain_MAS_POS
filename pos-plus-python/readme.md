@@ -145,7 +145,7 @@ python client.py register --stake 100 --address node_1
 
 **发送交易**:
 ```bash
-python client.py transaction --bpm 30 --address wallet_123
+python client.py --port 9002 transaction --bpm 30 --address node_2
 ```
 
 **查询区块链状态**:

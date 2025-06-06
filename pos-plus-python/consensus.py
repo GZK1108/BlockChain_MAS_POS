@@ -5,23 +5,23 @@ import json
 from blockchain import mutex, temp_blocks, Blockchain, validators, announcements
 from malicious_detection import get_total_attack_probability
 
-# pickWinner creates a lottery pool of validators and chooses the validator who gets to forge a block to the blockchain
+# pickWinner 创建一个验证者的抽奖池，并选择一个验证者来将区块添加到区块链中
 def pick_winner():
-    time.sleep(3)  # 3 seconds
+    time.sleep(3)  # 3秒
     with mutex:
         temp = temp_blocks.copy()
     
     lottery_pool = []
     if len(temp) > 0:
-        # slightly modified traditional proof of stake algorithm
-        # from all validators who submitted a block, weight them by the number of staked tokens
-        # in traditional proof of stake, validators can participate without submitting a block to be forged
+        # 略微修改的传统权益证明算法
+        # 从所有提交区块的验证者中，根据其质押代币数量加权
+        # 在传统的权益证明中，验证者可以不提交区块也能参与
         for block in temp:
-            # if already in lottery pool, skip
+            # 如果已在抽奖池中，跳过
             if block.validator in lottery_pool:
                 continue
                 
-            # lock list of validators to prevent data race
+            # 锁定验证者列表以防止数据竞争
             with mutex:
                 set_validators = validators.copy()
             
@@ -30,11 +30,11 @@ def pick_winner():
                 for i in range(k):
                     lottery_pool.append(block.validator)
         
-        # randomly pick winner from lottery pool
+        # 从抽奖池中随机选出获胜者
         if lottery_pool:
             lottery_winner = elect_validator(lottery_pool)
             
-            # add block of winner to blockchain and let all the other nodes know
+            # 将获胜者的区块添加到区块链，并通知所有其他节点
             for block in temp:
                 if block.validator == lottery_winner:
                     with mutex:
@@ -58,6 +58,7 @@ def pick_winner():
     with mutex:
         temp_blocks.clear()
 
+# 基础版本的简单随机选举
 def elect_validator(agents):
     # Simple random election for the basic version
     return random.choice(agents) if agents else None
@@ -68,7 +69,9 @@ class Agent:
         self.stake = stake
         self.attack_age = attack_age
 
+# 高级选举算法，考虑攻击概率和攻击年龄
 def elect_validator_advanced(agents):
+    # Advanced election algorithm considering attack probability and attack age
     if not agents or len(agents) < 2:
         return agents[0] if agents else None
     
@@ -78,6 +81,7 @@ def elect_validator_advanced(agents):
         attack_probability = get_total_attack_probability(agent)
         last_attack_attempt = agent.attack_age
         
+        # 如果攻击概率和攻击年龄的乘积大于等于2，则跳过该代理
         if attack_probability * float(last_attack_attempt) >= 2.0:
             agent.attack_age -= 1
             continue
@@ -88,7 +92,7 @@ def elect_validator_advanced(agents):
         if agent.attack_age > 0:
             agent.attack_age -= 1
     
-    # Sort by agent score
+    # 按代理得分排序
     elected_agents.sort(key=lambda x: x[1])
     
     if elected_agents and len(elected_agents) >= 2:

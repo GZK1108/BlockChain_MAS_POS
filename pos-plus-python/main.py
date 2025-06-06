@@ -103,7 +103,12 @@ def main():
     # Accept connections
     try:
         while True:
-            conn, addr = server.accept()
+            try:
+                conn, addr = server.accept()
+            except Exception as e:
+                logging.error(f"网络异常，无法接受新连接: {e}")
+                time.sleep(2)
+                continue
             logging.info(f"New connection from {addr}")
             client_thread = threading.Thread(target=handle_conn, args=(conn, addr))
             client_thread.daemon = True
