@@ -1,0 +1,38 @@
+working_dir: .
+# TODO(use config.yaml)
+server_host: localhost
+server_port: 5000
+python_bin: python3
+log_level: DEBUG 
+log_file: orchestration.log
+
+server:
+  cmd: "{python} aserver.py"
+
+nodes:
+  node1: { cmd: "{python} node.py --node node1" }
+  node2: { cmd: "{python} node.py --node node2" }
+
+post_wait: 4         # 时间轴跑完后再等 4 秒才退出
+node_exit_wait: 6    # server exit 后给节点 6 秒清理
+
+timeline:
+  - at: 0
+    target: server
+    run: "stop"
+
+  - at: 4s
+    target: node1 
+    run: "tx node2 10"
+
+  - at: 5s
+    target: server 
+    run: "step" 
+
+  - at: 8s
+    target: node2
+    run: "info"
+
+  - at: 8s
+    target: node1
+    run: "info"

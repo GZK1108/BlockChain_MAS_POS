@@ -1,0 +1,54 @@
+python_bin: python3          
+working_dir: ./test
+log_level: DEBUG
+log_file: fork_demo.log
+
+server:
+  cmd: "{python} aserver.py"
+
+nodes:
+  node1: { cmd: "{python} node.py --node node1" }
+  node2: { cmd: "{python} node.py --node node2" }
+
+# 收尾参数
+post_wait: 5         # 时间轴结束后再等 5 秒
+node_exit_wait: 5    # server exit 后给节点 5 秒自毁
+
+timeline:
+  - at: 0
+    target: server
+    run: "stop"                # 关闭自动 STEP，改为手动控制节奏
+
+  - at: 2s
+    target: server
+    run: "drop node2 on"       # 手动隔离 node2，模拟网络分区, node2无法接收到消息 但是可以发送消息
+
+  - at: 5s
+    target: node1
+    run: ["stake 10", "tx node2 10"]
+
+  - at: 5s
+    target: node2
+    run: "stake 10"          
+
+  - at: 7s
+    target: node1 
+    run: "forge --force"       # node1 强制出块（高度 H）
+
+  - at: 8s
+    target: node2
+    run: "forge --force"       # node2 强制出块（高度 H）此时node1收到该block 高度相同 暂存不切换
+
+  - at: 10s
+    target: node2
+    run: ["tx node1 10", "forge --force"]  # node2 发送交易给 node1 并出块（高度 H+1）, 此时node1收到这个block 高度 H+1 切换到 node2 的链上, 并恢复node1链上的交易
+
+  - at: 12s
+    target: node1
+    run: "info"
+
+  - at: 12s
+    target: node2
+    run: "info"
+
+

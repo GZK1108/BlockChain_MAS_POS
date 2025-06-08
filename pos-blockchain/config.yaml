@@ -1,0 +1,27 @@
+server:
+  host: "127.0.0.1"
+  port: 5000
+
+
+sync:
+  timeout: 2.0
+
+step:
+  interval: 5.0
+
+vote:
+  enabled: false 
+  timeout: 5.0
+  threshold: 0.66
+
+
+initial_state:
+  node1:
+    balance: 100.0
+    stake: 0.0
+  node2:
+    balance: 100.0
+    stake: 0.0
+  node3:
+    balance: 100.0
+    stake: 0.0

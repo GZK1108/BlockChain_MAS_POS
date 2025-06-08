@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package blockchain;
+
+
+// Next id: 6
+message Transaction {
+  // Next id: 3
+  enum TransactionType {
+    TRANSFER = 0;
+    STAKE = 1;
+    UNSTAKE = 2;
+  }
+
+  string sender = 1;
+  string receiver = 2;
+  double amount = 3;
+  double timestamp = 4;
+  TransactionType type = 5;
+}
+
+
+// Next id: 7 
+message Block {
+  uint32 index = 1;
+  string prev_hash = 2;
+  string hash = 3;
+  string validator = 4;
+  repeated Transaction transactions = 5;
+  double timestamp = 6;
+}
+
+message BlockVote {
+  string voter_id = 1;  // 投票人
+  string block_hash = 2;
+}
+
+// Next id: 7
+message Message {
+  // Next id: 8
+  enum MessageType {
+    HELLO = 0;
+    BYE = 1;
+    TRANSACTION = 2;
+    BLOCK = 3;
+    SYNC_REQUEST = 4;
+    SYNC_RESPONSE = 5;
+    STEP = 6;
+    BLOCK_VOTE = 7;
+  }
+
+  MessageType type = 1;
+
+  string sender_id = 2;
+
+  oneof payload {
+    Transaction tx = 3;
+    Block block = 4;
+    SyncResponse sync_response = 5;
+    BlockVote block_vote = 6;
+  }
+}
+
+// Next id: 3
+message SyncResponse {
+  repeated Block blocks = 1;
+}
