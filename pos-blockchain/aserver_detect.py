@@ -79,7 +79,7 @@ class AttackDetectionServer(BlockchainServerAsync):
             # 创建检测器，使用较低的阈值以便更容易检测到双花
             self.attack_detector = DoubleSpendingDetector(
                 detection_window=60,  # 60秒检测窗口
-                similarity_threshold=0.3  # 较低的阈值，更敏感
+                similarity_threshold=0.8  # 较低的阈值，更敏感
             )
             
             # 创建警报管理器
