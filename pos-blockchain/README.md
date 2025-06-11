@@ -181,9 +181,21 @@ timeline:
 启动：
 
 ```bash
-python sim_orchestrator.py fork_demo.yml          # 普通模式
-python sim_orchestrator.py fork_demo.yml --debug  # 交互调试
+python sim_orchestrator.py fork_demo.yaml          # 普通模式
+python sim_orchestrator.py ./sim_config/fork_demo.yaml --debug  # 交互调试
 ```
+
+双花攻击模拟：
+```bash
+python aserver_detect.py
+python node.py --node node1
+python node.py --node node2
+python node.py --node node3
+# python sim_orchestrator.py ./sim_config/double_spending.yaml --debug
+
+```
+
+
 
 ------
 
