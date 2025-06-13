@@ -1,0 +1,120 @@
+python_bin: python3
+working_dir: ./test
+log_level: DEBUG
+log_file: double_spending.log
+
+server:
+  cmd: "{python} aserver_detect.py"
+
+nodes:
+  node1: { cmd: "{python} node.py --node node1" }
+  node2: { cmd: "{python} node.py --node node2" }
+  node3: { cmd: "{python} node.py --node node3" }
+
+post_wait: 10
+node_exit_wait: 5
+
+timeline:
+  - at: 0
+    target: server
+    run: "stop"
+
+  - at: 1s
+    target: server
+    run: "threshold 0.8
+
+  - at: 2s
+    target: node1
+    run: "stake 20"
+
+  - at: 3s
+    target: node2
+    run: "stake 15"
+
+  - at: 4s
+    target: node3
+    run: "stake 15"
+
+  - at: 5s
+    target: server
+    run: "step"
+
+  - at: 6s
+    target: node1
+    run: "info"
+
+  - at: 8s
+    target: server
+    run: "drop node3 on"
+
+  - at: 9s
+    target: node1
+    run: "tx node2 30"  # 双花交易1
+
+  - at: 10s
+    target: node1
+    run: "forge --force"
+
+  - at: 11s
+    target: server
+    run: [ "drop node1 on", "drop node2 on", "drop node3 off"]
+
+  - at: 12s
+    target: node3
+    run: "tx node1 1"   # 构造更长的链
+
+  - at: 13s
+    target: node3
+    run: "forge --force" 
+
+  - at: 14s
+    target: node3
+    run: "tx node1 1"
+  
+  - at: 15s
+    target: node3
+    run: "forge --force"  
+
+  - at: 16s
+    target: node1
+    run: "tx node3 30"  # 双花交易2
+
+  - at: 17s
+    target: node3
+    run: "forge --force"  
+  
+  - at: 18s
+    target: server
+    run: "drop node1 off"
+
+  - at: 19s
+    target: node1
+    run: "sync"
+
+  - at: 20s
+    target: node1
+    run: "chain"
+
+  - at: 22s
+    target: server
+    run: "detect"
+
+  - at: 23s
+    target: server
+    run: "attacks"
+
+  - at: 24s
+    target: server
+    run: "drop node2 off"
+
+  - at: 25s
+    target: node2
+    run: "sync"
+
+  - at: 26s
+    target: server
+    run: ["detect", "attacks"]
+
+  - at: 27s
+    target: node1
+    run: "info"
