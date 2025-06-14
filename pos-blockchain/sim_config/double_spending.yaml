@@ -21,7 +21,7 @@ timeline:
 
   - at: 1s
     target: server
-    run: "threshold 0.8
+    run: "threshold 0.8"
 
   - at: 2s
     target: node1
