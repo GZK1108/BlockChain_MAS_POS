@@ -95,7 +95,7 @@ class Node:
     def _on_hello(self, msg):
         """处理 HELLO 消息，记录新节点 ID"""
         self.known_nodes.add(msg.sender_id)
-        self.logger.info(f"Received HELLO message from node {msg.sender_id}{len(self.known_nodes)}.")
+        self.logger.info(f"Received HELLO message from node {msg.sender_id}.")
         
 
     @message_handler(message_pb2.Message.BYE)
