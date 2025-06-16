@@ -94,8 +94,9 @@ class Node:
     @message_handler(message_pb2.Message.HELLO)
     def _on_hello(self, msg):
         """处理 HELLO 消息，记录新节点 ID"""
-        self.logger.info(f"Received HELLO message from node {msg.sender_id}.")
         self.known_nodes.add(msg.sender_id)
+        self.logger.info(f"Received HELLO message from node {msg.sender_id}.")
+        
 
     @message_handler(message_pb2.Message.BYE)
     def _on_bye(self, msg):
@@ -133,7 +134,7 @@ class Node:
 
         self.pending_blocks[block.hash] = block
 
-        if self.blockchain.stake(self.id) > 0:
+        if self.should_allow_all_voters() or self.blockchain.stake(self.id) > 0:
             self.pending_block_votes[block.hash].add(self.id)
 
     def _add_block(self, block: Block):
@@ -149,6 +150,22 @@ class Node:
         for tx in block.transactions:
             if tx in self.mempool:
                 self.mempool.remove(tx)
+
+    def should_allow_all_voters(self):
+        # 计算已知节点总数
+        total_nodes = len(self.known_nodes)
+    
+        # 计算当前验证节点数量
+        validator_count = 0
+        for node_id in self.known_nodes:
+            if self.blockchain.stake(node_id) > 0:  # 质押大于0的节点为验证节点
+                validator_count += 1
+        
+        # 判断条件：验证节点 < 总节点的三分之二
+        if validator_count < total_nodes * (2.0 / 3.0):
+            return True
+        return False
+
 
     @message_handler(message_pb2.Message.BLOCK)
     def _on_block(self, msg):
@@ -184,8 +201,11 @@ class Node:
             self.logger.info(f"Received BLOCK VOTE message from {msg.sender_id} on block {msg.block_vote.block_hash[:8]}. Not in pending blocks, Ignoring.")
             return
 
-        # 非验证者节点投票忽略
-        if self.blockchain.stake(msg.sender_id) <= 0:
+
+        should_allow_all_voters=self.should_allow_all_voters()
+
+        # 非验证者节点投票忽略；而如果当前验证节点不满足总节点数的三分之二，则所有节点都有vote权利
+        if not should_allow_all_voters and self.blockchain.stake(msg.sender_id) <= 0:
             self.logger.warning(f"Received BLOCK VOTE from {msg.sender_id} on block {msg.block_vote.block_hash[:8]}. Not validator node, Ignoring")
             return
 
@@ -200,6 +220,8 @@ class Node:
 
         def get_online_validator_count(node_ids):
             """计算在线验证者数量"""
+            if should_allow_all_voters:
+                return len(self.known_nodes)
             cnt = 0
             for node_id in node_ids:
                 if self.blockchain.stake(node_id) > 0:

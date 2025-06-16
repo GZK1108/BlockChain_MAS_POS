@@ -13,26 +13,28 @@ nodes:
 # 收尾参数
 post_wait: 5         # 时间轴结束后再等 5 秒
 node_exit_wait: 5    # server exit 后给节点 5 秒自毁
+
 timeline:
   - at: 0
     target: server
     run: "stop"                # 关闭自动 STEP，改为手动控制节奏
 
-  - at: 2s
-    target: server
-    run: "drop node2 on"       # 手动隔离 node2，模拟网络分区, node2无法接收到消息 但是可以发送消息
+  # - at: 2s
+  #   target: server
+  #   run: "drop node2 on"       # 手动隔离 node2，模拟网络分区, node2无法接收到消息 但是可以发送消息
 
   - at: 5s
     target: node1
     run: ["stake 10", "tx node2 10"]
-
-  - at: 5s
-    target: node2
-    run: "stake 10"          
+       
 
   - at: 7s
-    target: node1 
+    target: node1
     run: "forge --force"       # node1 强制出块（高度 H）
+
+  - at: 8s
+    target: node2
+    run: "stake 10"   
 
   - at: 8s
     target: node2
