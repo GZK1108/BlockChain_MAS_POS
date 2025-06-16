@@ -1,0 +1,1547 @@
+[2025-06-15 18:37:18] [INFO] [server:44] Async server started on 127.0.0.1:5000
+[2025-06-15 18:37:23] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:37:28] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:37:33] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:37:38] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:37:43] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:37:48] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:37:53] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:37:58] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:38:03] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:38:08] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:38:13] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:38:18] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:38:23] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:38:28] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:38:33] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:38:38] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:38:43] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:38:48] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:38:53] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:38:58] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:39:03] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:39:08] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:39:13] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:39:18] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:39:23] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:39:28] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:39:33] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:39:38] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:39:43] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:39:48] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:39:53] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:39:56] [INFO] [server:62] New connection from ('127.0.0.1', 61205)
+[2025-06-15 18:39:56] [INFO] [server:62] New connection from ('127.0.0.1', 61206)
+[2025-06-15 18:39:56] [INFO] [server:84] received message [HELLO]
+  sender   : node2
+  full msg : 
+sender_id: "node2"
+
+[2025-06-15 18:39:56] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node2
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node2"
+
+[2025-06-15 18:39:56] [INFO] [server:84] received message [HELLO]
+  sender   : node1
+  full msg : 
+sender_id: "node1"
+
+[2025-06-15 18:39:56] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node1
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node1"
+
+[2025-06-15 18:39:56] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node1
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node1"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+}
+
+[2025-06-15 18:39:56] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node2
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node2"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+}
+
+[2025-06-15 18:39:58] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:40:03] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:40:08] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:40:13] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:40:18] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:40:23] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:40:28] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:40:33] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:40:38] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:40:43] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:40:48] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:40:53] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:40:58] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:41:03] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:41:08] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:41:13] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:41:18] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:41:23] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:41:28] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:41:33] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:41:38] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:41:43] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:41:48] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:41:53] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:41:58] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:42:03] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:42:08] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:42:13] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:42:18] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:42:23] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:42:28] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:42:33] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:42:38] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:42:43] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:42:48] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:42:53] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:42:58] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:43:03] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:43:08] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:43:13] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:43:18] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:43:23] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:43:28] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:43:33] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:43:38] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:43:43] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:43:48] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:43:53] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:43:58] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:44:03] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:44:08] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:44:13] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:44:18] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:44:24] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:44:29] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:44:34] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:44:39] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:44:44] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:44:49] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:44:54] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:44:59] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:45:04] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:45:09] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:45:14] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:45:19] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:45:24] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:45:29] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:45:34] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:45:39] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:45:44] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:45:49] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:45:54] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:45:59] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:46:04] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:46:09] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:46:14] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:46:19] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:46:24] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:46:29] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:46:34] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:46:39] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:46:44] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:46:49] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:46:54] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:46:59] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:47:04] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:47:09] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:47:14] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:47:19] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:47:24] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:47:29] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:47:34] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:47:39] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:47:44] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:47:49] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:47:54] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:47:59] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:48:04] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:48:09] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:48:14] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:48:19] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:48:24] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:48:29] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:48:34] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:48:39] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:48:44] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:48:49] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:48:54] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:48:59] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:49:04] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:49:09] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:49:14] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:49:19] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:49:24] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:49:29] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:49:34] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:49:39] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:49:44] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:49:49] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:49:54] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:49:59] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:50:04] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:50:09] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:50:14] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:50:19] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:50:24] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:50:29] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:50:34] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:50:39] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:50:44] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:50:49] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:50:54] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:50:59] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:51:04] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:51:09] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:51:14] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:51:19] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:51:24] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:51:29] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:51:34] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:51:39] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:51:44] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:51:49] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:51:54] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:51:59] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:52:04] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:52:09] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:52:14] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 18:52:18] [INFO] [server:252] Stopped sending STEP messages
+[2025-06-15 18:59:08] [INFO] [server:156] Node node2 disconnected.
+[2025-06-15 18:59:20] [INFO] [server:62] New connection from ('127.0.0.1', 61473)
+[2025-06-15 18:59:20] [INFO] [server:84] received message [HELLO]
+  sender   : node1
+  full msg : 
+sender_id: "node1"
+
+[2025-06-15 18:59:20] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node1
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node1"
+
+[2025-06-15 19:01:03] [INFO] [server:258] Continuing sending STEP messages
+[2025-06-15 19:01:08] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 19:01:13] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 19:01:18] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 19:01:23] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 19:01:28] [INFO] [server:101] [STEP] Broadcasted STEP message to all nodes.
+[2025-06-15 19:01:29] [INFO] [server:252] Stopped sending STEP messages
+[2025-06-15 19:39:09] [INFO] [server:156] Node node1 disconnected.
+[2025-06-15 19:39:12] [INFO] [server:156] Node node1 disconnected.
+[2025-06-15 19:39:52] [INFO] [server:44] Async server started on 127.0.0.1:5000
+[2025-06-15 19:39:52] [INFO] [server:62] New connection from ('127.0.0.1', 62063)
+[2025-06-15 19:39:52] [INFO] [server:252] Stopped sending STEP messages
+[2025-06-15 19:39:52] [INFO] [server:62] New connection from ('127.0.0.1', 62064)
+[2025-06-15 19:39:52] [INFO] [server:62] New connection from ('127.0.0.1', 62065)
+[2025-06-15 19:39:52] [INFO] [server:84] received message [HELLO]
+  sender   : node1
+  full msg : 
+sender_id: "node1"
+
+[2025-06-15 19:39:52] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node1
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node1"
+
+[2025-06-15 19:39:52] [INFO] [server:84] received message [HELLO]
+  sender   : node2
+  full msg : 
+sender_id: "node2"
+
+[2025-06-15 19:39:52] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node2
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node2"
+
+[2025-06-15 19:39:52] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node2
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node2"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+}
+
+[2025-06-15 19:39:52] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node1
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node1"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+}
+
+[2025-06-15 19:50:23] [INFO] [server:321] [DROP] node2 → ON
+[2025-06-15 19:50:33] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node1
+  full msg : 
+type: TRANSACTION
+sender_id: "node1"
+tx {
+  sender: "node1"
+  receiver: "node1"
+  amount: 10.0
+  timestamp: 1749988233.1410182
+  type: STAKE
+}
+
+[2025-06-15 19:50:33] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node2
+  full msg : 
+type: TRANSACTION
+sender_id: "node2"
+tx {
+  sender: "node2"
+  receiver: "node2"
+  amount: 10.0
+  timestamp: 1749988233.141079
+  type: STAKE
+}
+
+[2025-06-15 19:55:17] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node1
+  full msg : 
+type: TRANSACTION
+sender_id: "node1"
+tx {
+  sender: "node1"
+  receiver: "node2"
+  amount: 10.0
+  timestamp: 1749988517.2932851
+}
+
+[2025-06-15 19:55:17] [INFO] [server:84] received message [BLOCK]
+  sender   : node1
+  full msg : 
+type: BLOCK
+sender_id: "node1"
+block {
+  index: 1
+  prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+  hash: "c12ef46ac7a50f60da010b6fc93ed8a741f939dc17967716bb850eb0974645a1"
+  validator: "node1"
+  transactions {
+    sender: "node1"
+    receiver: "node1"
+    amount: 10.0
+    timestamp: 1749988233.1410182
+    type: STAKE
+  }
+  transactions {
+    sender: "node2"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1749988233.141079
+    type: STAKE
+  }
+  transactions {
+    sender: "node1"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1749988517.2932851
+  }
+  timestamp: 1749988517.2988129
+}
+
+[2025-06-15 19:55:46] [INFO] [server:84] received message [BLOCK]
+  sender   : node2
+  full msg : 
+type: BLOCK
+sender_id: "node2"
+block {
+  index: 1
+  prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+  hash: "b99a84e00e376ba4e86e91d0d59af928d244424e822f9d319e8144c33108786c"
+  validator: "node2"
+  transactions {
+    sender: "node2"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1749988233.141079
+    type: STAKE
+  }
+  timestamp: 1749988546.197458
+}
+
+[2025-06-15 19:56:20] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node2
+  full msg : 
+type: TRANSACTION
+sender_id: "node2"
+tx {
+  sender: "node2"
+  receiver: "node1"
+  amount: 10.0
+  timestamp: 1749988580.944021
+}
+
+[2025-06-15 19:56:20] [INFO] [server:84] received message [BLOCK]
+  sender   : node2
+  full msg : 
+type: BLOCK
+sender_id: "node2"
+block {
+  index: 2
+  prev_hash: "b99a84e00e376ba4e86e91d0d59af928d244424e822f9d319e8144c33108786c"
+  hash: "089fc9937675a990218caca925bb98b2453f0431476c0581c30eae51676e830c"
+  validator: "node2"
+  transactions {
+    sender: "node2"
+    receiver: "node1"
+    amount: 10.0
+    timestamp: 1749988580.944021
+  }
+  timestamp: 1749988580.9461582
+}
+
+[2025-06-15 19:57:31] [INFO] [server:268] Shutting down server...
+[2025-06-15 19:57:31] [INFO] [server:287] Closing all client connections...
+[2025-06-15 19:57:31] [INFO] [server:156] Node node2 disconnected.
+[2025-06-15 19:57:31] [INFO] [server:156] Node node1 disconnected.
+[2025-06-15 19:57:31] [INFO] [server:294] Closing server socket...
+[2025-06-15 19:57:31] [INFO] [server:299] Server shutdown complete. Bye!
+[2025-06-15 20:50:18] [INFO] [server:44] Async server started on 127.0.0.1:5000
+[2025-06-15 20:50:19] [INFO] [server:62] New connection from ('127.0.0.1', 63181)
+[2025-06-15 20:50:19] [INFO] [server:252] Stopped sending STEP messages
+[2025-06-15 20:50:19] [INFO] [server:62] New connection from ('127.0.0.1', 63182)
+[2025-06-15 20:50:19] [INFO] [server:62] New connection from ('127.0.0.1', 63183)
+[2025-06-15 20:50:19] [INFO] [server:84] received message [HELLO]
+  sender   : node2
+  full msg : 
+sender_id: "node2"
+
+[2025-06-15 20:50:19] [INFO] [server:84] received message [HELLO]
+  sender   : node1
+  full msg : 
+sender_id: "node1"
+
+[2025-06-15 20:50:19] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node2
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node2"
+
+[2025-06-15 20:50:19] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node1
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node1"
+
+[2025-06-15 20:50:19] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node1
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node1"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+  blocks {
+    index: 1
+    prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    hash: "b99a84e00e376ba4e86e91d0d59af928d244424e822f9d319e8144c33108786c"
+    validator: "node2"
+    transactions {
+      sender: "node2"
+      receiver: "node2"
+      amount: 10.0
+      timestamp: 1749988233.141079
+      type: STAKE
+    }
+    timestamp: 1749988546.197458
+  }
+  blocks {
+    index: 2
+    prev_hash: "b99a84e00e376ba4e86e91d0d59af928d244424e822f9d319e8144c33108786c"
+    hash: "089fc9937675a990218caca925bb98b2453f0431476c0581c30eae51676e830c"
+    validator: "node2"
+    transactions {
+      sender: "node2"
+      receiver: "node1"
+      amount: 10.0
+      timestamp: 1749988580.944021
+    }
+    timestamp: 1749988580.9461582
+  }
+}
+
+[2025-06-15 20:50:19] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node2
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node2"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+  blocks {
+    index: 1
+    prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    hash: "b99a84e00e376ba4e86e91d0d59af928d244424e822f9d319e8144c33108786c"
+    validator: "node2"
+    transactions {
+      sender: "node2"
+      receiver: "node2"
+      amount: 10.0
+      timestamp: 1749988233.141079
+      type: STAKE
+    }
+    timestamp: 1749988546.197458
+  }
+  blocks {
+    index: 2
+    prev_hash: "b99a84e00e376ba4e86e91d0d59af928d244424e822f9d319e8144c33108786c"
+    hash: "089fc9937675a990218caca925bb98b2453f0431476c0581c30eae51676e830c"
+    validator: "node2"
+    transactions {
+      sender: "node2"
+      receiver: "node1"
+      amount: 10.0
+      timestamp: 1749988580.944021
+    }
+    timestamp: 1749988580.9461582
+  }
+}
+
+[2025-06-15 20:50:56] [INFO] [server:321] [DROP] node2 → ON
+[2025-06-15 20:52:32] [INFO] [server:156] Node node2 disconnected.
+[2025-06-15 20:52:32] [INFO] [server:156] Node node1 disconnected.
+[2025-06-15 20:52:43] [INFO] [server:44] Async server started on 127.0.0.1:5000
+[2025-06-15 20:52:43] [INFO] [server:62] New connection from ('127.0.0.1', 63219)
+[2025-06-15 20:52:43] [INFO] [server:252] Stopped sending STEP messages
+[2025-06-15 20:52:43] [INFO] [server:62] New connection from ('127.0.0.1', 63220)
+[2025-06-15 20:52:43] [INFO] [server:62] New connection from ('127.0.0.1', 63221)
+[2025-06-15 20:52:43] [INFO] [server:84] received message [HELLO]
+  sender   : node1
+  full msg : 
+sender_id: "node1"
+
+[2025-06-15 20:52:43] [INFO] [server:84] received message [HELLO]
+  sender   : node2
+  full msg : 
+sender_id: "node2"
+
+[2025-06-15 20:52:43] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node1
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node1"
+
+[2025-06-15 20:52:43] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node2
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node2"
+
+[2025-06-15 20:52:43] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node2
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node2"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+  blocks {
+    index: 1
+    prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    hash: "b99a84e00e376ba4e86e91d0d59af928d244424e822f9d319e8144c33108786c"
+    validator: "node2"
+    transactions {
+      sender: "node2"
+      receiver: "node2"
+      amount: 10.0
+      timestamp: 1749988233.141079
+      type: STAKE
+    }
+    timestamp: 1749988546.197458
+  }
+  blocks {
+    index: 2
+    prev_hash: "b99a84e00e376ba4e86e91d0d59af928d244424e822f9d319e8144c33108786c"
+    hash: "089fc9937675a990218caca925bb98b2453f0431476c0581c30eae51676e830c"
+    validator: "node2"
+    transactions {
+      sender: "node2"
+      receiver: "node1"
+      amount: 10.0
+      timestamp: 1749988580.944021
+    }
+    timestamp: 1749988580.9461582
+  }
+}
+
+[2025-06-15 20:52:43] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node1
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node1"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+  blocks {
+    index: 1
+    prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    hash: "b99a84e00e376ba4e86e91d0d59af928d244424e822f9d319e8144c33108786c"
+    validator: "node2"
+    transactions {
+      sender: "node2"
+      receiver: "node2"
+      amount: 10.0
+      timestamp: 1749988233.141079
+      type: STAKE
+    }
+    timestamp: 1749988546.197458
+  }
+  blocks {
+    index: 2
+    prev_hash: "b99a84e00e376ba4e86e91d0d59af928d244424e822f9d319e8144c33108786c"
+    hash: "089fc9937675a990218caca925bb98b2453f0431476c0581c30eae51676e830c"
+    validator: "node2"
+    transactions {
+      sender: "node2"
+      receiver: "node1"
+      amount: 10.0
+      timestamp: 1749988580.944021
+    }
+    timestamp: 1749988580.9461582
+  }
+}
+
+[2025-06-15 20:53:52] [INFO] [server:321] [DROP] node2 → ON
+[2025-06-15 20:55:45] [INFO] [server:156] Node node2 disconnected.
+[2025-06-15 20:55:45] [INFO] [server:156] Node node1 disconnected.
+[2025-06-15 20:56:35] [INFO] [server:44] Async server started on 127.0.0.1:5000
+[2025-06-15 20:56:36] [INFO] [server:62] New connection from ('127.0.0.1', 63300)
+[2025-06-15 20:56:36] [INFO] [server:252] Stopped sending STEP messages
+[2025-06-15 20:56:36] [INFO] [server:62] New connection from ('127.0.0.1', 63301)
+[2025-06-15 20:56:36] [INFO] [server:62] New connection from ('127.0.0.1', 63302)
+[2025-06-15 20:56:36] [INFO] [server:84] received message [HELLO]
+  sender   : node2
+  full msg : 
+sender_id: "node2"
+
+[2025-06-15 20:56:36] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node2
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node2"
+
+[2025-06-15 20:56:36] [INFO] [server:84] received message [HELLO]
+  sender   : node1
+  full msg : 
+sender_id: "node1"
+
+[2025-06-15 20:56:36] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node1
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node1"
+
+[2025-06-15 20:56:36] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node1
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node1"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+}
+
+[2025-06-15 20:56:36] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node2
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node2"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+}
+
+[2025-06-15 20:56:57] [INFO] [server:321] [DROP] node2 → ON
+[2025-06-15 20:56:57] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node2
+  full msg : 
+type: TRANSACTION
+sender_id: "node2"
+tx {
+  sender: "node2"
+  receiver: "node2"
+  amount: 10.0
+  timestamp: 1749992217.820145
+  type: STAKE
+}
+
+[2025-06-15 20:56:57] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node1
+  full msg : 
+type: TRANSACTION
+sender_id: "node1"
+tx {
+  sender: "node1"
+  receiver: "node1"
+  amount: 10.0
+  timestamp: 1749992217.817463
+  type: STAKE
+}
+
+[2025-06-15 20:56:58] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node1
+  full msg : 
+type: TRANSACTION
+sender_id: "node1"
+tx {
+  sender: "node1"
+  receiver: "node2"
+  amount: 10.0
+  timestamp: 1749992218.090629
+}
+
+[2025-06-15 20:56:58] [INFO] [server:84] received message [BLOCK]
+  sender   : node1
+  full msg : 
+type: BLOCK
+sender_id: "node1"
+block {
+  index: 1
+  prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+  hash: "d2738d416f0cb11244b38c7798b36ba8c2b232c3fc34ec5b1174e0fcbf315780"
+  validator: "node1"
+  transactions {
+    sender: "node1"
+    receiver: "node1"
+    amount: 10.0
+    timestamp: 1749992217.817463
+    type: STAKE
+  }
+  transactions {
+    sender: "node2"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1749992217.820145
+    type: STAKE
+  }
+  transactions {
+    sender: "node1"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1749992218.090629
+  }
+  timestamp: 1749992218.0918772
+}
+
+[2025-06-15 20:56:58] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node1
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node1"
+block_vote {
+  voter_id: "node1"
+  block_hash: "d2738d416f0cb11244b38c7798b36ba8c2b232c3fc34ec5b1174e0fcbf315780"
+}
+
+[2025-06-15 20:56:58] [INFO] [server:84] received message [BLOCK]
+  sender   : node2
+  full msg : 
+type: BLOCK
+sender_id: "node2"
+block {
+  index: 1
+  prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+  hash: "954500be1471476e7660f052b4108a3e3a5744346b1251b4cfb631c14ba58950"
+  validator: "node2"
+  transactions {
+    sender: "node2"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1749992217.820145
+    type: STAKE
+  }
+  timestamp: 1749992218.212408
+}
+
+[2025-06-15 20:56:58] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node2
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node2"
+block_vote {
+  voter_id: "node2"
+  block_hash: "954500be1471476e7660f052b4108a3e3a5744346b1251b4cfb631c14ba58950"
+}
+
+[2025-06-15 20:56:58] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node1
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node1"
+block_vote {
+  voter_id: "node1"
+  block_hash: "954500be1471476e7660f052b4108a3e3a5744346b1251b4cfb631c14ba58950"
+}
+
+[2025-06-15 20:56:58] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node2
+  full msg : 
+type: TRANSACTION
+sender_id: "node2"
+tx {
+  sender: "node2"
+  receiver: "node1"
+  amount: 10.0
+  timestamp: 1749992218.4951649
+}
+
+[2025-06-15 20:56:58] [INFO] [server:84] received message [BLOCK]
+  sender   : node2
+  full msg : 
+type: BLOCK
+sender_id: "node2"
+block {
+  index: 1
+  prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+  hash: "35c3c5fe0e8860a1c9dfaeafe684f7c4ba6f92da834470c46ba7ec481ffbfa4c"
+  validator: "node2"
+  transactions {
+    sender: "node2"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1749992217.820145
+    type: STAKE
+  }
+  transactions {
+    sender: "node2"
+    receiver: "node1"
+    amount: 10.0
+    timestamp: 1749992218.4951649
+  }
+  timestamp: 1749992218.4958742
+}
+
+[2025-06-15 20:56:58] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node2
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node2"
+block_vote {
+  voter_id: "node2"
+  block_hash: "35c3c5fe0e8860a1c9dfaeafe684f7c4ba6f92da834470c46ba7ec481ffbfa4c"
+}
+
+[2025-06-15 20:56:58] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node1
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node1"
+block_vote {
+  voter_id: "node1"
+  block_hash: "35c3c5fe0e8860a1c9dfaeafe684f7c4ba6f92da834470c46ba7ec481ffbfa4c"
+}
+
+[2025-06-15 20:57:03] [INFO] [server:268] Shutting down server...
+[2025-06-15 20:57:03] [INFO] [server:287] Closing all client connections...
+[2025-06-15 20:57:03] [INFO] [server:156] Node node2 disconnected.
+[2025-06-15 20:57:03] [INFO] [server:156] Node node1 disconnected.
+[2025-06-15 20:57:03] [INFO] [server:294] Closing server socket...
+[2025-06-15 20:57:03] [INFO] [server:299] Server shutdown complete. Bye!
+[2025-06-15 23:13:00] [INFO] [server:44] Async server started on 127.0.0.1:5000
+[2025-06-15 23:13:00] [INFO] [server:62] New connection from ('127.0.0.1', 49189)
+[2025-06-15 23:13:00] [INFO] [server:252] Stopped sending STEP messages
+[2025-06-15 23:13:00] [INFO] [server:62] New connection from ('127.0.0.1', 49190)
+[2025-06-15 23:13:00] [INFO] [server:62] New connection from ('127.0.0.1', 49191)
+[2025-06-15 23:13:00] [INFO] [server:84] received message [HELLO]
+  sender   : node1
+  full msg : 
+sender_id: "node1"
+
+[2025-06-15 23:13:00] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node1
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node1"
+
+[2025-06-15 23:13:00] [INFO] [server:84] received message [HELLO]
+  sender   : node2
+  full msg : 
+sender_id: "node2"
+
+[2025-06-15 23:13:00] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node2
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node2"
+
+[2025-06-15 23:13:00] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node2
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node2"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+}
+
+[2025-06-15 23:13:00] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node1
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node1"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+}
+
+[2025-06-15 23:15:17] [INFO] [server:321] [DROP] node2 → ON
+[2025-06-15 23:15:28] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node1
+  full msg : 
+type: TRANSACTION
+sender_id: "node1"
+tx {
+  sender: "node1"
+  receiver: "node1"
+  amount: 10.0
+  timestamp: 1750000528.606727
+  type: STAKE
+}
+
+[2025-06-15 23:15:28] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node2
+  full msg : 
+type: TRANSACTION
+sender_id: "node2"
+tx {
+  sender: "node2"
+  receiver: "node2"
+  amount: 10.0
+  timestamp: 1750000528.606814
+  type: STAKE
+}
+
+[2025-06-15 23:16:33] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node1
+  full msg : 
+type: TRANSACTION
+sender_id: "node1"
+tx {
+  sender: "node1"
+  receiver: "node2"
+  amount: 10.0
+  timestamp: 1750000593.553355
+}
+
+[2025-06-15 23:16:33] [INFO] [server:84] received message [BLOCK]
+  sender   : node1
+  full msg : 
+type: BLOCK
+sender_id: "node1"
+block {
+  index: 1
+  prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+  hash: "3865d7e2ba1df2ebec4d9f4466289f3e47f417186e5f3a82fba9a0ac680c9e14"
+  validator: "node1"
+  transactions {
+    sender: "node1"
+    receiver: "node1"
+    amount: 10.0
+    timestamp: 1750000528.606727
+    type: STAKE
+  }
+  transactions {
+    sender: "node2"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1750000528.606814
+    type: STAKE
+  }
+  transactions {
+    sender: "node1"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1750000593.553355
+  }
+  timestamp: 1750000593.5606558
+}
+
+[2025-06-15 23:16:33] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node1
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node1"
+block_vote {
+  voter_id: "node1"
+  block_hash: "3865d7e2ba1df2ebec4d9f4466289f3e47f417186e5f3a82fba9a0ac680c9e14"
+}
+
+[2025-06-15 23:29:39] [INFO] [server:84] received message [BLOCK]
+  sender   : node2
+  full msg : 
+type: BLOCK
+sender_id: "node2"
+block {
+  index: 1
+  prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+  hash: "09b06c2b5292376f0a4d67a12e8cc34401e1851ace8768672654633ce28e677a"
+  validator: "node2"
+  transactions {
+    sender: "node2"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1750000528.606814
+    type: STAKE
+  }
+  timestamp: 1750001379.234535
+}
+
+[2025-06-15 23:29:39] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node2
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node2"
+block_vote {
+  voter_id: "node2"
+  block_hash: "09b06c2b5292376f0a4d67a12e8cc34401e1851ace8768672654633ce28e677a"
+}
+
+[2025-06-15 23:29:39] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node1
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node1"
+block_vote {
+  voter_id: "node1"
+  block_hash: "09b06c2b5292376f0a4d67a12e8cc34401e1851ace8768672654633ce28e677a"
+}
+
+[2025-06-15 23:35:49] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node2
+  full msg : 
+type: TRANSACTION
+sender_id: "node2"
+tx {
+  sender: "node2"
+  receiver: "node1"
+  amount: 10.0
+  timestamp: 1750001749.6869829
+}
+
+[2025-06-15 23:36:12] [INFO] [server:84] received message [BLOCK]
+  sender   : node2
+  full msg : 
+type: BLOCK
+sender_id: "node2"
+block {
+  index: 1
+  prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+  hash: "69ff3fb6098c96a50180385d1f8758d04c1b65c41caf6477b961abe725e596c3"
+  validator: "node2"
+  transactions {
+    sender: "node2"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1750000528.606814
+    type: STAKE
+  }
+  transactions {
+    sender: "node2"
+    receiver: "node1"
+    amount: 10.0
+    timestamp: 1750001749.6869829
+  }
+  timestamp: 1750001772.101759
+}
+
+[2025-06-15 23:36:12] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node2
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node2"
+block_vote {
+  voter_id: "node2"
+  block_hash: "69ff3fb6098c96a50180385d1f8758d04c1b65c41caf6477b961abe725e596c3"
+}
+
+[2025-06-15 23:36:12] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node1
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node1"
+block_vote {
+  voter_id: "node1"
+  block_hash: "69ff3fb6098c96a50180385d1f8758d04c1b65c41caf6477b961abe725e596c3"
+}
+
+[2025-06-15 23:40:15] [INFO] [server:268] Shutting down server...
+[2025-06-15 23:40:15] [INFO] [server:287] Closing all client connections...
+[2025-06-15 23:40:15] [INFO] [server:156] Node node2 disconnected.
+[2025-06-15 23:40:15] [INFO] [server:156] Node node1 disconnected.
+[2025-06-15 23:40:15] [INFO] [server:294] Closing server socket...
+[2025-06-15 23:40:15] [INFO] [server:299] Server shutdown complete. Bye!
+[2025-06-15 23:40:56] [INFO] [server:44] Async server started on 127.0.0.1:5000
+[2025-06-15 23:40:56] [INFO] [server:62] New connection from ('127.0.0.1', 50089)
+[2025-06-15 23:40:56] [INFO] [server:252] Stopped sending STEP messages
+[2025-06-15 23:40:56] [INFO] [server:62] New connection from ('127.0.0.1', 50090)
+[2025-06-15 23:40:56] [INFO] [server:62] New connection from ('127.0.0.1', 50091)
+[2025-06-15 23:40:56] [INFO] [server:84] received message [HELLO]
+  sender   : node1
+  full msg : 
+sender_id: "node1"
+
+[2025-06-15 23:40:56] [INFO] [server:84] received message [HELLO]
+  sender   : node2
+  full msg : 
+sender_id: "node2"
+
+[2025-06-15 23:40:56] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node2
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node2"
+
+[2025-06-15 23:40:56] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node1
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node1"
+
+[2025-06-15 23:40:56] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node1
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node1"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+}
+
+[2025-06-15 23:40:56] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node2
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node2"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+}
+
+[2025-06-15 23:40:58] [INFO] [server:321] [DROP] node2 → ON
+[2025-06-15 23:41:01] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node1
+  full msg : 
+type: TRANSACTION
+sender_id: "node1"
+tx {
+  sender: "node1"
+  receiver: "node1"
+  amount: 10.0
+  timestamp: 1750002061.8798249
+  type: STAKE
+}
+
+[2025-06-15 23:41:01] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node2
+  full msg : 
+type: TRANSACTION
+sender_id: "node2"
+tx {
+  sender: "node2"
+  receiver: "node2"
+  amount: 10.0
+  timestamp: 1750002061.8803
+  type: STAKE
+}
+
+[2025-06-15 23:41:01] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node1
+  full msg : 
+type: TRANSACTION
+sender_id: "node1"
+tx {
+  sender: "node1"
+  receiver: "node2"
+  amount: 10.0
+  timestamp: 1750002061.880964
+}
+
+[2025-06-15 23:41:03] [INFO] [server:84] received message [BLOCK]
+  sender   : node1
+  full msg : 
+type: BLOCK
+sender_id: "node1"
+block {
+  index: 1
+  prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+  hash: "60d000dd17b2e7e4ee7973e81b04dfcde0fb50e2d79569e0418d566acff6adcd"
+  validator: "node1"
+  transactions {
+    sender: "node1"
+    receiver: "node1"
+    amount: 10.0
+    timestamp: 1750002061.8798249
+    type: STAKE
+  }
+  transactions {
+    sender: "node1"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1750002061.880964
+  }
+  transactions {
+    sender: "node2"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1750002061.8803
+    type: STAKE
+  }
+  timestamp: 1750002063.879402
+}
+
+[2025-06-15 23:41:03] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node1
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node1"
+block_vote {
+  voter_id: "node1"
+  block_hash: "60d000dd17b2e7e4ee7973e81b04dfcde0fb50e2d79569e0418d566acff6adcd"
+}
+
+[2025-06-15 23:41:04] [INFO] [server:84] received message [BLOCK]
+  sender   : node2
+  full msg : 
+type: BLOCK
+sender_id: "node2"
+block {
+  index: 1
+  prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+  hash: "531fb00330f43d0857509917fea2ea861cd96e2bb19162b7e03dc8805878d380"
+  validator: "node2"
+  transactions {
+    sender: "node2"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1750002061.8803
+    type: STAKE
+  }
+  timestamp: 1750002064.8807878
+}
+
+[2025-06-15 23:41:04] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node2
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node2"
+block_vote {
+  voter_id: "node2"
+  block_hash: "531fb00330f43d0857509917fea2ea861cd96e2bb19162b7e03dc8805878d380"
+}
+
+[2025-06-15 23:41:04] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node1
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node1"
+block_vote {
+  voter_id: "node1"
+  block_hash: "531fb00330f43d0857509917fea2ea861cd96e2bb19162b7e03dc8805878d380"
+}
+
+[2025-06-15 23:41:06] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node2
+  full msg : 
+type: TRANSACTION
+sender_id: "node2"
+tx {
+  sender: "node2"
+  receiver: "node1"
+  amount: 10.0
+  timestamp: 1750002066.879594
+}
+
+[2025-06-15 23:41:06] [INFO] [server:84] received message [BLOCK]
+  sender   : node2
+  full msg : 
+type: BLOCK
+sender_id: "node2"
+block {
+  index: 1
+  prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+  hash: "d3966a8230460d6eeea64f93cda73d19358f6c4a26439d21fa882d6c3a1a71d8"
+  validator: "node2"
+  transactions {
+    sender: "node2"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1750002061.8803
+    type: STAKE
+  }
+  transactions {
+    sender: "node2"
+    receiver: "node1"
+    amount: 10.0
+    timestamp: 1750002066.879594
+  }
+  timestamp: 1750002066.880822
+}
+
+[2025-06-15 23:41:06] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node2
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node2"
+block_vote {
+  voter_id: "node2"
+  block_hash: "d3966a8230460d6eeea64f93cda73d19358f6c4a26439d21fa882d6c3a1a71d8"
+}
+
+[2025-06-15 23:41:06] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node1
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node1"
+block_vote {
+  voter_id: "node1"
+  block_hash: "d3966a8230460d6eeea64f93cda73d19358f6c4a26439d21fa882d6c3a1a71d8"
+}
+
+[2025-06-15 23:41:13] [INFO] [server:268] Shutting down server...
+[2025-06-15 23:41:13] [INFO] [server:287] Closing all client connections...
+[2025-06-15 23:41:13] [INFO] [server:156] Node node2 disconnected.
+[2025-06-15 23:41:13] [INFO] [server:156] Node node1 disconnected.
+[2025-06-15 23:41:13] [INFO] [server:294] Closing server socket...
+[2025-06-15 23:41:13] [INFO] [server:299] Server shutdown complete. Bye!
+[2025-06-15 23:48:52] [INFO] [server:44] Async server started on 127.0.0.1:5000
+[2025-06-15 23:48:53] [INFO] [server:62] New connection from ('127.0.0.1', 50324)
+[2025-06-15 23:48:53] [INFO] [server:252] Stopped sending STEP messages
+[2025-06-15 23:48:53] [INFO] [server:62] New connection from ('127.0.0.1', 50325)
+[2025-06-15 23:48:53] [INFO] [server:62] New connection from ('127.0.0.1', 50326)
+[2025-06-15 23:48:53] [INFO] [server:84] received message [HELLO]
+  sender   : node1
+  full msg : 
+sender_id: "node1"
+
+[2025-06-15 23:48:53] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node1
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node1"
+
+[2025-06-15 23:48:53] [INFO] [server:84] received message [HELLO]
+  sender   : node2
+  full msg : 
+sender_id: "node2"
+
+[2025-06-15 23:48:53] [INFO] [server:84] received message [SYNC_REQUEST]
+  sender   : node2
+  full msg : 
+type: SYNC_REQUEST
+sender_id: "node2"
+
+[2025-06-15 23:48:53] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node2
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node2"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+}
+
+[2025-06-15 23:48:53] [INFO] [server:84] received message [SYNC_RESPONSE]
+  sender   : node1
+  full msg : 
+type: SYNC_RESPONSE
+sender_id: "node1"
+sync_response {
+  blocks {
+    prev_hash: "0000000000000000000000000000000000000000000000000000000000000000"
+    hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+    validator: "genesis"
+  }
+}
+
+[2025-06-15 23:49:01] [INFO] [server:321] [DROP] node2 → ON
+[2025-06-15 23:49:06] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node1
+  full msg : 
+type: TRANSACTION
+sender_id: "node1"
+tx {
+  sender: "node1"
+  receiver: "node1"
+  amount: 10.0
+  timestamp: 1750002546.721729
+  type: STAKE
+}
+
+[2025-06-15 23:49:06] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node2
+  full msg : 
+type: TRANSACTION
+sender_id: "node2"
+tx {
+  sender: "node2"
+  receiver: "node2"
+  amount: 10.0
+  timestamp: 1750002546.7221591
+  type: STAKE
+}
+
+[2025-06-15 23:49:06] [INFO] [server:84] received message [TRANSACTION]
+  sender   : node1
+  full msg : 
+type: TRANSACTION
+sender_id: "node1"
+tx {
+  sender: "node1"
+  receiver: "node2"
+  amount: 10.0
+  timestamp: 1750002546.722767
+}
+
+[2025-06-15 23:49:46] [INFO] [server:84] received message [BLOCK]
+  sender   : node1
+  full msg : 
+type: BLOCK
+sender_id: "node1"
+block {
+  index: 1
+  prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+  hash: "6bd322a117912637efc37910cd0c28d14f424af1023aa9e77da74f29d3596df1"
+  validator: "node1"
+  transactions {
+    sender: "node1"
+    receiver: "node1"
+    amount: 10.0
+    timestamp: 1750002546.721729
+    type: STAKE
+  }
+  transactions {
+    sender: "node1"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1750002546.722767
+  }
+  transactions {
+    sender: "node2"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1750002546.7221591
+    type: STAKE
+  }
+  timestamp: 1750002586.824012
+}
+
+[2025-06-15 23:49:46] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node1
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node1"
+block_vote {
+  voter_id: "node1"
+  block_hash: "6bd322a117912637efc37910cd0c28d14f424af1023aa9e77da74f29d3596df1"
+}
+
+[2025-06-15 23:52:46] [INFO] [server:84] received message [BLOCK]
+  sender   : node2
+  full msg : 
+type: BLOCK
+sender_id: "node2"
+block {
+  index: 1
+  prev_hash: "97045df0a09b7b396d0a62dc5cc1b013bd06c479df40b4333c83490755ef9661"
+  hash: "443835f14030dd60a7b33c4af83b3ee811e00d9d29e0d8aff24e22e6784dff2d"
+  validator: "node2"
+  transactions {
+    sender: "node2"
+    receiver: "node2"
+    amount: 10.0
+    timestamp: 1750002546.7221591
+    type: STAKE
+  }
+  timestamp: 1750002766.474346
+}
+
+[2025-06-15 23:52:46] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node2
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node2"
+block_vote {
+  voter_id: "node2"
+  block_hash: "443835f14030dd60a7b33c4af83b3ee811e00d9d29e0d8aff24e22e6784dff2d"
+}
+
+[2025-06-15 23:52:46] [INFO] [server:84] received message [BLOCK_VOTE]
+  sender   : node1
+  full msg : 
+type: BLOCK_VOTE
+sender_id: "node1"
+block_vote {
+  voter_id: "node1"
+  block_hash: "443835f14030dd60a7b33c4af83b3ee811e00d9d29e0d8aff24e22e6784dff2d"
+}
+

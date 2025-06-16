@@ -10,7 +10,7 @@ step:
   interval: 5.0
 
 vote:
-  enabled: false 
+  enabled: True 
   timeout: 5.0
   threshold: 0.66
 

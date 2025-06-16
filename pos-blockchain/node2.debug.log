@@ -1,0 +1,589 @@
+2025-06-15 19:39:52,441 [DEBUG] [2025-06-15 19:39:52] [INFO] [node2:401] Sent SYNC_REQUEST to network
+2025-06-15 19:39:52,441 [DEBUG] [2025-06-15 19:39:52] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-15 19:39:52,441 [DEBUG] [2025-06-15 19:39:52] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+2025-06-15 19:39:52,444 [DEBUG] [2025-06-15 19:39:52] [INFO] [node2:97] Received HELLO message from node node1.
+2025-06-15 19:39:52,444 [DEBUG] [2025-06-15 19:39:52] [INFO] [node2:273] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-15 19:39:52,446 [DEBUG] [2025-06-15 19:39:52] [INFO] [node2:296] Received SYNC_RESPONSE from node1, storing response
+2025-06-15 19:39:54,447 [DEBUG] [2025-06-15 19:39:54] [INFO] [node2:368] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-15 19:39:54,448 [DEBUG] [2025-06-15 19:39:54] [INFO] [node2:358] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+2025-06-15 19:39:54,448 [DEBUG] [2025-06-15 19:39:54] [INFO] [node2:387] no need to sync chain, best chain same with local chain
+2025-06-15 19:50:33,148 [DEBUG] [2025-06-15 19:50:33] [INFO] [node2:431] sent STAKE transaction: node2 -> node2 10.0
+2025-06-15 19:50:33,149 [DEBUG] [2025-06-15 19:50:33] [INFO] [node2:573] Want to stake 10.0 tokens.
+2025-06-15 19:55:46,196 [DEBUG] [2025-06-15 19:55:46] [WARNING] [node2:481] FORCING block forge -- skipping validator check!
+2025-06-15 19:55:46,199 [DEBUG] [2025-06-15 19:55:46] [INFO] [node2:499] Want to forge block 1 with hash b99a84e0
+2025-06-15 19:55:46,199 [DEBUG] [2025-06-15 19:55:46] [INFO] [node2:512] [No Voting] Directly adding forged Block 1 ...
+2025-06-15 19:55:46,204 [DEBUG] [2025-06-15 19:55:46] [INFO] [blockchain:150] Adding block 1 to main chain
+2025-06-15 19:55:46,204 [DEBUG] [2025-06-15 19:55:46] [INFO] [node2:143] Added new block 1 with hash b99a84e0. Chain length is now 1(excluding genesis).
+2025-06-15 19:55:46,204 [DEBUG] [2025-06-15 19:55:46] [INFO] [node2:514] [No Voting] forged block 1. Chain length is now 1(excluding genesis).
+2025-06-15 19:56:20,946 [DEBUG] [2025-06-15 19:56:20] [INFO] [node2:431] sent TRANSFER transaction: node2 -> node1 10.0
+2025-06-15 19:56:20,947 [DEBUG] [2025-06-15 19:56:20] [WARNING] [node2:481] FORCING block forge -- skipping validator check!
+2025-06-15 19:56:20,947 [DEBUG] [2025-06-15 19:56:20] [INFO] [node2:499] Want to forge block 2 with hash 089fc993
+2025-06-15 19:56:20,947 [DEBUG] [2025-06-15 19:56:20] [INFO] [node2:512] [No Voting] Directly adding forged Block 2 ...
+2025-06-15 19:56:20,948 [DEBUG] [2025-06-15 19:56:20] [INFO] [blockchain:150] Adding block 2 to main chain
+2025-06-15 19:56:20,948 [DEBUG] [2025-06-15 19:56:20] [INFO] [node2:143] Added new block 2 with hash 089fc993. Chain length is now 2(excluding genesis).
+2025-06-15 19:56:20,948 [DEBUG] [2025-06-15 19:56:20] [INFO] [node2:514] [No Voting] forged block 2. Chain length is now 2(excluding genesis).
+2025-06-15 19:57:31,393 [DEBUG] [2025-06-15 19:57:31] [INFO] [node2:103] Received BYE message from node server.
+2025-06-15 19:57:31,393 [DEBUG] [2025-06-15 19:57:31] [INFO] [node2:105] Server is shutting down, exiting.
+2025-06-15 19:57:31,393 [DEBUG] [2025-06-15 19:57:31] [INFO] [node2:555] Exiting.
+2025-06-15 19:57:31,395 [DEBUG] [2025-06-15 19:57:31] [INFO] [blockchain:264] Blockchain saved to data_node_node2
+2025-06-15 19:57:31,398 [DEBUG] Node ID: node2
+2025-06-15 19:57:31,398 [DEBUG] Known nodes: {'node1', 'node2'}
+2025-06-15 19:57:31,398 [DEBUG] ========== Blockchain Structure ==========
+2025-06-15 19:57:31,399 [DEBUG] Block 0 | hash=97045df0... | validator=genesis | tx_count=0 (main)
+2025-06-15 19:57:31,399 [DEBUG] └── Block 1 | hash=b99a84e0... | validator=node2 | tx_count=1 (main)
+2025-06-15 19:57:31,399 [DEBUG] └── └── Block 2 | hash=089fc993... | validator=node2 | tx_count=1 (main)
+2025-06-15 19:57:31,399 [DEBUG] ===================================
+2025-06-15 19:57:31,399 [DEBUG] ========== Account State ==========
+2025-06-15 19:57:31,399 [DEBUG]  Account node1 | Balance=110.00 | Stake=0.00
+2025-06-15 19:57:31,400 [DEBUG]  Account node2 | Balance=80.00 | Stake=10.00
+2025-06-15 19:57:31,400 [DEBUG]  Account node3 | Balance=100.00 | Stake=0.00
+2025-06-15 19:57:31,400 [DEBUG] ===================================
+2025-06-15 19:57:31,400 [DEBUG] ========== Pending Transactions ==========
+2025-06-15 19:57:31,401 [DEBUG] ==========================================
+2025-06-15 20:50:19,188 [DEBUG] [2025-06-15 20:50:19] [INFO] [blockchain:288] Blockchain loaded successfully from data_node_node2. Chain length=2
+2025-06-15 20:50:19,194 [DEBUG] [2025-06-15 20:50:19] [INFO] [node2:401] Sent SYNC_REQUEST to network
+2025-06-15 20:50:19,195 [DEBUG] [2025-06-15 20:50:19] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-15 20:50:19,195 [DEBUG] [2025-06-15 20:50:19] [INFO] [node2:80] Current chain length: 2 (excluding genesis)
+2025-06-15 20:50:19,197 [DEBUG] [2025-06-15 20:50:19] [INFO] [node2:97] Received HELLO message from node node1.
+2025-06-15 20:50:19,197 [DEBUG] [2025-06-15 20:50:19] [INFO] [node2:273] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-15 20:50:19,200 [DEBUG] [2025-06-15 20:50:19] [INFO] [node2:296] Received SYNC_RESPONSE from node1, storing response
+2025-06-15 20:50:21,200 [DEBUG] [2025-06-15 20:50:21] [INFO] [node2:368] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-15 20:50:21,200 [DEBUG] [2025-06-15 20:50:21] [INFO] [node2:358] SYNC_RESPONSE from node1: chain length=3     head=089fc993
+2025-06-15 20:50:21,201 [DEBUG] [2025-06-15 20:50:21] [INFO] [node2:387] no need to sync chain, best chain same with local chain
+2025-06-15 20:52:43,772 [DEBUG] [2025-06-15 20:52:43] [INFO] [blockchain:288] Blockchain loaded successfully from data_node_node2. Chain length=2
+2025-06-15 20:52:43,778 [DEBUG] [2025-06-15 20:52:43] [INFO] [node2:401] Sent SYNC_REQUEST to network
+2025-06-15 20:52:43,778 [DEBUG] [2025-06-15 20:52:43] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-15 20:52:43,778 [DEBUG] [2025-06-15 20:52:43] [INFO] [node2:80] Current chain length: 2 (excluding genesis)
+2025-06-15 20:52:43,782 [DEBUG] [2025-06-15 20:52:43] [INFO] [node2:97] Received HELLO message from node node1.
+2025-06-15 20:52:43,782 [DEBUG] [2025-06-15 20:52:43] [INFO] [node2:273] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-15 20:52:43,787 [DEBUG] [2025-06-15 20:52:43] [INFO] [node2:296] Received SYNC_RESPONSE from node1, storing response
+2025-06-15 20:52:45,784 [DEBUG] [2025-06-15 20:52:45] [INFO] [node2:368] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-15 20:52:45,785 [DEBUG] [2025-06-15 20:52:45] [INFO] [node2:358] SYNC_RESPONSE from node1: chain length=3     head=089fc993
+2025-06-15 20:52:45,786 [DEBUG] [2025-06-15 20:52:45] [INFO] [node2:387] no need to sync chain, best chain same with local chain
+2025-06-15 20:56:36,231 [DEBUG] [2025-06-15 20:56:36] [INFO] [node2:401] Sent SYNC_REQUEST to network
+2025-06-15 20:56:36,231 [DEBUG] [2025-06-15 20:56:36] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-15 20:56:36,231 [DEBUG] [2025-06-15 20:56:36] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+2025-06-15 20:56:36,235 [DEBUG] [2025-06-15 20:56:36] [INFO] [node2:97] Received HELLO message from node node1.
+2025-06-15 20:56:36,235 [DEBUG] [2025-06-15 20:56:36] [INFO] [node2:273] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-15 20:56:36,235 [DEBUG] [2025-06-15 20:56:36] [INFO] [node2:296] Received SYNC_RESPONSE from node1, storing response
+2025-06-15 20:56:38,236 [DEBUG] [2025-06-15 20:56:38] [INFO] [node2:368] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-15 20:56:38,237 [DEBUG] [2025-06-15 20:56:38] [INFO] [node2:358] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+2025-06-15 20:56:38,237 [DEBUG] [2025-06-15 20:56:38] [INFO] [node2:387] no need to sync chain, best chain same with local chain
+2025-06-15 20:56:57,831 [DEBUG] [2025-06-15 20:56:57] [INFO] [node2:431] sent STAKE transaction: node2 -> node2 10.0
+2025-06-15 20:56:57,831 [DEBUG] [2025-06-15 20:56:57] [INFO] [node2:573] Want to stake 10.0 tokens.
+2025-06-15 20:56:58,212 [DEBUG] [2025-06-15 20:56:58] [WARNING] [node2:481] FORCING block forge -- skipping validator check!
+2025-06-15 20:56:58,213 [DEBUG] [2025-06-15 20:56:58] [INFO] [node2:499] Want to forge block 1 with hash 954500be
+2025-06-15 20:56:58,214 [DEBUG] [2025-06-15 20:56:58] [INFO] [node2:127] Voted to accept Block 1, hash=954500be
+2025-06-15 20:56:58,495 [DEBUG] [2025-06-15 20:56:58] [INFO] [node2:431] sent TRANSFER transaction: node2 -> node1 10.0
+2025-06-15 20:56:58,496 [DEBUG] [2025-06-15 20:56:58] [WARNING] [node2:481] FORCING block forge -- skipping validator check!
+2025-06-15 20:56:58,498 [DEBUG] [2025-06-15 20:56:58] [INFO] [node2:499] Want to forge block 1 with hash 35c3c5fe
+2025-06-15 20:56:58,505 [DEBUG] [2025-06-15 20:56:58] [INFO] [node2:127] Voted to accept Block 1, hash=35c3c5fe
+2025-06-15 20:57:03,218 [DEBUG] [2025-06-15 20:57:03] [WARNING] [node2:342] Vote timeout for block 954500be, discarding pending         state.
+2025-06-15 20:57:03,502 [DEBUG] [2025-06-15 20:57:03] [WARNING] [node2:342] Vote timeout for block 35c3c5fe, discarding pending         state.
+2025-06-15 20:57:03,915 [DEBUG] [2025-06-15 20:57:03] [INFO] [node2:103] Received BYE message from node server.
+2025-06-15 20:57:03,915 [DEBUG] [2025-06-15 20:57:03] [INFO] [node2:105] Server is shutting down, exiting.
+2025-06-15 20:57:03,916 [DEBUG] [2025-06-15 20:57:03] [INFO] [node2:555] Exiting.
+2025-06-15 20:57:03,919 [DEBUG] [2025-06-15 20:57:03] [INFO] [blockchain:264] Blockchain saved to data_node_node2
+2025-06-15 20:57:03,923 [DEBUG] Node ID: node2
+2025-06-15 20:57:03,923 [DEBUG] Known nodes: {'node1', 'node2'}
+2025-06-15 20:57:03,923 [DEBUG] ========== Blockchain Structure ==========
+2025-06-15 20:57:03,924 [DEBUG] Block 0 | hash=97045df0... | validator=genesis | tx_count=0 (main)
+2025-06-15 20:57:03,924 [DEBUG] ===================================
+2025-06-15 20:57:03,924 [DEBUG] ========== Account State ==========
+2025-06-15 20:57:03,924 [DEBUG]  Account node1 | Balance=100.00 | Stake=0.00
+2025-06-15 20:57:03,924 [DEBUG]  Account node2 | Balance=100.00 | Stake=0.00
+2025-06-15 20:57:03,924 [DEBUG]  Account node3 | Balance=100.00 | Stake=0.00
+2025-06-15 20:57:03,925 [DEBUG] ===================================
+2025-06-15 20:57:03,926 [DEBUG] ========== Pending Transactions ==========
+2025-06-15 20:57:03,926 [DEBUG]   Transaction(node2 -> node2, 10.0, type=STAKE)
+2025-06-15 20:57:03,926 [DEBUG]   Transaction(node2 -> node1, 10.0, type=TRANSFER)
+2025-06-15 20:57:03,926 [DEBUG] ==========================================
+2025-06-15 23:13:00,611 [DEBUG] [2025-06-15 23:13:00] [INFO] [node2:401] Sent SYNC_REQUEST to network
+2025-06-15 23:13:00,612 [DEBUG] [2025-06-15 23:13:00] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-15 23:13:00,612 [DEBUG] [2025-06-15 23:13:00] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+2025-06-15 23:13:00,614 [DEBUG] [2025-06-15 23:13:00] [INFO] [node2:97] Received HELLO message from node node1.
+2025-06-15 23:13:00,614 [DEBUG] [2025-06-15 23:13:00] [INFO] [node2:273] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-15 23:13:00,616 [DEBUG] [2025-06-15 23:13:00] [INFO] [node2:296] Received SYNC_RESPONSE from node1, storing response
+2025-06-15 23:13:02,620 [DEBUG] [2025-06-15 23:13:02] [INFO] [node2:368] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-15 23:13:02,621 [DEBUG] [2025-06-15 23:13:02] [INFO] [node2:358] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+2025-06-15 23:13:02,621 [DEBUG] [2025-06-15 23:13:02] [INFO] [node2:387] no need to sync chain, best chain same with local chain
+2025-06-15 23:15:28,616 [DEBUG] [2025-06-15 23:15:28] [INFO] [node2:431] sent STAKE transaction: node2 -> node2 10.0
+2025-06-15 23:15:28,616 [DEBUG] [2025-06-15 23:15:28] [INFO] [node2:573] Want to stake 10.0 tokens.
+2025-06-15 23:29:39,234 [DEBUG] [2025-06-15 23:29:39] [WARNING] [node2:481] FORCING block forge -- skipping validator check!
+2025-06-15 23:29:39,239 [DEBUG] [2025-06-15 23:29:39] [INFO] [node2:499] Want to forge block 1 with hash 09b06c2b
+2025-06-15 23:29:39,239 [DEBUG] [2025-06-15 23:29:39] [INFO] [node2:127] Voted to accept Block 1, hash=09b06c2b
+2025-06-15 23:29:44,247 [DEBUG] [2025-06-15 23:29:44] [WARNING] [node2:342] Vote timeout for block 09b06c2b, discarding pending         state.
+2025-06-15 23:35:49,691 [DEBUG] [2025-06-15 23:35:49] [INFO] [node2:431] sent TRANSFER transaction: node2 -> node1 10.0
+2025-06-15 23:36:12,101 [DEBUG] [2025-06-15 23:36:12] [WARNING] [node2:481] FORCING block forge -- skipping validator check!
+2025-06-15 23:36:12,107 [DEBUG] [2025-06-15 23:36:12] [INFO] [node2:499] Want to forge block 1 with hash 69ff3fb6
+2025-06-15 23:36:12,112 [DEBUG] [2025-06-15 23:36:12] [INFO] [node2:127] Voted to accept Block 1, hash=69ff3fb6
+2025-06-15 23:36:17,115 [DEBUG] [2025-06-15 23:36:17] [WARNING] [node2:342] Vote timeout for block 69ff3fb6, discarding pending         state.
+2025-06-15 23:40:15,354 [DEBUG] [2025-06-15 23:40:15] [INFO] [node2:103] Received BYE message from node server.
+2025-06-15 23:40:15,356 [DEBUG] [2025-06-15 23:40:15] [INFO] [node2:105] Server is shutting down, exiting.
+2025-06-15 23:40:15,356 [DEBUG] [2025-06-15 23:40:15] [INFO] [node2:555] Exiting.
+2025-06-15 23:40:15,362 [DEBUG] [2025-06-15 23:40:15] [INFO] [blockchain:264] Blockchain saved to data_node_node2
+2025-06-15 23:40:15,365 [DEBUG] Node ID: node2
+2025-06-15 23:40:15,366 [DEBUG] Known nodes: {'node2', 'node1'}
+2025-06-15 23:40:15,366 [DEBUG] ========== Blockchain Structure ==========
+2025-06-15 23:40:15,367 [DEBUG] Block 0 | hash=97045df0... | validator=genesis | tx_count=0 (main)
+2025-06-15 23:40:15,367 [DEBUG] ===================================
+2025-06-15 23:40:15,367 [DEBUG] ========== Account State ==========
+2025-06-15 23:40:15,368 [DEBUG]  Account node1 | Balance=100.00 | Stake=0.00
+2025-06-15 23:40:15,368 [DEBUG]  Account node2 | Balance=100.00 | Stake=0.00
+2025-06-15 23:40:15,368 [DEBUG]  Account node3 | Balance=100.00 | Stake=0.00
+2025-06-15 23:40:15,368 [DEBUG] ===================================
+2025-06-15 23:40:15,369 [DEBUG] ========== Pending Transactions ==========
+2025-06-15 23:40:15,369 [DEBUG]   Transaction(node2 -> node2, 10.0, type=STAKE)
+2025-06-15 23:40:15,369 [DEBUG]   Transaction(node2 -> node1, 10.0, type=TRANSFER)
+2025-06-15 23:40:15,369 [DEBUG] ==========================================
+2025-06-15 23:40:56,966 [DEBUG] [2025-06-15 23:40:56] [INFO] [blockchain:288] Blockchain loaded successfully from data_node_node2. Chain length=0
+2025-06-15 23:40:56,971 [DEBUG] [2025-06-15 23:40:56] [INFO] [node2:401] Sent SYNC_REQUEST to network
+2025-06-15 23:40:56,972 [DEBUG] [2025-06-15 23:40:56] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-15 23:40:56,972 [DEBUG] [2025-06-15 23:40:56] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+2025-06-15 23:40:56,975 [DEBUG] [2025-06-15 23:40:56] [INFO] [node2:97] Received HELLO message from node node1.
+2025-06-15 23:40:56,976 [DEBUG] [2025-06-15 23:40:56] [INFO] [node2:273] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-15 23:40:56,977 [DEBUG] [2025-06-15 23:40:56] [INFO] [node2:296] Received SYNC_RESPONSE from node1, storing response
+2025-06-15 23:40:58,978 [DEBUG] [2025-06-15 23:40:58] [INFO] [node2:368] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-15 23:40:58,979 [DEBUG] [2025-06-15 23:40:58] [INFO] [node2:358] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+2025-06-15 23:40:58,979 [DEBUG] [2025-06-15 23:40:58] [INFO] [node2:387] no need to sync chain, best chain same with local chain
+2025-06-15 23:41:01,881 [DEBUG] [2025-06-15 23:41:01] [INFO] [node2:431] sent STAKE transaction: node2 -> node2 10.0
+2025-06-15 23:41:01,881 [DEBUG] [2025-06-15 23:41:01] [INFO] [node2:573] Want to stake 10.0 tokens.
+2025-06-15 23:41:04,880 [DEBUG] [2025-06-15 23:41:04] [WARNING] [node2:481] FORCING block forge -- skipping validator check!
+2025-06-15 23:41:04,881 [DEBUG] [2025-06-15 23:41:04] [INFO] [node2:499] Want to forge block 1 with hash 531fb003
+2025-06-15 23:41:04,882 [DEBUG] [2025-06-15 23:41:04] [INFO] [node2:127] Voted to accept Block 1, hash=531fb003
+2025-06-15 23:41:06,880 [DEBUG] [2025-06-15 23:41:06] [INFO] [node2:431] sent TRANSFER transaction: node2 -> node1 10.0
+2025-06-15 23:41:06,881 [DEBUG] [2025-06-15 23:41:06] [WARNING] [node2:481] FORCING block forge -- skipping validator check!
+2025-06-15 23:41:06,884 [DEBUG] [2025-06-15 23:41:06] [INFO] [node2:499] Want to forge block 1 with hash d3966a82
+2025-06-15 23:41:06,884 [DEBUG] [2025-06-15 23:41:06] [INFO] [node2:127] Voted to accept Block 1, hash=d3966a82
+2025-06-15 23:41:09,887 [DEBUG] [2025-06-15 23:41:09] [WARNING] [node2:342] Vote timeout for block 531fb003, discarding pending         state.
+2025-06-15 23:41:11,887 [DEBUG] [2025-06-15 23:41:11] [WARNING] [node2:342] Vote timeout for block d3966a82, discarding pending         state.
+2025-06-15 23:41:13,889 [DEBUG] [2025-06-15 23:41:13] [INFO] [node2:103] Received BYE message from node server.
+2025-06-15 23:41:13,890 [DEBUG] [2025-06-15 23:41:13] [INFO] [node2:105] Server is shutting down, exiting.
+2025-06-15 23:41:13,890 [DEBUG] [2025-06-15 23:41:13] [INFO] [node2:555] Exiting.
+2025-06-15 23:41:13,891 [DEBUG] [2025-06-15 23:41:13] [INFO] [blockchain:264] Blockchain saved to data_node_node2
+2025-06-15 23:41:13,894 [DEBUG] Node ID: node2
+2025-06-15 23:41:13,894 [DEBUG] Known nodes: {'node2', 'node1'}
+2025-06-15 23:41:13,894 [DEBUG] ========== Blockchain Structure ==========
+2025-06-15 23:41:13,895 [DEBUG] Block 0 | hash=97045df0... | validator=genesis | tx_count=0 (main)
+2025-06-15 23:41:13,895 [DEBUG] ===================================
+2025-06-15 23:41:13,895 [DEBUG] ========== Account State ==========
+2025-06-15 23:41:13,895 [DEBUG]  Account node1 | Balance=100.00 | Stake=0.00
+2025-06-15 23:41:13,896 [DEBUG]  Account node2 | Balance=100.00 | Stake=0.00
+2025-06-15 23:41:13,896 [DEBUG]  Account node3 | Balance=100.00 | Stake=0.00
+2025-06-15 23:41:13,896 [DEBUG] ===================================
+2025-06-15 23:41:13,896 [DEBUG] ========== Pending Transactions ==========
+2025-06-15 23:41:13,896 [DEBUG]   Transaction(node2 -> node2, 10.0, type=STAKE)
+2025-06-15 23:41:13,897 [DEBUG]   Transaction(node2 -> node1, 10.0, type=TRANSFER)
+2025-06-15 23:41:13,897 [DEBUG] ==========================================
+2025-06-15 23:48:53,199 [DEBUG] [2025-06-15 23:48:53] [INFO] [blockchain:288] Blockchain loaded successfully from data_node_node2. Chain length=0
+2025-06-15 23:48:53,204 [DEBUG] [2025-06-15 23:48:53] [INFO] [node2:401] Sent SYNC_REQUEST to network
+2025-06-15 23:48:53,204 [DEBUG] [2025-06-15 23:48:53] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-15 23:48:53,204 [DEBUG] [2025-06-15 23:48:53] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+2025-06-15 23:48:53,208 [DEBUG] [2025-06-15 23:48:53] [INFO] [node2:97] Received HELLO message from node node1.
+2025-06-15 23:48:53,209 [DEBUG] [2025-06-15 23:48:53] [INFO] [node2:273] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-15 23:48:53,210 [DEBUG] [2025-06-15 23:48:53] [INFO] [node2:296] Received SYNC_RESPONSE from node1, storing response
+2025-06-15 23:48:55,211 [DEBUG] [2025-06-15 23:48:55] [INFO] [node2:368] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-15 23:48:55,211 [DEBUG] [2025-06-15 23:48:55] [INFO] [node2:358] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+2025-06-15 23:48:55,212 [DEBUG] [2025-06-15 23:48:55] [INFO] [node2:387] no need to sync chain, best chain same with local chain
+2025-06-15 23:49:06,725 [DEBUG] [2025-06-15 23:49:06] [INFO] [node2:431] sent STAKE transaction: node2 -> node2 10.0
+2025-06-15 23:49:06,726 [DEBUG] [2025-06-15 23:49:06] [INFO] [node2:573] Want to stake 10.0 tokens.
+2025-06-15 23:52:46,474 [DEBUG] [2025-06-15 23:52:46] [WARNING] [node2:481] FORCING block forge -- skipping validator check!
+2025-06-15 23:52:46,476 [DEBUG] [2025-06-15 23:52:46] [INFO] [node2:499] Want to forge block 1 with hash 443835f1
+2025-06-15 23:52:46,476 [DEBUG] [2025-06-15 23:52:46] [INFO] [node2:127] Voted to accept Block 1, hash=443835f1
+2025-06-15 23:52:51,483 [DEBUG] [2025-06-15 23:52:51] [WARNING] [node2:342] Vote timeout for block 443835f1, discarding pending         state.
+2025-06-16 00:03:23,487 [DEBUG] [2025-06-16 00:03:23] [INFO] [node2:431] sent TRANSFER transaction: node2 -> node1 10.0
+2025-06-16 00:03:23,751 [DEBUG] [2025-06-16 00:03:23] [WARNING] [node2:481] FORCING block forge -- skipping validator check!
+2025-06-16 00:03:23,757 [DEBUG] [2025-06-16 00:03:23] [INFO] [node2:499] Want to forge block 1 with hash 364ac076
+2025-06-16 00:03:23,762 [DEBUG] [2025-06-16 00:03:23] [INFO] [node2:127] Voted to accept Block 1, hash=364ac076
+2025-06-16 00:03:28,765 [DEBUG] [2025-06-16 00:03:28] [WARNING] [node2:342] Vote timeout for block 364ac076, discarding pending         state.
+2025-06-16 00:03:28,917 [DEBUG] [2025-06-16 00:03:28] [INFO] [node2:103] Received BYE message from node server.
+2025-06-16 00:03:28,918 [DEBUG] [2025-06-16 00:03:28] [INFO] [node2:105] Server is shutting down, exiting.
+2025-06-16 00:03:28,918 [DEBUG] [2025-06-16 00:03:28] [INFO] [node2:555] Exiting.
+2025-06-16 00:03:28,922 [DEBUG] --- Logging error ---
+2025-06-16 00:03:28,929 [DEBUG] Traceback (most recent call last):
+2025-06-16 00:03:28,930 [DEBUG]   File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/logging/handlers.py", line 74, in emit
+2025-06-16 00:03:28,930 [DEBUG]     self.doRollover()
+2025-06-16 00:03:28,930 [DEBUG]   File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/logging/handlers.py", line 403, in doRollover
+2025-06-16 00:03:28,930 [DEBUG]     self.rotate(self.baseFilename, dfn)
+2025-06-16 00:03:28,931 [DEBUG]   File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/logging/handlers.py", line 115, in rotate
+2025-06-16 00:03:28,931 [DEBUG]     os.rename(source, dest)
+2025-06-16 00:03:28,931 [DEBUG] FileNotFoundError: [Errno 2] No such file or directory: '/Users/liangwei13/BlockChain_MAS_POS/pos-blockchain/logs/blockchain.log' -> '/Users/liangwei13/BlockChain_MAS_POS/pos-blockchain/logs/blockchain.log.2025-06-15'
+2025-06-16 00:03:28,931 [DEBUG] Call stack:
+2025-06-16 00:03:28,932 [DEBUG]   File "/Users/liangwei13/BlockChain_MAS_POS/pos-blockchain/node.py", line 650, in <module>
+2025-06-16 00:03:28,932 [DEBUG]     node.run()
+2025-06-16 00:03:28,932 [DEBUG]   File "/Users/liangwei13/BlockChain_MAS_POS/pos-blockchain/node.py", line 83, in run
+2025-06-16 00:03:28,932 [DEBUG]     self.client.wait_loop(self._on_command)
+2025-06-16 00:03:28,932 [DEBUG]   File "/Users/liangwei13/BlockChain_MAS_POS/pos-blockchain/client.py", line 85, in wait_loop
+2025-06-16 00:03:28,933 [DEBUG]     if not self.receive_and_dispatch():
+2025-06-16 00:03:28,933 [DEBUG]   File "/Users/liangwei13/BlockChain_MAS_POS/pos-blockchain/client.py", line 73, in receive_and_dispatch
+2025-06-16 00:03:28,933 [DEBUG]     handler(msg)
+2025-06-16 00:03:28,933 [DEBUG]   File "/Users/liangwei13/BlockChain_MAS_POS/pos-blockchain/node.py", line 106, in _on_bye
+2025-06-16 00:03:28,934 [DEBUG]     self._cmd_exit(0)
+2025-06-16 00:03:28,934 [DEBUG]   File "/Users/liangwei13/BlockChain_MAS_POS/pos-blockchain/node.py", line 556, in _cmd_exit
+2025-06-16 00:03:28,934 [DEBUG]     self.blockchain.save_to_files(self.data_dir)
+2025-06-16 00:03:28,934 [DEBUG]   File "/Users/liangwei13/BlockChain_MAS_POS/pos-blockchain/blockchain.py", line 264, in save_to_files
+2025-06-16 00:03:28,935 [DEBUG]     logger.info(f"Blockchain saved to {directory}")
+2025-06-16 00:03:28,935 [DEBUG] Message: 'Blockchain saved to data_node_node2'
+2025-06-16 00:03:28,935 [DEBUG] Arguments: ()
+2025-06-16 00:03:28,935 [DEBUG] [2025-06-16 00:03:28] [INFO] [blockchain:264] Blockchain saved to data_node_node2
+2025-06-16 00:03:28,936 [DEBUG] Node ID: node2
+2025-06-16 00:03:28,936 [DEBUG] Known nodes: {'node1', 'node2'}
+2025-06-16 00:03:28,936 [DEBUG] ========== Blockchain Structure ==========
+2025-06-16 00:03:28,937 [DEBUG] Block 0 | hash=97045df0... | validator=genesis | tx_count=0 (main)
+2025-06-16 00:03:28,937 [DEBUG] ===================================
+2025-06-16 00:03:28,937 [DEBUG] ========== Account State ==========
+2025-06-16 00:03:28,937 [DEBUG]  Account node1 | Balance=100.00 | Stake=0.00
+2025-06-16 00:03:28,938 [DEBUG]  Account node2 | Balance=100.00 | Stake=0.00
+2025-06-16 00:03:28,938 [DEBUG]  Account node3 | Balance=100.00 | Stake=0.00
+2025-06-16 00:03:28,938 [DEBUG] ===================================
+2025-06-16 00:03:28,938 [DEBUG] ========== Pending Transactions ==========
+2025-06-16 00:03:28,939 [DEBUG]   Transaction(node2 -> node2, 10.0, type=STAKE)
+2025-06-16 00:03:28,939 [DEBUG]   Transaction(node2 -> node1, 10.0, type=TRANSFER)
+2025-06-16 00:03:28,940 [DEBUG] ==========================================
+2025-06-16 00:04:25,564 [DEBUG] [2025-06-16 00:04:25] [INFO] [blockchain:288] Blockchain loaded successfully from data_node_node2. Chain length=0
+2025-06-16 00:04:25,569 [DEBUG] [2025-06-16 00:04:25] [INFO] [node2:401] Sent SYNC_REQUEST to network
+2025-06-16 00:04:25,569 [DEBUG] [2025-06-16 00:04:25] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-16 00:04:25,569 [DEBUG] [2025-06-16 00:04:25] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+2025-06-16 00:04:25,573 [DEBUG] [2025-06-16 00:04:25] [INFO] [node2:97] Received HELLO message from node node1.
+2025-06-16 00:04:25,573 [DEBUG] [2025-06-16 00:04:25] [INFO] [node2:273] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-16 00:04:25,575 [DEBUG] [2025-06-16 00:04:25] [INFO] [node2:296] Received SYNC_RESPONSE from node1, storing response
+2025-06-16 00:04:27,576 [DEBUG] [2025-06-16 00:04:27] [INFO] [node2:368] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-16 00:04:27,576 [DEBUG] [2025-06-16 00:04:27] [INFO] [node2:358] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+2025-06-16 00:04:27,578 [DEBUG] [2025-06-16 00:04:27] [INFO] [node2:387] no need to sync chain, best chain same with local chain
+2025-06-16 00:04:37,284 [DEBUG] [2025-06-16 00:04:37] [INFO] [node2:431] sent STAKE transaction: node2 -> node2 10.0
+2025-06-16 00:04:37,285 [DEBUG] [2025-06-16 00:04:37] [INFO] [node2:573] Want to stake 10.0 tokens.
+2025-06-16 00:04:37,290 [DEBUG] [2025-06-16 00:04:37] [INFO] [node2:254] received STAKE: node1 stakes 10.0
+2025-06-16 00:04:47,689 [DEBUG] [2025-06-16 00:04:47] [INFO] [node2:248] received TRANSFER: node1 → node2, amount 10.0
+2025-06-16 00:04:47,691 [DEBUG] [2025-06-16 00:04:47] [INFO] [node2:127] Voted to accept Block 1, hash=5306ca40
+2025-06-16 00:04:47,691 [DEBUG] [2025-06-16 00:04:47] [WARNING] [node2:189] Received BLOCK VOTE from node1 on block 5306ca40. Not validator node, Ignoring
+2025-06-16 00:04:47,723 [DEBUG] [2025-06-16 00:04:47] [WARNING] [node2:481] FORCING block forge -- skipping validator check!
+2025-06-16 00:04:47,723 [DEBUG] [2025-06-16 00:04:47] [INFO] [node2:499] Want to forge block 1 with hash b11bd329
+2025-06-16 00:04:47,723 [DEBUG] [2025-06-16 00:04:47] [INFO] [node2:127] Voted to accept Block 1, hash=b11bd329
+2025-06-16 00:04:47,726 [DEBUG] [2025-06-16 00:04:47] [WARNING] [node2:189] Received BLOCK VOTE from node1 on block b11bd329. Not validator node, Ignoring
+2025-06-16 00:04:52,685 [DEBUG] [2025-06-16 00:04:52] [WARNING] [node2:342] Vote timeout for block 5306ca40, discarding pending         state.
+2025-06-16 00:04:52,728 [DEBUG] [2025-06-16 00:04:52] [WARNING] [node2:342] Vote timeout for block b11bd329, discarding pending         state.
+2025-06-16 00:37:57,332 [DEBUG] [2025-06-16 00:37:57] [INFO] [node2:431] sent TRANSFER transaction: node2 -> node1 10.0
+2025-06-16 00:37:57,749 [DEBUG] [2025-06-16 00:37:57] [WARNING] [node2:481] FORCING block forge -- skipping validator check!
+2025-06-16 00:37:57,758 [DEBUG] [2025-06-16 00:37:57] [INFO] [node2:499] Want to forge block 1 with hash e7521ed2
+2025-06-16 00:37:57,764 [DEBUG] [2025-06-16 00:37:57] [INFO] [node2:127] Voted to accept Block 1, hash=e7521ed2
+2025-06-16 00:37:57,764 [DEBUG] [2025-06-16 00:37:57] [WARNING] [node2:189] Received BLOCK VOTE from node1 on block e7521ed2. Not validator node, Ignoring
+2025-06-16 00:38:02,766 [DEBUG] [2025-06-16 00:38:02] [WARNING] [node2:342] Vote timeout for block e7521ed2, discarding pending         state.
+2025-06-16 00:38:02,929 [DEBUG] [2025-06-16 00:38:02] [INFO] [node2:103] Received BYE message from node server.
+2025-06-16 00:38:02,930 [DEBUG] [2025-06-16 00:38:02] [INFO] [node2:105] Server is shutting down, exiting.
+2025-06-16 00:38:02,930 [DEBUG] [2025-06-16 00:38:02] [INFO] [node2:555] Exiting.
+2025-06-16 00:38:02,932 [DEBUG] [2025-06-16 00:38:02] [INFO] [blockchain:264] Blockchain saved to data_node_node2
+2025-06-16 00:38:02,933 [DEBUG] Node ID: node2
+2025-06-16 00:38:02,933 [DEBUG] Known nodes: {'node1', 'node2'}
+2025-06-16 00:38:02,933 [DEBUG] ========== Blockchain Structure ==========
+2025-06-16 00:38:02,933 [DEBUG] Block 0 | hash=97045df0... | validator=genesis | tx_count=0 (main)
+2025-06-16 00:38:02,934 [DEBUG] ===================================
+2025-06-16 00:38:02,934 [DEBUG] ========== Account State ==========
+2025-06-16 00:38:02,934 [DEBUG]  Account node1 | Balance=100.00 | Stake=0.00
+2025-06-16 00:38:02,935 [DEBUG]  Account node2 | Balance=100.00 | Stake=0.00
+2025-06-16 00:38:02,935 [DEBUG]  Account node3 | Balance=100.00 | Stake=0.00
+2025-06-16 00:38:02,935 [DEBUG] ===================================
+2025-06-16 00:38:02,935 [DEBUG] ========== Pending Transactions ==========
+2025-06-16 00:38:02,935 [DEBUG]   Transaction(node2 -> node2, 10.0, type=STAKE)
+2025-06-16 00:38:02,936 [DEBUG]   Transaction(node1 -> node1, 10.0, type=STAKE)
+2025-06-16 00:38:02,936 [DEBUG]   Transaction(node1 -> node2, 10.0, type=TRANSFER)
+2025-06-16 00:38:02,936 [DEBUG]   Transaction(node2 -> node1, 10.0, type=TRANSFER)
+2025-06-16 00:38:02,936 [DEBUG] ==========================================
+2025-06-16 00:38:14,600 [DEBUG] [2025-06-16 00:38:14] [INFO] [blockchain:288] Blockchain loaded successfully from data_node_node2. Chain length=0
+2025-06-16 00:38:14,606 [DEBUG] [2025-06-16 00:38:14] [INFO] [node2:420] Sent SYNC_REQUEST to network
+2025-06-16 00:38:14,606 [DEBUG] [2025-06-16 00:38:14] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-16 00:38:14,606 [DEBUG] [2025-06-16 00:38:14] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+2025-06-16 00:38:14,610 [DEBUG] [2025-06-16 00:38:14] [INFO] [node2:97] Received HELLO message from node node1.
+2025-06-16 00:38:14,611 [DEBUG] [2025-06-16 00:38:14] [INFO] [node2:292] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-16 00:38:14,612 [DEBUG] [2025-06-16 00:38:14] [INFO] [node2:315] Received SYNC_RESPONSE from node1, storing response
+2025-06-16 00:38:16,614 [DEBUG] [2025-06-16 00:38:16] [INFO] [node2:387] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-16 00:38:16,615 [DEBUG] [2025-06-16 00:38:16] [INFO] [node2:377] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+2025-06-16 00:38:16,615 [DEBUG] [2025-06-16 00:38:16] [INFO] [node2:406] no need to sync chain, best chain same with local chain
+2025-06-16 00:38:28,111 [DEBUG] [2025-06-16 00:38:28] [INFO] [node2:450] sent STAKE transaction: node2 -> node2 10.0
+2025-06-16 00:38:28,112 [DEBUG] [2025-06-16 00:38:28] [INFO] [node2:592] Want to stake 10.0 tokens.
+2025-06-16 00:38:28,116 [DEBUG] [2025-06-16 00:38:28] [INFO] [node2:273] received STAKE: node1 stakes 10.0
+2025-06-16 00:38:32,975 [DEBUG] [2025-06-16 00:38:32] [INFO] [node2:267] received TRANSFER: node1 → node2, amount 10.0
+2025-06-16 00:38:32,980 [DEBUG] [2025-06-16 00:38:32] [INFO] [node2:127] Voted to accept Block 1, hash=aa19ec0f
+2025-06-16 00:38:32,980 [DEBUG] [2025-06-16 00:38:32] [INFO] [node2:215] Received BLOCK_VOTE from node1 on block aa19ec0f
+2025-06-16 00:38:32,980 [DEBUG] [2025-06-16 00:38:32] [INFO] [node2:233] Block aa19ec0f vote ratio: 1.00(1/1)
+2025-06-16 00:38:32,980 [DEBUG] [2025-06-16 00:38:32] [INFO] [node2:239] Validated Block 1 from node1, processing...
+2025-06-16 00:38:32,980 [DEBUG] [2025-06-16 00:38:32] [INFO] [blockchain:150] Adding block 1 to main chain
+2025-06-16 00:38:32,980 [DEBUG] [2025-06-16 00:38:32] [INFO] [node2:143] Added new block 1 with hash aa19ec0f. Chain length is now 1(excluding genesis).
+2025-06-16 00:38:32,980 [DEBUG] [2025-06-16 00:38:32] [INFO] [node2:241] added new block. Chain length is now 1(excluding genesis).
+2025-06-16 00:39:18,372 [DEBUG] [2025-06-16 00:39:18] [WARNING] [node2:500] FORCING block forge -- skipping validator check!
+2025-06-16 00:39:18,373 [DEBUG] [2025-06-16 00:39:18] [INFO] [node2:473] No transactions to pack into block.
+2025-06-16 00:40:31,448 [DEBUG] [2025-06-16 00:40:31] [INFO] [node2:450] sent TRANSFER transaction: node2 -> node1 10.0
+2025-06-16 00:40:31,748 [DEBUG] [2025-06-16 00:40:31] [WARNING] [node2:500] FORCING block forge -- skipping validator check!
+2025-06-16 00:40:31,749 [DEBUG] [2025-06-16 00:40:31] [INFO] [node2:518] Want to forge block 2 with hash d62045d2
+2025-06-16 00:40:31,749 [DEBUG] [2025-06-16 00:40:31] [INFO] [node2:127] Voted to accept Block 2, hash=d62045d2
+2025-06-16 00:40:31,759 [DEBUG] [2025-06-16 00:40:31] [INFO] [node2:215] Received BLOCK_VOTE from node1 on block d62045d2
+2025-06-16 00:40:31,759 [DEBUG] [2025-06-16 00:40:31] [INFO] [node2:233] Block d62045d2 vote ratio: 1.00(2/2)
+2025-06-16 00:40:31,759 [DEBUG] [2025-06-16 00:40:31] [INFO] [node2:239] Validated Block 2 from node2, processing...
+2025-06-16 00:40:31,759 [DEBUG] [2025-06-16 00:40:31] [INFO] [blockchain:150] Adding block 2 to main chain
+2025-06-16 00:40:31,760 [DEBUG] [2025-06-16 00:40:31] [INFO] [node2:143] Added new block 2 with hash d62045d2. Chain length is now 2(excluding genesis).
+2025-06-16 00:40:31,760 [DEBUG] [2025-06-16 00:40:31] [INFO] [node2:241] added new block. Chain length is now 2(excluding genesis).
+2025-06-16 00:40:37,667 [DEBUG] [2025-06-16 00:40:37] [INFO] [node2:103] Received BYE message from node server.
+2025-06-16 00:40:37,668 [DEBUG] [2025-06-16 00:40:37] [INFO] [node2:105] Server is shutting down, exiting.
+2025-06-16 00:40:37,668 [DEBUG] [2025-06-16 00:40:37] [INFO] [node2:574] Exiting.
+2025-06-16 00:40:37,673 [DEBUG] [2025-06-16 00:40:37] [INFO] [blockchain:264] Blockchain saved to data_node_node2
+2025-06-16 00:40:37,673 [DEBUG] Node ID: node2
+2025-06-16 00:40:37,674 [DEBUG] Known nodes: {'node1', 'node2'}
+2025-06-16 00:40:37,674 [DEBUG] ========== Blockchain Structure ==========
+2025-06-16 00:40:37,674 [DEBUG] Block 0 | hash=97045df0... | validator=genesis | tx_count=0 (main)
+2025-06-16 00:40:37,675 [DEBUG] └── Block 1 | hash=aa19ec0f... | validator=node1 | tx_count=3 (main)
+2025-06-16 00:40:37,675 [DEBUG] ===================================
+2025-06-16 00:40:37,675 [DEBUG] ========== Account State ==========
+2025-06-16 00:40:37,676 [DEBUG]  Account node1 | Balance=80.00 | Stake=10.00
+2025-06-16 00:40:37,676 [DEBUG]  Account node2 | Balance=100.00 | Stake=10.00
+2025-06-16 00:40:37,676 [DEBUG]  Account node3 | Balance=100.00 | Stake=0.00
+2025-06-16 00:40:37,676 [DEBUG] ===================================
+2025-06-16 00:40:37,676 [DEBUG] ========== Pending Transactions ==========
+2025-06-16 00:40:37,677 [DEBUG]   Transaction(node2 -> node1, 10.0, type=TRANSFER)
+2025-06-16 00:40:37,677 [DEBUG] ==========================================
+2025-06-16 00:42:26,272 [DEBUG] [2025-06-16 00:42:26] [INFO] [blockchain:288] Blockchain loaded successfully from data_node_node2. Chain length=2
+2025-06-16 00:42:26,278 [DEBUG] [2025-06-16 00:42:26] [INFO] [node2:420] Sent SYNC_REQUEST to network
+2025-06-16 00:42:26,279 [DEBUG] [2025-06-16 00:42:26] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-16 00:42:26,279 [DEBUG] [2025-06-16 00:42:26] [INFO] [node2:80] Current chain length: 2 (excluding genesis)
+2025-06-16 00:42:26,282 [DEBUG] [2025-06-16 00:42:26] [INFO] [node2:97] Received HELLO message from node node1.
+2025-06-16 00:42:26,282 [DEBUG] [2025-06-16 00:42:26] [INFO] [node2:292] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-16 00:42:26,288 [DEBUG] [2025-06-16 00:42:26] [INFO] [node2:315] Received SYNC_RESPONSE from node1, storing response
+2025-06-16 00:42:28,284 [DEBUG] [2025-06-16 00:42:28] [INFO] [node2:387] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-16 00:42:28,285 [DEBUG] [2025-06-16 00:42:28] [INFO] [node2:377] SYNC_RESPONSE from node1: chain length=3     head=d62045d2
+2025-06-16 00:42:28,285 [DEBUG] [2025-06-16 00:42:28] [INFO] [node2:406] no need to sync chain, best chain same with local chain
+2025-06-16 00:42:33,579 [DEBUG] [2025-06-16 00:42:33] [INFO] [node2:273] received STAKE: node1 stakes 10.0
+2025-06-16 00:42:35,834 [DEBUG] [2025-06-16 00:42:35] [INFO] [node2:450] sent STAKE transaction: node2 -> node2 10.0
+2025-06-16 00:42:35,834 [DEBUG] [2025-06-16 00:42:35] [INFO] [node2:592] Want to stake 10.0 tokens.
+2025-06-16 00:42:35,858 [DEBUG] [2025-06-16 00:42:35] [INFO] [node2:267] received TRANSFER: node1 → node2, amount 10.0
+2025-06-16 00:42:35,858 [DEBUG] [2025-06-16 00:42:35] [INFO] [node2:127] Voted to accept Block 3, hash=e859acfd
+2025-06-16 00:42:35,858 [DEBUG] [2025-06-16 00:42:35] [INFO] [node2:215] Received BLOCK_VOTE from node1 on block e859acfd
+2025-06-16 00:42:35,858 [DEBUG] [2025-06-16 00:42:35] [INFO] [node2:233] Block e859acfd vote ratio: 1.00(2/2)
+2025-06-16 00:42:35,859 [DEBUG] [2025-06-16 00:42:35] [INFO] [node2:239] Validated Block 3 from node1, processing...
+2025-06-16 00:42:35,859 [DEBUG] [2025-06-16 00:42:35] [INFO] [blockchain:150] Adding block 3 to main chain
+2025-06-16 00:42:35,859 [DEBUG] [2025-06-16 00:42:35] [INFO] [node2:143] Added new block 3 with hash e859acfd. Chain length is now 3(excluding genesis).
+2025-06-16 00:42:35,860 [DEBUG] [2025-06-16 00:42:35] [INFO] [node2:241] added new block. Chain length is now 3(excluding genesis).
+2025-06-16 00:45:41,061 [DEBUG] [2025-06-16 00:45:41] [WARNING] [node2:500] FORCING block forge -- skipping validator check!
+2025-06-16 00:45:41,063 [DEBUG] [2025-06-16 00:45:41] [INFO] [node2:518] Want to forge block 4 with hash 7bd22915
+2025-06-16 00:45:41,063 [DEBUG] [2025-06-16 00:45:41] [INFO] [node2:127] Voted to accept Block 4, hash=7bd22915
+2025-06-16 00:45:41,081 [DEBUG] [2025-06-16 00:45:41] [INFO] [node2:215] Received BLOCK_VOTE from node1 on block 7bd22915
+2025-06-16 00:45:41,082 [DEBUG] [2025-06-16 00:45:41] [INFO] [node2:233] Block 7bd22915 vote ratio: 1.00(2/2)
+2025-06-16 00:45:41,082 [DEBUG] [2025-06-16 00:45:41] [INFO] [node2:239] Validated Block 4 from node2, processing...
+2025-06-16 00:45:41,082 [DEBUG] [2025-06-16 00:45:41] [INFO] [blockchain:150] Adding block 4 to main chain
+2025-06-16 00:45:41,082 [DEBUG] [2025-06-16 00:45:41] [INFO] [node2:143] Added new block 4 with hash 7bd22915. Chain length is now 4(excluding genesis).
+2025-06-16 00:45:41,083 [DEBUG] [2025-06-16 00:45:41] [INFO] [node2:241] added new block. Chain length is now 4(excluding genesis).
+2025-06-16 00:45:41,305 [DEBUG] [2025-06-16 00:45:41] [INFO] [node2:450] sent TRANSFER transaction: node2 -> node1 10.0
+2025-06-16 00:45:41,305 [DEBUG] [2025-06-16 00:45:41] [WARNING] [node2:500] FORCING block forge -- skipping validator check!
+2025-06-16 00:45:41,308 [DEBUG] [2025-06-16 00:45:41] [INFO] [node2:518] Want to forge block 5 with hash 695c8ac6
+2025-06-16 00:45:41,309 [DEBUG] [2025-06-16 00:45:41] [INFO] [node2:127] Voted to accept Block 5, hash=695c8ac6
+2025-06-16 00:45:41,316 [DEBUG] [2025-06-16 00:45:41] [INFO] [node2:215] Received BLOCK_VOTE from node1 on block 695c8ac6
+2025-06-16 00:45:41,317 [DEBUG] [2025-06-16 00:45:41] [INFO] [node2:233] Block 695c8ac6 vote ratio: 1.00(2/2)
+2025-06-16 00:45:41,317 [DEBUG] [2025-06-16 00:45:41] [INFO] [node2:239] Validated Block 5 from node2, processing...
+2025-06-16 00:45:41,318 [DEBUG] [2025-06-16 00:45:41] [INFO] [blockchain:150] Adding block 5 to main chain
+2025-06-16 00:45:41,318 [DEBUG] [2025-06-16 00:45:41] [INFO] [node2:143] Added new block 5 with hash 695c8ac6. Chain length is now 5(excluding genesis).
+2025-06-16 00:45:41,318 [DEBUG] [2025-06-16 00:45:41] [INFO] [node2:241] added new block. Chain length is now 5(excluding genesis).
+2025-06-16 00:45:47,626 [DEBUG] [2025-06-16 00:45:47] [INFO] [node2:103] Received BYE message from node server.
+2025-06-16 00:45:47,626 [DEBUG] [2025-06-16 00:45:47] [INFO] [node2:105] Server is shutting down, exiting.
+2025-06-16 00:45:47,627 [DEBUG] [2025-06-16 00:45:47] [INFO] [node2:574] Exiting.
+2025-06-16 00:45:47,635 [DEBUG] [2025-06-16 00:45:47] [INFO] [blockchain:264] Blockchain saved to data_node_node2
+2025-06-16 00:45:47,636 [DEBUG] Node ID: node2
+2025-06-16 00:45:47,636 [DEBUG] Known nodes: {'node1', 'node2'}
+2025-06-16 00:45:47,636 [DEBUG] ========== Blockchain Structure ==========
+2025-06-16 00:45:47,636 [DEBUG] Block 0 | hash=97045df0... | validator=genesis | tx_count=0 (main)
+2025-06-16 00:45:47,636 [DEBUG] └── Block 1 | hash=aa19ec0f... | validator=node1 | tx_count=3 (main)
+2025-06-16 00:45:47,636 [DEBUG] └── └── Block 2 | hash=d62045d2... | validator=node2 | tx_count=1 (main)
+2025-06-16 00:45:47,637 [DEBUG] └── └── └── Block 3 | hash=e859acfd... | validator=node1 | tx_count=2 (main)
+2025-06-16 00:45:47,637 [DEBUG] └── └── └── └── Block 4 | hash=7bd22915... | validator=node2 | tx_count=1 (main)
+2025-06-16 00:45:47,637 [DEBUG] └── └── └── └── └── Block 5 | hash=695c8ac6... | validator=node2 | tx_count=1 (main)
+2025-06-16 00:45:47,637 [DEBUG] ===================================
+2025-06-16 00:45:47,637 [DEBUG] ========== Account State ==========
+2025-06-16 00:45:47,637 [DEBUG]  Account node1 | Balance=80.00 | Stake=20.00
+2025-06-16 00:45:47,637 [DEBUG]  Account node2 | Balance=80.00 | Stake=20.00
+2025-06-16 00:45:47,637 [DEBUG]  Account node3 | Balance=100.00 | Stake=0.00
+2025-06-16 00:45:47,638 [DEBUG] ===================================
+2025-06-16 00:45:47,638 [DEBUG] ========== Pending Transactions ==========
+2025-06-16 00:45:47,638 [DEBUG] ==========================================
+2025-06-16 00:46:06,978 [DEBUG] [2025-06-16 00:46:06] [INFO] [node2:420] Sent SYNC_REQUEST to network
+2025-06-16 00:46:06,979 [DEBUG] [2025-06-16 00:46:06] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-16 00:46:06,979 [DEBUG] [2025-06-16 00:46:06] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+2025-06-16 00:46:06,981 [DEBUG] [2025-06-16 00:46:06] [INFO] [node2:97] Received HELLO message from node node1.
+2025-06-16 00:46:06,982 [DEBUG] [2025-06-16 00:46:06] [INFO] [node2:292] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-16 00:46:06,983 [DEBUG] [2025-06-16 00:46:06] [INFO] [node2:315] Received SYNC_RESPONSE from node1, storing response
+2025-06-16 00:46:08,983 [DEBUG] [2025-06-16 00:46:08] [INFO] [node2:387] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-16 00:46:08,984 [DEBUG] [2025-06-16 00:46:08] [INFO] [node2:377] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+2025-06-16 00:46:08,984 [DEBUG] [2025-06-16 00:46:08] [INFO] [node2:406] no need to sync chain, best chain same with local chain
+2025-06-16 00:46:13,277 [DEBUG] [2025-06-16 00:46:13] [INFO] [node2:273] received STAKE: node1 stakes 10.0
+2025-06-16 00:46:14,824 [DEBUG] [2025-06-16 00:46:14] [INFO] [node2:450] sent STAKE transaction: node2 -> node2 10.0
+2025-06-16 00:46:14,824 [DEBUG] [2025-06-16 00:46:14] [INFO] [node2:592] Want to stake 10.0 tokens.
+2025-06-16 00:46:14,830 [DEBUG] [2025-06-16 00:46:14] [INFO] [node2:267] received TRANSFER: node1 → node2, amount 10.0
+2025-06-16 00:46:14,830 [DEBUG] [2025-06-16 00:46:14] [INFO] [node2:127] Voted to accept Block 1, hash=a8834d54
+2025-06-16 00:46:14,831 [DEBUG] [2025-06-16 00:46:14] [INFO] [node2:215] Received BLOCK_VOTE from node1 on block a8834d54
+2025-06-16 00:46:14,831 [DEBUG] [2025-06-16 00:46:14] [INFO] [node2:233] Block a8834d54 vote ratio: 1.00(1/1)
+2025-06-16 00:46:14,831 [DEBUG] [2025-06-16 00:46:14] [INFO] [node2:239] Validated Block 1 from node1, processing...
+2025-06-16 00:46:14,837 [DEBUG] [2025-06-16 00:46:14] [INFO] [blockchain:150] Adding block 1 to main chain
+2025-06-16 00:46:14,837 [DEBUG] [2025-06-16 00:46:14] [INFO] [node2:143] Added new block 1 with hash a8834d54. Chain length is now 1(excluding genesis).
+2025-06-16 00:46:14,837 [DEBUG] [2025-06-16 00:46:14] [INFO] [node2:241] added new block. Chain length is now 1(excluding genesis).
+2025-06-16 00:50:59,561 [DEBUG] [2025-06-16 00:50:59] [WARNING] [node2:500] FORCING block forge -- skipping validator check!
+2025-06-16 00:50:59,564 [DEBUG] [2025-06-16 00:50:59] [INFO] [node2:518] Want to forge block 2 with hash d70cbdc9
+2025-06-16 00:50:59,565 [DEBUG] [2025-06-16 00:50:59] [INFO] [node2:127] Voted to accept Block 2, hash=d70cbdc9
+2025-06-16 00:50:59,575 [DEBUG] [2025-06-16 00:50:59] [INFO] [node2:215] Received BLOCK_VOTE from node1 on block d70cbdc9
+2025-06-16 00:50:59,575 [DEBUG] [2025-06-16 00:50:59] [INFO] [node2:233] Block d70cbdc9 vote ratio: 1.00(1/1)
+2025-06-16 00:50:59,575 [DEBUG] [2025-06-16 00:50:59] [INFO] [node2:239] Validated Block 2 from node2, processing...
+2025-06-16 00:50:59,575 [DEBUG] [2025-06-16 00:50:59] [INFO] [blockchain:150] Adding block 2 to main chain
+2025-06-16 00:50:59,575 [DEBUG] [2025-06-16 00:50:59] [INFO] [node2:143] Added new block 2 with hash d70cbdc9. Chain length is now 2(excluding genesis).
+2025-06-16 00:50:59,576 [DEBUG] [2025-06-16 00:50:59] [INFO] [node2:241] added new block. Chain length is now 2(excluding genesis).
+2025-06-16 00:53:32,695 [DEBUG] [2025-06-16 00:53:32] [INFO] [node2:420] Sent SYNC_REQUEST to network
+2025-06-16 00:53:32,695 [DEBUG] [2025-06-16 00:53:32] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-16 00:53:32,695 [DEBUG] [2025-06-16 00:53:32] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+2025-06-16 00:53:32,699 [DEBUG] [2025-06-16 00:53:32] [INFO] [node2:97] Received HELLO message from node node11.
+2025-06-16 00:53:32,699 [DEBUG] [2025-06-16 00:53:32] [INFO] [node2:292] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-16 00:53:32,701 [DEBUG] [2025-06-16 00:53:32] [INFO] [node2:315] Received SYNC_RESPONSE from node1, storing response
+2025-06-16 00:53:34,702 [DEBUG] [2025-06-16 00:53:34] [INFO] [node2:387] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-16 00:53:34,702 [DEBUG] [2025-06-16 00:53:34] [INFO] [node2:377] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+2025-06-16 00:53:34,703 [DEBUG] [2025-06-16 00:53:34] [INFO] [node2:406] no need to sync chain, best chain same with local chain
+2025-06-16 00:55:44,433 [DEBUG] [2025-06-16 00:55:44] [INFO] [node2:421] Sent SYNC_REQUEST to network
+2025-06-16 00:55:44,434 [DEBUG] [2025-06-16 00:55:44] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-16 00:55:44,435 [DEBUG] [2025-06-16 00:55:44] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+2025-06-16 00:55:44,437 [DEBUG] [2025-06-16 00:55:44] [INFO] [node2:98] Received HELLO message from node node12.
+2025-06-16 00:55:44,438 [DEBUG] [2025-06-16 00:55:44] [INFO] [node2:293] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-16 00:55:44,439 [DEBUG] [2025-06-16 00:55:44] [INFO] [node2:316] Received SYNC_RESPONSE from node1, storing response
+2025-06-16 00:55:46,441 [DEBUG] [2025-06-16 00:55:46] [INFO] [node2:388] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-16 00:55:46,442 [DEBUG] [2025-06-16 00:55:46] [INFO] [node2:378] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+2025-06-16 00:55:46,442 [DEBUG] [2025-06-16 00:55:46] [INFO] [node2:407] no need to sync chain, best chain same with local chain
+2025-06-16 01:01:23,678 [DEBUG] [2025-06-16 01:01:23] [INFO] [node2:423] Sent SYNC_REQUEST to network
+2025-06-16 01:01:23,679 [DEBUG] [2025-06-16 01:01:23] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-16 01:01:23,679 [DEBUG] [2025-06-16 01:01:23] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+2025-06-16 01:01:23,682 [DEBUG] [2025-06-16 01:01:23] [INFO] [node2:98] Received HELLO message from node node12.
+2025-06-16 01:01:23,683 [DEBUG] [2025-06-16 01:01:23] [INFO] [node2:295] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-16 01:01:23,684 [DEBUG] [2025-06-16 01:01:23] [INFO] [node2:318] Received SYNC_RESPONSE from node1, storing response
+2025-06-16 01:01:25,685 [DEBUG] [2025-06-16 01:01:25] [INFO] [node2:390] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-16 01:01:25,685 [DEBUG] [2025-06-16 01:01:25] [INFO] [node2:380] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+2025-06-16 01:01:25,686 [DEBUG] [2025-06-16 01:01:25] [INFO] [node2:409] no need to sync chain, best chain same with local chain
+2025-06-16 01:01:26,379 [DEBUG] [2025-06-16 01:01:26] [INFO] [node2:276] received STAKE: node1 stakes 10.0
+2025-06-16 01:01:26,379 [DEBUG] [2025-06-16 01:01:26] [INFO] [node2:270] received TRANSFER: node1 → node2, amount 10.0
+2025-06-16 01:01:26,853 [DEBUG] [2025-06-16 01:01:26] [INFO] [node2:453] sent STAKE transaction: node2 -> node2 10.0
+2025-06-16 01:01:26,854 [DEBUG] [2025-06-16 01:01:26] [INFO] [node2:595] Want to stake 10.0 tokens.
+2025-06-16 01:01:26,863 [DEBUG] [2025-06-16 01:01:26] [INFO] [node2:128] Voted to accept Block 1, hash=929f7269
+2025-06-16 01:01:26,863 [DEBUG] [2025-06-16 01:01:26] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block 929f7269
+2025-06-16 01:01:26,863 [DEBUG] [2025-06-16 01:01:26] [INFO] [node2:236] Block 929f7269 vote ratio: 0.50(1/2)
+2025-06-16 01:01:27,032 [DEBUG] [2025-06-16 01:01:27] [WARNING] [node2:503] FORCING block forge -- skipping validator check!
+2025-06-16 01:01:27,033 [DEBUG] [2025-06-16 01:01:27] [INFO] [node2:521] Want to forge block 1 with hash 203077dc
+2025-06-16 01:01:27,033 [DEBUG] [2025-06-16 01:01:27] [INFO] [node2:128] Voted to accept Block 1, hash=203077dc
+2025-06-16 01:01:27,043 [DEBUG] [2025-06-16 01:01:27] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block 203077dc
+2025-06-16 01:01:27,043 [DEBUG] [2025-06-16 01:01:27] [INFO] [node2:236] Block 203077dc vote ratio: 0.50(1/2)
+2025-06-16 01:01:27,532 [DEBUG] [2025-06-16 01:01:27] [INFO] [node2:453] sent TRANSFER transaction: node2 -> node1 10.0
+2025-06-16 01:01:27,533 [DEBUG] [2025-06-16 01:01:27] [WARNING] [node2:503] FORCING block forge -- skipping validator check!
+2025-06-16 01:01:27,534 [DEBUG] [2025-06-16 01:01:27] [INFO] [node2:521] Want to forge block 1 with hash b26dbc93
+2025-06-16 01:01:27,534 [DEBUG] [2025-06-16 01:01:27] [INFO] [node2:128] Voted to accept Block 1, hash=b26dbc93
+2025-06-16 01:01:27,540 [DEBUG] [2025-06-16 01:01:27] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block b26dbc93
+2025-06-16 01:01:27,541 [DEBUG] [2025-06-16 01:01:27] [INFO] [node2:236] Block b26dbc93 vote ratio: 0.50(1/2)
+2025-06-16 01:01:31,861 [DEBUG] [2025-06-16 01:01:31] [WARNING] [node2:364] Vote timeout for block 929f7269, discarding pending         state.
+2025-06-16 01:01:32,040 [DEBUG] [2025-06-16 01:01:32] [WARNING] [node2:364] Vote timeout for block 203077dc, discarding pending         state.
+2025-06-16 01:01:32,540 [DEBUG] [2025-06-16 01:01:32] [WARNING] [node2:364] Vote timeout for block b26dbc93, discarding pending         state.
+2025-06-16 01:15:06,971 [DEBUG] [2025-06-16 01:15:06] [INFO] [node2:423] Sent SYNC_REQUEST to network
+2025-06-16 01:15:06,971 [DEBUG] [2025-06-16 01:15:06] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-16 01:15:06,971 [DEBUG] [2025-06-16 01:15:06] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+2025-06-16 01:15:06,976 [DEBUG] [2025-06-16 01:15:06] [INFO] [node2:98] Received HELLO message from node node12.
+2025-06-16 01:15:06,978 [DEBUG] [2025-06-16 01:15:06] [INFO] [node2:295] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-16 01:15:06,979 [DEBUG] [2025-06-16 01:15:06] [INFO] [node2:318] Received SYNC_RESPONSE from node1, storing response
+2025-06-16 01:15:08,980 [DEBUG] [2025-06-16 01:15:08] [INFO] [node2:390] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-16 01:15:08,980 [DEBUG] [2025-06-16 01:15:08] [INFO] [node2:380] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+2025-06-16 01:15:08,980 [DEBUG] [2025-06-16 01:15:08] [INFO] [node2:409] no need to sync chain, best chain same with local chain
+2025-06-16 01:15:09,336 [DEBUG] [2025-06-16 01:15:09] [INFO] [node2:276] received STAKE: node1 stakes 10.0
+2025-06-16 01:15:10,095 [DEBUG] [2025-06-16 01:15:10] [INFO] [node2:270] received TRANSFER: node1 → node2, amount 10.0
+2025-06-16 01:15:10,101 [DEBUG] [2025-06-16 01:15:10] [INFO] [node2:128] Voted to accept Block 1, hash=9a4b0ffc
+2025-06-16 01:15:10,101 [DEBUG] [2025-06-16 01:15:10] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block 9a4b0ffc
+2025-06-16 01:15:10,101 [DEBUG] [2025-06-16 01:15:10] [INFO] [node2:236] Block 9a4b0ffc vote ratio: 0.50(1/2)
+2025-06-16 01:15:10,413 [DEBUG] [2025-06-16 01:15:10] [INFO] [node2:453] sent STAKE transaction: node2 -> node2 10.0
+2025-06-16 01:15:10,414 [DEBUG] [2025-06-16 01:15:10] [INFO] [node2:595] Want to stake 10.0 tokens.
+2025-06-16 01:15:10,414 [DEBUG] [2025-06-16 01:15:10] [WARNING] [node2:503] FORCING block forge -- skipping validator check!
+2025-06-16 01:15:10,418 [DEBUG] [2025-06-16 01:15:10] [INFO] [node2:521] Want to forge block 1 with hash b7050bf0
+2025-06-16 01:15:10,418 [DEBUG] [2025-06-16 01:15:10] [INFO] [node2:128] Voted to accept Block 1, hash=b7050bf0
+2025-06-16 01:15:10,425 [DEBUG] [2025-06-16 01:15:10] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block b7050bf0
+2025-06-16 01:15:10,425 [DEBUG] [2025-06-16 01:15:10] [INFO] [node2:236] Block b7050bf0 vote ratio: 0.50(1/2)
+2025-06-16 01:15:15,136 [DEBUG] [2025-06-16 01:15:15] [WARNING] [node2:364] Vote timeout for block 9a4b0ffc, discarding pending         state.
+2025-06-16 01:15:15,420 [DEBUG] [2025-06-16 01:15:15] [WARNING] [node2:364] Vote timeout for block b7050bf0, discarding pending         state.
+2025-06-16 01:15:19,909 [DEBUG] [2025-06-16 01:15:19] [INFO] [node2:453] sent TRANSFER transaction: node2 -> node1 10.0
+2025-06-16 01:15:21,020 [DEBUG] [2025-06-16 01:15:21] [WARNING] [node2:503] FORCING block forge -- skipping validator check!
+2025-06-16 01:15:21,021 [DEBUG] [2025-06-16 01:15:21] [INFO] [node2:521] Want to forge block 1 with hash 527ec375
+2025-06-16 01:15:21,022 [DEBUG] [2025-06-16 01:15:21] [INFO] [node2:128] Voted to accept Block 1, hash=527ec375
+2025-06-16 01:15:21,033 [DEBUG] [2025-06-16 01:15:21] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block 527ec375
+2025-06-16 01:15:21,033 [DEBUG] [2025-06-16 01:15:21] [INFO] [node2:236] Block 527ec375 vote ratio: 0.50(1/2)
+2025-06-16 01:15:26,028 [DEBUG] [2025-06-16 01:15:26] [WARNING] [node2:364] Vote timeout for block 527ec375, discarding pending         state.
+2025-06-16 01:15:27,995 [DEBUG] [2025-06-16 01:15:27] [INFO] [node2:104] Received BYE message from node server.
+2025-06-16 01:15:27,996 [DEBUG] [2025-06-16 01:15:27] [INFO] [node2:106] Server is shutting down, exiting.
+2025-06-16 01:15:27,996 [DEBUG] [2025-06-16 01:15:27] [INFO] [node2:577] Exiting.
+2025-06-16 01:15:28,000 [DEBUG] [2025-06-16 01:15:27] [INFO] [blockchain:264] Blockchain saved to data_node_node2
+2025-06-16 01:15:28,007 [DEBUG] Node ID: node2
+2025-06-16 01:15:28,007 [DEBUG] Known nodes: {'node1', 'node2'}
+2025-06-16 01:15:28,007 [DEBUG] ========== Blockchain Structure ==========
+2025-06-16 01:15:28,007 [DEBUG] Block 0 | hash=97045df0... | validator=genesis | tx_count=0 (main)
+2025-06-16 01:15:28,007 [DEBUG] ===================================
+2025-06-16 01:15:28,008 [DEBUG] ========== Account State ==========
+2025-06-16 01:15:28,008 [DEBUG]  Account node1 | Balance=100.00 | Stake=0.00
+2025-06-16 01:15:28,008 [DEBUG]  Account node2 | Balance=100.00 | Stake=0.00
+2025-06-16 01:15:28,008 [DEBUG]  Account node3 | Balance=100.00 | Stake=0.00
+2025-06-16 01:15:28,008 [DEBUG] ===================================
+2025-06-16 01:15:28,008 [DEBUG] ========== Pending Transactions ==========
+2025-06-16 01:15:28,008 [DEBUG]   Transaction(node1 -> node1, 10.0, type=STAKE)
+2025-06-16 01:15:28,010 [DEBUG]   Transaction(node1 -> node2, 10.0, type=TRANSFER)
+2025-06-16 01:15:28,010 [DEBUG]   Transaction(node2 -> node2, 10.0, type=STAKE)
+2025-06-16 01:15:28,010 [DEBUG]   Transaction(node2 -> node1, 10.0, type=TRANSFER)
+2025-06-16 01:15:28,010 [DEBUG] ==========================================
+2025-06-16 01:23:42,528 [DEBUG] [2025-06-16 01:23:42] [INFO] [blockchain:288] Blockchain loaded successfully from data_node_node2. Chain length=0
+2025-06-16 01:23:42,533 [DEBUG] [2025-06-16 01:23:42] [INFO] [node2:423] Sent SYNC_REQUEST to network
+2025-06-16 01:23:42,533 [DEBUG] [2025-06-16 01:23:42] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+2025-06-16 01:23:42,533 [DEBUG] [2025-06-16 01:23:42] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+2025-06-16 01:23:42,537 [DEBUG] [2025-06-16 01:23:42] [INFO] [node2:98] Received HELLO message from node node12.
+2025-06-16 01:23:42,537 [DEBUG] [2025-06-16 01:23:42] [INFO] [node2:295] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+2025-06-16 01:23:42,538 [DEBUG] [2025-06-16 01:23:42] [INFO] [node2:318] Received SYNC_RESPONSE from node1, storing response
+2025-06-16 01:23:43,854 [DEBUG] [2025-06-16 01:23:43] [INFO] [node2:276] received STAKE: node1 stakes 10.0
+2025-06-16 01:23:43,854 [DEBUG] [2025-06-16 01:23:43] [INFO] [node2:270] received TRANSFER: node1 → node2, amount 10.0
+2025-06-16 01:23:44,181 [DEBUG] [2025-06-16 01:23:44] [INFO] [node2:128] Voted to accept Block 1, hash=7e1a6bdb
+2025-06-16 01:23:44,181 [DEBUG] [2025-06-16 01:23:44] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block 7e1a6bdb
+2025-06-16 01:23:44,181 [DEBUG] [2025-06-16 01:23:44] [INFO] [node2:236] Block 7e1a6bdb vote ratio: 1.00(2/2)
+2025-06-16 01:23:44,181 [DEBUG] [2025-06-16 01:23:44] [INFO] [node2:242] Validated Block 1 from node1, processing...
+2025-06-16 01:23:44,181 [DEBUG] [2025-06-16 01:23:44] [INFO] [blockchain:150] Adding block 1 to main chain
+2025-06-16 01:23:44,181 [DEBUG] [2025-06-16 01:23:44] [INFO] [node2:144] Added new block 1 with hash 7e1a6bdb. Chain length is now 1(excluding genesis).
+2025-06-16 01:23:44,181 [DEBUG] [2025-06-16 01:23:44] [INFO] [node2:244] added new block. Chain length is now 1(excluding genesis).
+2025-06-16 01:23:44,539 [DEBUG] [2025-06-16 01:23:44] [INFO] [node2:390] SYNC_RESPONSE collection finished. Processing responses.
+2025-06-16 01:23:44,540 [DEBUG] [2025-06-16 01:23:44] [INFO] [node2:380] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+2025-06-16 01:23:44,541 [DEBUG] [2025-06-16 01:23:44] [INFO] [blockchain:211] Reorganized chain: new head 97045df0 height 0
+2025-06-16 01:23:44,541 [DEBUG] [2025-06-16 01:23:44] [INFO] [node2:341] Recovered TX: Transaction(node1 -> node1, 10.0, type=STAKE)
+2025-06-16 01:23:44,542 [DEBUG] [2025-06-16 01:23:44] [INFO] [node2:341] Recovered TX: Transaction(node1 -> node2, 10.0, type=TRANSFER)
+2025-06-16 01:23:45,493 [DEBUG] [2025-06-16 01:23:45] [INFO] [node2:453] sent STAKE transaction: node2 -> node2 10.0
+2025-06-16 01:23:45,493 [DEBUG] [2025-06-16 01:23:45] [INFO] [node2:595] Want to stake 10.0 tokens.
+2025-06-16 01:23:45,494 [DEBUG] [2025-06-16 01:23:45] [WARNING] [node2:503] FORCING block forge -- skipping validator check!
+2025-06-16 01:23:45,498 [DEBUG] [2025-06-16 01:23:45] [INFO] [node2:521] Want to forge block 1 with hash 905722d5
+2025-06-16 01:23:45,506 [DEBUG] [2025-06-16 01:23:45] [INFO] [node2:128] Voted to accept Block 1, hash=905722d5
+2025-06-16 01:23:45,506 [DEBUG] [2025-06-16 01:23:45] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block 905722d5
+2025-06-16 01:23:45,506 [DEBUG] [2025-06-16 01:23:45] [INFO] [node2:236] Block 905722d5 vote ratio: 1.00(2/2)
+2025-06-16 01:23:45,507 [DEBUG] [2025-06-16 01:23:45] [INFO] [node2:242] Validated Block 1 from node2, processing...
+2025-06-16 01:23:45,507 [DEBUG] [2025-06-16 01:23:45] [INFO] [blockchain:150] Adding block 1 to main chain
+2025-06-16 01:23:45,507 [DEBUG] [2025-06-16 01:23:45] [INFO] [node2:144] Added new block 1 with hash 905722d5. Chain length is now 1(excluding genesis).
+2025-06-16 01:23:45,507 [DEBUG] [2025-06-16 01:23:45] [INFO] [node2:244] added new block. Chain length is now 1(excluding genesis).
+2025-06-16 01:23:49,645 [DEBUG] [2025-06-16 01:23:49] [INFO] [node2:453] sent TRANSFER transaction: node2 -> node1 10.0
+2025-06-16 01:23:49,646 [DEBUG] [2025-06-16 01:23:49] [WARNING] [node2:503] FORCING block forge -- skipping validator check!
+2025-06-16 01:23:49,646 [DEBUG] [2025-06-16 01:23:49] [INFO] [node2:521] Want to forge block 2 with hash c696eef0
+2025-06-16 01:23:49,647 [DEBUG] [2025-06-16 01:23:49] [INFO] [node2:128] Voted to accept Block 2, hash=c696eef0
+2025-06-16 01:23:49,655 [DEBUG] [2025-06-16 01:23:49] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block c696eef0
+2025-06-16 01:23:49,655 [DEBUG] [2025-06-16 01:23:49] [INFO] [node2:236] Block c696eef0 vote ratio: 1.00(2/2)
+2025-06-16 01:23:49,656 [DEBUG] [2025-06-16 01:23:49] [INFO] [node2:242] Validated Block 2 from node2, processing...
+2025-06-16 01:23:49,656 [DEBUG] [2025-06-16 01:23:49] [INFO] [blockchain:150] Adding block 2 to main chain
+2025-06-16 01:23:49,656 [DEBUG] [2025-06-16 01:23:49] [INFO] [node2:144] Added new block 2 with hash c696eef0. Chain length is now 2(excluding genesis).
+2025-06-16 01:23:49,656 [DEBUG] [2025-06-16 01:23:49] [INFO] [node2:244] added new block. Chain length is now 2(excluding genesis).
+2025-06-16 01:23:57,083 [DEBUG] [2025-06-16 01:23:57] [INFO] [node2:104] Received BYE message from node server.
+2025-06-16 01:23:57,085 [DEBUG] [2025-06-16 01:23:57] [INFO] [node2:106] Server is shutting down, exiting.
+2025-06-16 01:23:57,086 [DEBUG] [2025-06-16 01:23:57] [INFO] [node2:577] Exiting.
+2025-06-16 01:23:57,086 [DEBUG] [2025-06-16 01:23:57] [INFO] [blockchain:264] Blockchain saved to data_node_node2
+2025-06-16 01:23:57,089 [DEBUG] Node ID: node2
+2025-06-16 01:23:57,089 [DEBUG] Known nodes: {'node1', 'node2'}
+2025-06-16 01:23:57,089 [DEBUG] ========== Blockchain Structure ==========
+2025-06-16 01:23:57,089 [DEBUG] Block 0 | hash=97045df0... | validator=genesis | tx_count=0 (main)
+2025-06-16 01:23:57,089 [DEBUG] └── Block 1 | hash=905722d5... | validator=node2 | tx_count=3 (main)
+2025-06-16 01:23:57,089 [DEBUG] └── └── Block 2 | hash=c696eef0... | validator=node2 | tx_count=1 (main)
+2025-06-16 01:23:57,089 [DEBUG] ===================================
+2025-06-16 01:23:57,089 [DEBUG] ========== Account State ==========
+2025-06-16 01:23:57,090 [DEBUG]  Account node1 | Balance=90.00 | Stake=10.00
+2025-06-16 01:23:57,090 [DEBUG]  Account node2 | Balance=90.00 | Stake=10.00
+2025-06-16 01:23:57,090 [DEBUG]  Account node3 | Balance=100.00 | Stake=0.00
+2025-06-16 01:23:57,090 [DEBUG] ===================================
+2025-06-16 01:23:57,090 [DEBUG] ========== Pending Transactions ==========
+2025-06-16 01:23:57,090 [DEBUG] ==========================================

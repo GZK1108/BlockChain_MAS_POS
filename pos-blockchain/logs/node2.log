@@ -1,0 +1,258 @@
+[2025-06-16 00:03:23] [INFO] [node2:431] sent TRANSFER transaction: node2 -> node1 10.0
+[2025-06-16 00:03:23] [WARNING] [node2:481] FORCING block forge -- skipping validator check!
+[2025-06-16 00:03:23] [INFO] [node2:499] Want to forge block 1 with hash 364ac076
+[2025-06-16 00:03:23] [INFO] [node2:127] Voted to accept Block 1, hash=364ac076
+[2025-06-16 00:03:28] [WARNING] [node2:342] Vote timeout for block 364ac076, discarding pending         state.
+[2025-06-16 00:03:28] [INFO] [node2:103] Received BYE message from node server.
+[2025-06-16 00:03:28] [INFO] [node2:105] Server is shutting down, exiting.
+[2025-06-16 00:03:28] [INFO] [node2:555] Exiting.
+[2025-06-16 00:04:25] [INFO] [node2:401] Sent SYNC_REQUEST to network
+[2025-06-16 00:04:25] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+[2025-06-16 00:04:25] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+[2025-06-16 00:04:25] [INFO] [node2:97] Received HELLO message from node node1.
+[2025-06-16 00:04:25] [INFO] [node2:273] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+[2025-06-16 00:04:25] [INFO] [node2:296] Received SYNC_RESPONSE from node1, storing response
+[2025-06-16 00:04:27] [INFO] [node2:368] SYNC_RESPONSE collection finished. Processing responses.
+[2025-06-16 00:04:27] [INFO] [node2:358] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+[2025-06-16 00:04:27] [INFO] [node2:387] no need to sync chain, best chain same with local chain
+[2025-06-16 00:04:37] [INFO] [node2:431] sent STAKE transaction: node2 -> node2 10.0
+[2025-06-16 00:04:37] [INFO] [node2:573] Want to stake 10.0 tokens.
+[2025-06-16 00:04:37] [INFO] [node2:254] received STAKE: node1 stakes 10.0
+[2025-06-16 00:04:47] [INFO] [node2:248] received TRANSFER: node1 → node2, amount 10.0
+[2025-06-16 00:04:47] [INFO] [node2:127] Voted to accept Block 1, hash=5306ca40
+[2025-06-16 00:04:47] [WARNING] [node2:189] Received BLOCK VOTE from node1 on block 5306ca40. Not validator node, Ignoring
+[2025-06-16 00:04:47] [WARNING] [node2:481] FORCING block forge -- skipping validator check!
+[2025-06-16 00:04:47] [INFO] [node2:499] Want to forge block 1 with hash b11bd329
+[2025-06-16 00:04:47] [INFO] [node2:127] Voted to accept Block 1, hash=b11bd329
+[2025-06-16 00:04:47] [WARNING] [node2:189] Received BLOCK VOTE from node1 on block b11bd329. Not validator node, Ignoring
+[2025-06-16 00:04:52] [WARNING] [node2:342] Vote timeout for block 5306ca40, discarding pending         state.
+[2025-06-16 00:04:52] [WARNING] [node2:342] Vote timeout for block b11bd329, discarding pending         state.
+[2025-06-16 00:37:57] [INFO] [node2:431] sent TRANSFER transaction: node2 -> node1 10.0
+[2025-06-16 00:37:57] [WARNING] [node2:481] FORCING block forge -- skipping validator check!
+[2025-06-16 00:37:57] [INFO] [node2:499] Want to forge block 1 with hash e7521ed2
+[2025-06-16 00:37:57] [INFO] [node2:127] Voted to accept Block 1, hash=e7521ed2
+[2025-06-16 00:37:57] [WARNING] [node2:189] Received BLOCK VOTE from node1 on block e7521ed2. Not validator node, Ignoring
+[2025-06-16 00:38:02] [WARNING] [node2:342] Vote timeout for block e7521ed2, discarding pending         state.
+[2025-06-16 00:38:02] [INFO] [node2:103] Received BYE message from node server.
+[2025-06-16 00:38:02] [INFO] [node2:105] Server is shutting down, exiting.
+[2025-06-16 00:38:02] [INFO] [node2:555] Exiting.
+[2025-06-16 00:38:14] [INFO] [node2:420] Sent SYNC_REQUEST to network
+[2025-06-16 00:38:14] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+[2025-06-16 00:38:14] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+[2025-06-16 00:38:14] [INFO] [node2:97] Received HELLO message from node node1.
+[2025-06-16 00:38:14] [INFO] [node2:292] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+[2025-06-16 00:38:14] [INFO] [node2:315] Received SYNC_RESPONSE from node1, storing response
+[2025-06-16 00:38:16] [INFO] [node2:387] SYNC_RESPONSE collection finished. Processing responses.
+[2025-06-16 00:38:16] [INFO] [node2:377] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+[2025-06-16 00:38:16] [INFO] [node2:406] no need to sync chain, best chain same with local chain
+[2025-06-16 00:38:28] [INFO] [node2:450] sent STAKE transaction: node2 -> node2 10.0
+[2025-06-16 00:38:28] [INFO] [node2:592] Want to stake 10.0 tokens.
+[2025-06-16 00:38:28] [INFO] [node2:273] received STAKE: node1 stakes 10.0
+[2025-06-16 00:38:32] [INFO] [node2:267] received TRANSFER: node1 → node2, amount 10.0
+[2025-06-16 00:38:32] [INFO] [node2:127] Voted to accept Block 1, hash=aa19ec0f
+[2025-06-16 00:38:32] [INFO] [node2:215] Received BLOCK_VOTE from node1 on block aa19ec0f
+[2025-06-16 00:38:32] [INFO] [node2:233] Block aa19ec0f vote ratio: 1.00(1/1)
+[2025-06-16 00:38:32] [INFO] [node2:239] Validated Block 1 from node1, processing...
+[2025-06-16 00:38:32] [INFO] [node2:143] Added new block 1 with hash aa19ec0f. Chain length is now 1(excluding genesis).
+[2025-06-16 00:38:32] [INFO] [node2:241] added new block. Chain length is now 1(excluding genesis).
+[2025-06-16 00:39:18] [WARNING] [node2:500] FORCING block forge -- skipping validator check!
+[2025-06-16 00:39:18] [INFO] [node2:473] No transactions to pack into block.
+[2025-06-16 00:40:31] [INFO] [node2:450] sent TRANSFER transaction: node2 -> node1 10.0
+[2025-06-16 00:40:31] [WARNING] [node2:500] FORCING block forge -- skipping validator check!
+[2025-06-16 00:40:31] [INFO] [node2:518] Want to forge block 2 with hash d62045d2
+[2025-06-16 00:40:31] [INFO] [node2:127] Voted to accept Block 2, hash=d62045d2
+[2025-06-16 00:40:31] [INFO] [node2:215] Received BLOCK_VOTE from node1 on block d62045d2
+[2025-06-16 00:40:31] [INFO] [node2:233] Block d62045d2 vote ratio: 1.00(2/2)
+[2025-06-16 00:40:31] [INFO] [node2:239] Validated Block 2 from node2, processing...
+[2025-06-16 00:40:31] [INFO] [node2:143] Added new block 2 with hash d62045d2. Chain length is now 2(excluding genesis).
+[2025-06-16 00:40:31] [INFO] [node2:241] added new block. Chain length is now 2(excluding genesis).
+[2025-06-16 00:40:37] [INFO] [node2:103] Received BYE message from node server.
+[2025-06-16 00:40:37] [INFO] [node2:105] Server is shutting down, exiting.
+[2025-06-16 00:40:37] [INFO] [node2:574] Exiting.
+[2025-06-16 00:42:26] [INFO] [node2:420] Sent SYNC_REQUEST to network
+[2025-06-16 00:42:26] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+[2025-06-16 00:42:26] [INFO] [node2:80] Current chain length: 2 (excluding genesis)
+[2025-06-16 00:42:26] [INFO] [node2:97] Received HELLO message from node node1.
+[2025-06-16 00:42:26] [INFO] [node2:292] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+[2025-06-16 00:42:26] [INFO] [node2:315] Received SYNC_RESPONSE from node1, storing response
+[2025-06-16 00:42:28] [INFO] [node2:387] SYNC_RESPONSE collection finished. Processing responses.
+[2025-06-16 00:42:28] [INFO] [node2:377] SYNC_RESPONSE from node1: chain length=3     head=d62045d2
+[2025-06-16 00:42:28] [INFO] [node2:406] no need to sync chain, best chain same with local chain
+[2025-06-16 00:42:33] [INFO] [node2:273] received STAKE: node1 stakes 10.0
+[2025-06-16 00:42:35] [INFO] [node2:450] sent STAKE transaction: node2 -> node2 10.0
+[2025-06-16 00:42:35] [INFO] [node2:592] Want to stake 10.0 tokens.
+[2025-06-16 00:42:35] [INFO] [node2:267] received TRANSFER: node1 → node2, amount 10.0
+[2025-06-16 00:42:35] [INFO] [node2:127] Voted to accept Block 3, hash=e859acfd
+[2025-06-16 00:42:35] [INFO] [node2:215] Received BLOCK_VOTE from node1 on block e859acfd
+[2025-06-16 00:42:35] [INFO] [node2:233] Block e859acfd vote ratio: 1.00(2/2)
+[2025-06-16 00:42:35] [INFO] [node2:239] Validated Block 3 from node1, processing...
+[2025-06-16 00:42:35] [INFO] [node2:143] Added new block 3 with hash e859acfd. Chain length is now 3(excluding genesis).
+[2025-06-16 00:42:35] [INFO] [node2:241] added new block. Chain length is now 3(excluding genesis).
+[2025-06-16 00:45:41] [WARNING] [node2:500] FORCING block forge -- skipping validator check!
+[2025-06-16 00:45:41] [INFO] [node2:518] Want to forge block 4 with hash 7bd22915
+[2025-06-16 00:45:41] [INFO] [node2:127] Voted to accept Block 4, hash=7bd22915
+[2025-06-16 00:45:41] [INFO] [node2:215] Received BLOCK_VOTE from node1 on block 7bd22915
+[2025-06-16 00:45:41] [INFO] [node2:233] Block 7bd22915 vote ratio: 1.00(2/2)
+[2025-06-16 00:45:41] [INFO] [node2:239] Validated Block 4 from node2, processing...
+[2025-06-16 00:45:41] [INFO] [node2:143] Added new block 4 with hash 7bd22915. Chain length is now 4(excluding genesis).
+[2025-06-16 00:45:41] [INFO] [node2:241] added new block. Chain length is now 4(excluding genesis).
+[2025-06-16 00:45:41] [INFO] [node2:450] sent TRANSFER transaction: node2 -> node1 10.0
+[2025-06-16 00:45:41] [WARNING] [node2:500] FORCING block forge -- skipping validator check!
+[2025-06-16 00:45:41] [INFO] [node2:518] Want to forge block 5 with hash 695c8ac6
+[2025-06-16 00:45:41] [INFO] [node2:127] Voted to accept Block 5, hash=695c8ac6
+[2025-06-16 00:45:41] [INFO] [node2:215] Received BLOCK_VOTE from node1 on block 695c8ac6
+[2025-06-16 00:45:41] [INFO] [node2:233] Block 695c8ac6 vote ratio: 1.00(2/2)
+[2025-06-16 00:45:41] [INFO] [node2:239] Validated Block 5 from node2, processing...
+[2025-06-16 00:45:41] [INFO] [node2:143] Added new block 5 with hash 695c8ac6. Chain length is now 5(excluding genesis).
+[2025-06-16 00:45:41] [INFO] [node2:241] added new block. Chain length is now 5(excluding genesis).
+[2025-06-16 00:45:47] [INFO] [node2:103] Received BYE message from node server.
+[2025-06-16 00:45:47] [INFO] [node2:105] Server is shutting down, exiting.
+[2025-06-16 00:45:47] [INFO] [node2:574] Exiting.
+[2025-06-16 00:46:06] [INFO] [node2:420] Sent SYNC_REQUEST to network
+[2025-06-16 00:46:06] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+[2025-06-16 00:46:06] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+[2025-06-16 00:46:06] [INFO] [node2:97] Received HELLO message from node node1.
+[2025-06-16 00:46:06] [INFO] [node2:292] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+[2025-06-16 00:46:06] [INFO] [node2:315] Received SYNC_RESPONSE from node1, storing response
+[2025-06-16 00:46:08] [INFO] [node2:387] SYNC_RESPONSE collection finished. Processing responses.
+[2025-06-16 00:46:08] [INFO] [node2:377] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+[2025-06-16 00:46:08] [INFO] [node2:406] no need to sync chain, best chain same with local chain
+[2025-06-16 00:46:13] [INFO] [node2:273] received STAKE: node1 stakes 10.0
+[2025-06-16 00:46:14] [INFO] [node2:450] sent STAKE transaction: node2 -> node2 10.0
+[2025-06-16 00:46:14] [INFO] [node2:592] Want to stake 10.0 tokens.
+[2025-06-16 00:46:14] [INFO] [node2:267] received TRANSFER: node1 → node2, amount 10.0
+[2025-06-16 00:46:14] [INFO] [node2:127] Voted to accept Block 1, hash=a8834d54
+[2025-06-16 00:46:14] [INFO] [node2:215] Received BLOCK_VOTE from node1 on block a8834d54
+[2025-06-16 00:46:14] [INFO] [node2:233] Block a8834d54 vote ratio: 1.00(1/1)
+[2025-06-16 00:46:14] [INFO] [node2:239] Validated Block 1 from node1, processing...
+[2025-06-16 00:46:14] [INFO] [node2:143] Added new block 1 with hash a8834d54. Chain length is now 1(excluding genesis).
+[2025-06-16 00:46:14] [INFO] [node2:241] added new block. Chain length is now 1(excluding genesis).
+[2025-06-16 00:50:59] [WARNING] [node2:500] FORCING block forge -- skipping validator check!
+[2025-06-16 00:50:59] [INFO] [node2:518] Want to forge block 2 with hash d70cbdc9
+[2025-06-16 00:50:59] [INFO] [node2:127] Voted to accept Block 2, hash=d70cbdc9
+[2025-06-16 00:50:59] [INFO] [node2:215] Received BLOCK_VOTE from node1 on block d70cbdc9
+[2025-06-16 00:50:59] [INFO] [node2:233] Block d70cbdc9 vote ratio: 1.00(1/1)
+[2025-06-16 00:50:59] [INFO] [node2:239] Validated Block 2 from node2, processing...
+[2025-06-16 00:50:59] [INFO] [node2:143] Added new block 2 with hash d70cbdc9. Chain length is now 2(excluding genesis).
+[2025-06-16 00:50:59] [INFO] [node2:241] added new block. Chain length is now 2(excluding genesis).
+[2025-06-16 00:53:32] [INFO] [node2:420] Sent SYNC_REQUEST to network
+[2025-06-16 00:53:32] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+[2025-06-16 00:53:32] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+[2025-06-16 00:53:32] [INFO] [node2:97] Received HELLO message from node node11.
+[2025-06-16 00:53:32] [INFO] [node2:292] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+[2025-06-16 00:53:32] [INFO] [node2:315] Received SYNC_RESPONSE from node1, storing response
+[2025-06-16 00:53:34] [INFO] [node2:387] SYNC_RESPONSE collection finished. Processing responses.
+[2025-06-16 00:53:34] [INFO] [node2:377] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+[2025-06-16 00:53:34] [INFO] [node2:406] no need to sync chain, best chain same with local chain
+[2025-06-16 00:55:44] [INFO] [node2:421] Sent SYNC_REQUEST to network
+[2025-06-16 00:55:44] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+[2025-06-16 00:55:44] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+[2025-06-16 00:55:44] [INFO] [node2:98] Received HELLO message from node node12.
+[2025-06-16 00:55:44] [INFO] [node2:293] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+[2025-06-16 00:55:44] [INFO] [node2:316] Received SYNC_RESPONSE from node1, storing response
+[2025-06-16 00:55:46] [INFO] [node2:388] SYNC_RESPONSE collection finished. Processing responses.
+[2025-06-16 00:55:46] [INFO] [node2:378] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+[2025-06-16 00:55:46] [INFO] [node2:407] no need to sync chain, best chain same with local chain
+[2025-06-16 01:01:23] [INFO] [node2:423] Sent SYNC_REQUEST to network
+[2025-06-16 01:01:23] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+[2025-06-16 01:01:23] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+[2025-06-16 01:01:23] [INFO] [node2:98] Received HELLO message from node node12.
+[2025-06-16 01:01:23] [INFO] [node2:295] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+[2025-06-16 01:01:23] [INFO] [node2:318] Received SYNC_RESPONSE from node1, storing response
+[2025-06-16 01:01:25] [INFO] [node2:390] SYNC_RESPONSE collection finished. Processing responses.
+[2025-06-16 01:01:25] [INFO] [node2:380] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+[2025-06-16 01:01:25] [INFO] [node2:409] no need to sync chain, best chain same with local chain
+[2025-06-16 01:01:26] [INFO] [node2:276] received STAKE: node1 stakes 10.0
+[2025-06-16 01:01:26] [INFO] [node2:270] received TRANSFER: node1 → node2, amount 10.0
+[2025-06-16 01:01:26] [INFO] [node2:453] sent STAKE transaction: node2 -> node2 10.0
+[2025-06-16 01:01:26] [INFO] [node2:595] Want to stake 10.0 tokens.
+[2025-06-16 01:01:26] [INFO] [node2:128] Voted to accept Block 1, hash=929f7269
+[2025-06-16 01:01:26] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block 929f7269
+[2025-06-16 01:01:26] [INFO] [node2:236] Block 929f7269 vote ratio: 0.50(1/2)
+[2025-06-16 01:01:27] [WARNING] [node2:503] FORCING block forge -- skipping validator check!
+[2025-06-16 01:01:27] [INFO] [node2:521] Want to forge block 1 with hash 203077dc
+[2025-06-16 01:01:27] [INFO] [node2:128] Voted to accept Block 1, hash=203077dc
+[2025-06-16 01:01:27] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block 203077dc
+[2025-06-16 01:01:27] [INFO] [node2:236] Block 203077dc vote ratio: 0.50(1/2)
+[2025-06-16 01:01:27] [INFO] [node2:453] sent TRANSFER transaction: node2 -> node1 10.0
+[2025-06-16 01:01:27] [WARNING] [node2:503] FORCING block forge -- skipping validator check!
+[2025-06-16 01:01:27] [INFO] [node2:521] Want to forge block 1 with hash b26dbc93
+[2025-06-16 01:01:27] [INFO] [node2:128] Voted to accept Block 1, hash=b26dbc93
+[2025-06-16 01:01:27] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block b26dbc93
+[2025-06-16 01:01:27] [INFO] [node2:236] Block b26dbc93 vote ratio: 0.50(1/2)
+[2025-06-16 01:01:31] [WARNING] [node2:364] Vote timeout for block 929f7269, discarding pending         state.
+[2025-06-16 01:01:32] [WARNING] [node2:364] Vote timeout for block 203077dc, discarding pending         state.
+[2025-06-16 01:01:32] [WARNING] [node2:364] Vote timeout for block b26dbc93, discarding pending         state.
+[2025-06-16 01:15:06] [INFO] [node2:423] Sent SYNC_REQUEST to network
+[2025-06-16 01:15:06] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+[2025-06-16 01:15:06] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+[2025-06-16 01:15:06] [INFO] [node2:98] Received HELLO message from node node12.
+[2025-06-16 01:15:06] [INFO] [node2:295] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+[2025-06-16 01:15:06] [INFO] [node2:318] Received SYNC_RESPONSE from node1, storing response
+[2025-06-16 01:15:08] [INFO] [node2:390] SYNC_RESPONSE collection finished. Processing responses.
+[2025-06-16 01:15:08] [INFO] [node2:380] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+[2025-06-16 01:15:08] [INFO] [node2:409] no need to sync chain, best chain same with local chain
+[2025-06-16 01:15:09] [INFO] [node2:276] received STAKE: node1 stakes 10.0
+[2025-06-16 01:15:10] [INFO] [node2:270] received TRANSFER: node1 → node2, amount 10.0
+[2025-06-16 01:15:10] [INFO] [node2:128] Voted to accept Block 1, hash=9a4b0ffc
+[2025-06-16 01:15:10] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block 9a4b0ffc
+[2025-06-16 01:15:10] [INFO] [node2:236] Block 9a4b0ffc vote ratio: 0.50(1/2)
+[2025-06-16 01:15:10] [INFO] [node2:453] sent STAKE transaction: node2 -> node2 10.0
+[2025-06-16 01:15:10] [INFO] [node2:595] Want to stake 10.0 tokens.
+[2025-06-16 01:15:10] [WARNING] [node2:503] FORCING block forge -- skipping validator check!
+[2025-06-16 01:15:10] [INFO] [node2:521] Want to forge block 1 with hash b7050bf0
+[2025-06-16 01:15:10] [INFO] [node2:128] Voted to accept Block 1, hash=b7050bf0
+[2025-06-16 01:15:10] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block b7050bf0
+[2025-06-16 01:15:10] [INFO] [node2:236] Block b7050bf0 vote ratio: 0.50(1/2)
+[2025-06-16 01:15:15] [WARNING] [node2:364] Vote timeout for block 9a4b0ffc, discarding pending         state.
+[2025-06-16 01:15:15] [WARNING] [node2:364] Vote timeout for block b7050bf0, discarding pending         state.
+[2025-06-16 01:15:19] [INFO] [node2:453] sent TRANSFER transaction: node2 -> node1 10.0
+[2025-06-16 01:15:21] [WARNING] [node2:503] FORCING block forge -- skipping validator check!
+[2025-06-16 01:15:21] [INFO] [node2:521] Want to forge block 1 with hash 527ec375
+[2025-06-16 01:15:21] [INFO] [node2:128] Voted to accept Block 1, hash=527ec375
+[2025-06-16 01:15:21] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block 527ec375
+[2025-06-16 01:15:21] [INFO] [node2:236] Block 527ec375 vote ratio: 0.50(1/2)
+[2025-06-16 01:15:26] [WARNING] [node2:364] Vote timeout for block 527ec375, discarding pending         state.
+[2025-06-16 01:15:27] [INFO] [node2:104] Received BYE message from node server.
+[2025-06-16 01:15:27] [INFO] [node2:106] Server is shutting down, exiting.
+[2025-06-16 01:15:27] [INFO] [node2:577] Exiting.
+[2025-06-16 01:23:42] [INFO] [node2:423] Sent SYNC_REQUEST to network
+[2025-06-16 01:23:42] [INFO] [node2:79] Node node2 started. Connected to server at 127.0.0.1:5000.
+[2025-06-16 01:23:42] [INFO] [node2:80] Current chain length: 0 (excluding genesis)
+[2025-06-16 01:23:42] [INFO] [node2:98] Received HELLO message from node node12.
+[2025-06-16 01:23:42] [INFO] [node2:295] Received SYNC_REQUEST from node1, sending SYNC_RESPONSE
+[2025-06-16 01:23:42] [INFO] [node2:318] Received SYNC_RESPONSE from node1, storing response
+[2025-06-16 01:23:43] [INFO] [node2:276] received STAKE: node1 stakes 10.0
+[2025-06-16 01:23:43] [INFO] [node2:270] received TRANSFER: node1 → node2, amount 10.0
+[2025-06-16 01:23:44] [INFO] [node2:128] Voted to accept Block 1, hash=7e1a6bdb
+[2025-06-16 01:23:44] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block 7e1a6bdb
+[2025-06-16 01:23:44] [INFO] [node2:236] Block 7e1a6bdb vote ratio: 1.00(2/2)
+[2025-06-16 01:23:44] [INFO] [node2:242] Validated Block 1 from node1, processing...
+[2025-06-16 01:23:44] [INFO] [node2:144] Added new block 1 with hash 7e1a6bdb. Chain length is now 1(excluding genesis).
+[2025-06-16 01:23:44] [INFO] [node2:244] added new block. Chain length is now 1(excluding genesis).
+[2025-06-16 01:23:44] [INFO] [node2:390] SYNC_RESPONSE collection finished. Processing responses.
+[2025-06-16 01:23:44] [INFO] [node2:380] SYNC_RESPONSE from node1: chain length=1     head=97045df0
+[2025-06-16 01:23:44] [INFO] [node2:341] Recovered TX: Transaction(node1 -> node1, 10.0, type=STAKE)
+[2025-06-16 01:23:44] [INFO] [node2:341] Recovered TX: Transaction(node1 -> node2, 10.0, type=TRANSFER)
+[2025-06-16 01:23:45] [INFO] [node2:453] sent STAKE transaction: node2 -> node2 10.0
+[2025-06-16 01:23:45] [INFO] [node2:595] Want to stake 10.0 tokens.
+[2025-06-16 01:23:45] [WARNING] [node2:503] FORCING block forge -- skipping validator check!
+[2025-06-16 01:23:45] [INFO] [node2:521] Want to forge block 1 with hash 905722d5
+[2025-06-16 01:23:45] [INFO] [node2:128] Voted to accept Block 1, hash=905722d5
+[2025-06-16 01:23:45] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block 905722d5
+[2025-06-16 01:23:45] [INFO] [node2:236] Block 905722d5 vote ratio: 1.00(2/2)
+[2025-06-16 01:23:45] [INFO] [node2:242] Validated Block 1 from node2, processing...
+[2025-06-16 01:23:45] [INFO] [node2:144] Added new block 1 with hash 905722d5. Chain length is now 1(excluding genesis).
+[2025-06-16 01:23:45] [INFO] [node2:244] added new block. Chain length is now 1(excluding genesis).
+[2025-06-16 01:23:49] [INFO] [node2:453] sent TRANSFER transaction: node2 -> node1 10.0
+[2025-06-16 01:23:49] [WARNING] [node2:503] FORCING block forge -- skipping validator check!
+[2025-06-16 01:23:49] [INFO] [node2:521] Want to forge block 2 with hash c696eef0
+[2025-06-16 01:23:49] [INFO] [node2:128] Voted to accept Block 2, hash=c696eef0
+[2025-06-16 01:23:49] [INFO] [node2:216] Received BLOCK_VOTE from node1 on block c696eef0
+[2025-06-16 01:23:49] [INFO] [node2:236] Block c696eef0 vote ratio: 1.00(2/2)
+[2025-06-16 01:23:49] [INFO] [node2:242] Validated Block 2 from node2, processing...
+[2025-06-16 01:23:49] [INFO] [node2:144] Added new block 2 with hash c696eef0. Chain length is now 2(excluding genesis).
+[2025-06-16 01:23:49] [INFO] [node2:244] added new block. Chain length is now 2(excluding genesis).
+[2025-06-16 01:23:57] [INFO] [node2:104] Received BYE message from node server.
+[2025-06-16 01:23:57] [INFO] [node2:106] Server is shutting down, exiting.
+[2025-06-16 01:23:57] [INFO] [node2:577] Exiting.
