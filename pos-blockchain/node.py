@@ -16,6 +16,7 @@ from utils import load_config
 from client import Client
 from logger import setup_logger
 from decorators import command, message_handler
+import time
 from timer import Timer
 
 class Node:
@@ -154,10 +155,19 @@ class Node:
     def _on_block(self, msg):
         block = Block.from_proto(msg.block)
 
+        # 伪代码
+        # 通过validator的公钥验证是否是合法的区块且由validator产生
+
         # 检查区块是否已存在
         if block.hash in self.blockchain.blocks_by_hash:
             return
 
+        index = block.index
+        if self.blockchain.chain and index <= self.blockchain.head.index:
+            for blk in self.blockchain.chain:
+                if blk.index == index and block.validator == blk.validator and blk.hash != block.hash:
+                    self.logger.warning(f"Received same block index {index} with same validator {block.validator}")
+            return
 
         if self.use_voting:
             # 验证 block 是否合法
@@ -174,6 +184,9 @@ class Node:
             # 关闭投票，直接加链
             self.logger.info(f"[No Voting] Directly adding Block {block.index} from {block.validator} ...")
             self._add_block(block)
+            time.sleep(0.1)  # 确保日志输出顺序
+            msg = message_pb2.Message(type=message_pb2.Message.BLOCK, sender_id=self.id, block=block.to_proto())
+            self.client.send(msg)
             self.logger.info(f"[No Voting] added block {block.index}. Chain length is now {len(self.blockchain.chain)-1}(excluding genesis).")
 
     @message_handler(message_pb2.Message.BLOCK_VOTE)
@@ -513,6 +526,44 @@ class Node:
             self._add_block(block)
             self.logger.info(f"[No Voting] forged block {block.index}. Chain length is now {len(self.blockchain.chain)-1}(excluding genesis).")
 
+    def _balance_attack(self):
+        """进行一次balance attack"""
+        packaged_txs = self._pack_transactions()
+        packaged_txs_1 = packaged_txs[:len(packaged_txs)//2]
+        packaged_txs_2 = packaged_txs[len(packaged_txs)//2:]
+
+        if not packaged_txs_1 or not packaged_txs_2:
+            self.logger.info("Not enough transactions to pack into block for balance attack.")
+            return
+
+        prev = self.blockchain.head
+        block_1 = Block(
+            index=prev.index + 1,
+            prev_hash=prev.hash,
+            validator=self.id,
+            transactions=packaged_txs_1,
+        )
+        block_2 = Block(
+            index=prev.index + 1,
+            prev_hash=prev.hash,
+            validator=self.id,
+            transactions=packaged_txs_2,
+        )
+
+        lst = list(self.known_nodes - set(self.id))
+        node_set1 = lst[:len(lst) // 2]
+        node_set2 = lst[len(lst) // 2:]
+
+        # 发送区块消息
+        for node in node_set1:
+            msg = message_pb2.Message(type=message_pb2.Message.BLOCK, sender_id=self.id, receiver_id=node, block=block_1.to_proto())
+            self.client.send(msg)
+        for node in node_set2:
+            msg = message_pb2.Message(type=message_pb2.Message.BLOCK, sender_id=self.id, receiver_id=node, block=block_2.to_proto())
+            self.client.send(msg)
+
+        self.logger.info(f"balance attack with block1 {block_1.index} with hash {block_1.hash[:8]} and block2 {block_2.index} with hash {block_2.hash[:8]}")
+
     def stake(self, amount: float):
         self.create_transaction(
             receiver=self.id,
@@ -549,6 +600,10 @@ class Node:
         if args and args[0] == "--force":
             force = True
         self.forge_block(force=force)
+
+    @command("balance", "start a balance attack")
+    def _cmd_balance(self, args):
+        self._balance_attack()
 
     @command("exit", "exit the program")
     def _cmd_exit(self, args):

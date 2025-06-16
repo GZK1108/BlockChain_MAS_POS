@@ -126,6 +126,26 @@ class BlockchainServerAsync:
         except Exception as e:
             logger.error(f"Failed to send to {self.clients.get(writer) or 'unknown'}: {e}")
 
+    async def _unicast(self, message):
+        data = message.SerializeToString()
+        prefix = struct.pack('>I', len(data))
+        packet = prefix + data
+
+        target_node_id = message.receiver_id
+
+        for writer, node_id in list(self.clients.items()):
+            if node_id in self.drop_set:
+                continue
+            if node_id != target_node_id:
+                continue
+            
+            # 模拟延迟: 走异步延迟发送
+            delay = self.delay_map.get(node_id)
+            if delay:
+                asyncio.create_task(self._send_with_delay(writer, packet, delay))
+            else:
+                await self._send_immediate(writer, packet)
+
     async def _broadcast(self, message, exclude=None):
         """Broadcast a message to all connected clients."""
         data = message.SerializeToString()
@@ -180,7 +200,10 @@ class BlockchainServerAsync:
 
     async def _default_message_handler(self, writer, message):
         """Default message handler for unrecognized message types."""
-        await self._broadcast(message, exclude=writer)
+        if message.receiver_id:
+            await self._unicast(message)
+        else:
+            await self._broadcast(message, exclude=writer)
 
     def _register_commands(self):
         """Register commands from methods decorated with @command."""
@@ -238,6 +261,7 @@ class BlockchainServerAsync:
         """Handle HELLO messages from clients."""
         self.clients[writer] = message.sender_id
         await self._default_message_handler(writer, message)
+
 
     @command("step", "Manually broadcast a STEP message")
     async def _cmd_step(self, args):

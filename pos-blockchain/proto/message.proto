@@ -52,12 +52,13 @@ message Message {
   MessageType type = 1;
 
   string sender_id = 2;
+  string receiver_id = 3;
 
   oneof payload {
-    Transaction tx = 3;
-    Block block = 4;
-    SyncResponse sync_response = 5;
-    BlockVote block_vote = 6;
+    Transaction tx = 4;
+    Block block = 5;
+    SyncResponse sync_response = 6;
+    BlockVote block_vote = 7;
   }
 }
 

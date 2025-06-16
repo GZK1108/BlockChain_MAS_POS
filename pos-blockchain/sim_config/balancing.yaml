@@ -1,0 +1,73 @@
+python_bin: python3          
+working_dir: ./test
+log_level: DEBUG
+log_file: balancing_attack.log
+
+server:
+  cmd: "{python} aserver.py"
+
+nodes:
+  node1: { cmd: "{python} node.py --node node1" }
+  node2: { cmd: "{python} node.py --node node2" }
+  node3: { cmd: "{python} node.py --node node3" }
+  node4: { cmd: "{python} node.py --node node4" }
+  node5: { cmd: "{python} node.py --node node5" }
+
+# 收尾参数
+post_wait: 5         # 时间轴结束后再等 5 秒
+node_exit_wait: 5    # server exit 后给节点 5 秒自毁
+
+timeline:
+  - at: 0
+    target: server
+    run: "stop"                # 关闭自动 STEP，改为手动控制节奏
+  
+  - at: 1s
+    target: node2
+    run: ["stake 10", "tx node3 10"]
+
+  - at: 2s
+    target: node1
+    run: ["stake 10", "tx node2 10"]
+
+  - at: 3s
+    target: node2
+    run: ["tx node5 10"]
+
+  - at: 4s
+    target: node3
+    run: ["tx node4 10"]
+
+  - at: 5s
+    target: node4
+    run: ["stake 10", "tx node2 10"]
+
+  - at: 5s
+    target: node2
+    run: "stake 100"
+
+  - at: 7s
+    target: node1 
+    run: "balance"       # 利用出块机会进行攻击
+
+  - at: 9s
+    target: node1
+    run: "info"
+
+  - at: 9s
+    target: node2
+    run: "info"
+
+  - at: 9s
+    target: node3
+    run: "info"
+
+  - at: 9s
+    target: node4
+    run: "info"
+
+  - at: 9s
+    target: node5
+    run: "info"
+
+
