@@ -17,6 +17,7 @@ from client import Client
 from logger import setup_logger
 from decorators import command, message_handler
 from timer import Timer
+from reputation import ValidatorReputationSystem
 
 class Node:
     def __init__(self, node_id: str):
@@ -38,6 +39,7 @@ class Node:
         self.sync_timeout = sync_config.get('timeout', 2.0)         # sync timeout, seconds
 
         # for vote
+        self.reputation = ValidatorReputationSystem(node_id)
         vote_config = load_config(section="vote")
         self.use_voting = vote_config.get('enabled', False)         # whether to use voting, default False
         self.pending_block_votes = {}                               # block_hash -> voter_id
@@ -182,11 +184,13 @@ class Node:
                 self.logger.warning(f"Block {block.index} failed validation, rejecting.")
                 return
 
-            # 开启投票验证流程
-            self._vote(block)
-            self._stash_block(block)
+            # 开启投票验证流
+            vote_decision = self.reputation(block)
+            if vote_decision=="ACCEPT":
+                self._vote(block)
+                self._stash_block(block)
             # 开启timer检查投票超时
-            Timer(self.vote_timeout, self._check_vote_timeout, 1, block.hash).start()
+                Timer(self.vote_timeout, self._check_vote_timeout, 1, block.hash).start()
         else:
             # 关闭投票，直接加链
             self.logger.info(f"[No Voting] Directly adding Block {block.index} from {block.validator} ...")
